@@ -1,0 +1,97 @@
+.about-doctortitle, .about-clinictitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.about-container {
+  display: flex;
+}
+
+.about-sidebar1, .about-sidebar2, .about-sidebar3,.about-sidebar4 {
+  width: 60%;
+  padding: 0 10px;
+  align-content: center;
+  text-align: center;
+  font-size: large;
+  text-wrap: wrap;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-style: ridge;
+  border-width: 5px;
+}
+
+.about-img.doctor, .about-img.clinic {
+  align-items: center;
+}
+
+.about-container p {
+  font-size: larger;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.about {
+  width: 50%;
+  height: auto;
+  align-items: center;
+}
+
+.about-container ul .certificates {
+  margin-right: 0;
+}
+
+.about-container li {
+  display: flex;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.about-container li p {
+width: 100%;
+color:rgb(43, 245, 255, 1);
+background-color: rgb(25, 39, 51, 1);
+text-align: center;
+border-style: ridge;
+border-width: 5px;
+}
+
+.about-container li p:hover, .touch-effect:active {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+
+@media (max-width: 800px) {
+  .about-doctortitle, .about-clinictitle {
+    font-size: small;
+  }
+  
+.about-img {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-container p {
+    font-size: small;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  .about {
+    width: auto;
+  }
+
+  .about-sidebar1, .about-sidebar2, .about-sidebar3,.about-sidebar4 {
+    display: none;
+  }
+}
+

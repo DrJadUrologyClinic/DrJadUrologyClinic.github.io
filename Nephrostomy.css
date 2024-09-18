@@ -1,0 +1,66 @@
+
+.Nephrostomy {
+  display: flex;
+}
+
+.Nephrostomy-text {
+  margin: 0 10px;
+  width: 90%;
+} 
+
+
+
+li::selection{
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+}
+
+
+
+h6 {
+  color: black;
+  direction: ltr;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: small;
+}
+
+
+.References  {
+  direction: ltr;
+  list-style-type: decimal;
+}
+
+.References-list {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: small;
+}
+
+
+.References-list a {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .Nephrostomy {
+    flex-direction: column;
+  } 
+  .Nephrostomy-image {
+    width: 95%;
+    margin-right: 5px;
+  }
+
+  .Nephrostomy-image img {
+    border-style: ridge;
+    border-width: 5px;
+  }
+
+  .Nephrostomy-text {
+    width: 95%;
+  }
+}

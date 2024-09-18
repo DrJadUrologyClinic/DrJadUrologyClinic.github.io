@@ -1,0 +1,183 @@
+
+.services-container{
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+ p {
+  font-size: larger;
+  font-weight: bolder;
+  padding: 5px;
+  margin-right: 5px;
+  line-height: 2;
+}
+
+.sidebar {
+  width: 10%;
+}
+
+.services-all {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-all a {
+  border-style: ridge;
+  border-width: 5px;
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+  width: 30%;
+  margin: 5px;
+}
+
+.service {
+  border-style: ridge;
+  border-width: 5px;
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+  width: 100%;
+  margin: 5px;
+}
+
+.service img {
+  background-color: rgb(43, 245, 255, 1);
+  margin: 20px;
+  width: 90%;
+  height: 90%;
+}
+.service p {
+margin: 20px;
+text-align: center;
+border-style: ridge;
+border-width: 5px;
+}
+
+.service:hover {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+@media (max-width: 800px) {
+  .services-all {
+    flex-direction: column;
+  }
+
+  .services-all a {
+width: 100%;
+  }
+
+  .service {
+    width: 100%;
+  }
+  p {
+    font-size: medium;
+    font-weight: bold;
+    padding: 5px;
+    margin-right: 5px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .sidebar {
+    display: none;
+  }
+
+  h1 {
+    font-size: larger;
+    font-weight: bolder;
+  }
+  
+}
+
+/* This is the carousel*/
+/* Position the image container (needed to position the left and right arrows) */
+.Cliniccarousel-container {
+  position: relative;
+}
+
+.Cliniccarousel-container img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Hide the images by default */
+.clinicSlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.clinicprev,
+.clinicnext {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.clinicnext {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.clinicprev:hover,
+.clinicnext:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: rgb(43, 245, 255, 1);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}

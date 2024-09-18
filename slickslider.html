@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        .slider img {
+            width: 80%;
+            height: auto;
+        }
+
+        .slider .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider">
+    <div><img src="images/DrJadClinic.png" alt="Image 1"></div>
+    <div><img src="images/الدكتور جاد الصمادي استشاري مسالك وكلى.jpg" alt="Image 2"></div>
+    <div><img src="images/الدكتور-جاد-الصمادي.jpeg" alt="Image 3"></div>
+    <div><img src="images/خلالمنظارمرن.jpeg" alt="Image 3"></div>
+    <div><img src="images/صورة مع الشهادات.jpg" alt="Image 3"></div>
+    <div><img src="images/عمليةمنظارمرن.png" alt="Image 3"></div>
+    <!-- Add more images as needed -->
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+        });
+    });
+</script>
+
+</body>
+</html>

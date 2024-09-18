@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="images/png" href="images/Favicon.png">
+  <link rel="stylesheet" href="contact.css">
+
+  <title> Contact Form </title>
+
+</head>
+
+
+  <special-header></special-header>
+
+
+<body>
+  <div class="contact-container">
+
+    <form action="https://api.web3forms.com/submit" method="post" class="contact-form">
+      <h2>هل لديك استفسار أو ملاحظة؟</h2>
+      <h3>   أترك ملاحظاتك و سنقوم بالرد عليها في أقرب وقت ممكن  </h3>
+
+      <input type="hidden" name="access_key" value="b88272ec-d6b4-412d-aa8d-f06a5c528e32">
+      
+      <input type="text" name="name" placeholder="الإسم الأول و اسم العائلة" class="contact-inputs" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" class="contact-inputs" required>
+      <input type="number" name="Mobile Number" placeholder="  رقم الجوال " class="contact-inputs" required>
+      <input type="text" name="subject" placeholder="  الموضوع " class="contact-inputs" required>
+      <textarea name="message" placeholder="  اكتب ملاحظاتك " class="contact-inputs" required></textarea>
+      <button type="submit">  إرسال </button>
+      <input type="hidden" name="_next" value="Thankyouforcontact.html">
+
+    </form>
+  </div>
+
+
+
+  <special-footer></special-footer>
+
+</body>
+
+<script src="js/headerFooterManager.js"></script>
+
+</html>
+

@@ -1,0 +1,228 @@
+
+.procedures-heading li {
+  list-style-type:circle;
+  font-size:x-large;
+}
+
+
+.procedures-heading a {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+  text-decoration: underline;
+}
+
+.procedures-heading a:hover {
+ color: rgb(43, 245, 255, 1);
+ background-color:rgb(25, 39, 51, 1);
+}
+
+.procedures-heading h1 {
+  font-size: 150%;
+}
+
+
+.urologyprocedures h2, h3, p {
+  font-size: x-large;
+  padding: 1% 3%;
+  margin: 1% 0;
+  line-height: 125%;
+  direction: rtl;
+  }
+
+  .urologyprocedures ul, li {
+    font-size: x-large;
+    padding: 0 2%;
+    margin: 1%;
+    direction: rtl;
+    }
+
+.panel h3 {
+  margin: 2% 0;
+  font-size: x-large;
+}
+
+
+/* References accord */
+
+.accordionup {
+  cursor: pointer;
+  padding: 1%;
+  font-size: medium;
+  width: 99%;
+  text-align: right;
+  transition: 0.4s;
+}
+
+.accordionup:after {
+  content: '\2015';
+  font-size: larger;
+  float: left;
+  margin-left: 1%;
+}
+
+.active:after {
+content: '\0058';
+}
+
+
+.accordionup::selection {
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+ }
+
+ .panel {
+  padding: 0 1%;
+  display: none;
+  overflow: hidden;
+  direction: ltr;
+ }
+
+
+
+ @media (max-width: 1025px) {
+  .accordionup {
+   width: 95%;
+  }
+  .panel {
+    margin: 0;
+    padding: 0;
+  }
+ }
+
+ /*the End */
+
+
+
+
+
+
+
+.urologyprocedures-references h2, h3 {
+ font-size: large;
+ padding: 0 1%;
+ margin: 0 1%;
+}
+
+.panel .references  {
+  direction: ltr;
+  list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.References-list {
+  padding: 0;
+  margin: 0;
+  font-size: small;
+  line-height: 110%;
+  direction: ltr;
+}
+
+.References-list h6 {
+  padding:0;
+  margin: 0;
+  direction: ltr;
+}
+
+.References-list::marker {
+  font-size: smaller;
+}
+
+
+
+.References-list a {
+  color: rgb(25, 39, 51, 1);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  direction: ltr;
+}
+
+
+@media (max-width: 800px) {
+  .procedures-heading .main-heading {
+    font-size: 100%;
+    margin-top: 10%;
+    padding: 1%;
+  }
+  .procedures-heading h1 {
+    font-size: 100%;
+  }
+
+  .procedures-heading .urologyprocedures h3 {
+    font-size: large;
+  }
+
+  .procedures-heading .urologyprocedures ul {
+  margin-right: 5%;
+  }
+
+
+  .urologyprocedures-references ul, h1, h2, h3 {
+    font-size: small;
+    padding: 2% 5%;
+    margin: 2% 5%;
+    }
+
+}
+
+/* References accord */
+
+.accordion {
+  cursor: pointer;
+  padding: 1%;
+  font-size: medium;
+  width: 99%;
+  text-align: right;
+  transition: 0.4s;
+}
+
+.accordion:after {
+  content: '\2015';
+  font-size: larger;
+  float: left;
+  margin-left: 1%;
+}
+
+.active:after {
+content: '\0058';
+}
+
+
+.accordion::selection {
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+ }
+
+ .panel {
+  padding: 0 1%;
+  display: none;
+  overflow: hidden;
+  direction: ltr;
+ }
+
+
+
+ @media (max-width: 1025px) {
+  .urologyprocedures-references{
+    padding-right: 3%;
+    margin-right: 3%;
+  }
+
+  .accordion {
+width: 95%;
+  }
+  .panel {
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+  }
+ }
+
+ .highlight {
+  color: black;
+  border: 5px solid;
+  padding: 10px;
+  background-color: yellow;
+}

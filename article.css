@@ -1,0 +1,197 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAF5;
+}
+
+
+article header {
+  z-index: 99;
+  border-radius: 50px;
+  width: 90%;
+}
+
+h1 {
+  color: rgb(43, 245, 255);
+  font-size: xx-large;
+}
+
+h2, h3 {
+  color: rgb(25, 39, 51);
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1.1em;
+  color: #333;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 1.1em;
+  padding: 10px 0;
+}
+
+a {
+  color: rgb(25, 39, 51);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: rgb(43, 245, 255);
+}
+
+.references {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  direction: rtl;
+}
+
+.references h2 {
+  font-size: 1.5em;
+  color: rgb(25, 39, 51);
+}
+
+.references ol {
+  padding: 0;
+  margin: 0;
+  font-size: small;
+  direction: ltr;
+  counter-reset: reference-counter; /* Reset counter */
+}
+
+.references-numbering {
+  padding: 0;
+  margin: 0;
+  font-size: small;
+}
+
+.references .References-list {
+  direction: ltr;
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  counter-increment: reference-counter; /* Increment counter */
+  font-size: small;
+}
+
+.references .References-list::before {
+  content: counter(reference-counter) ".";
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.references .References-list a {
+  text-decoration: none;
+}
+
+.references .References-list h6 {
+  color: #333;
+  font-size: small;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.references .References-list h6:hover {
+  color: rgb(43, 245, 255);
+}
+
+aside {
+  background-color: #f1f1f1;
+  border-left: 4px solid rgb(25, 39, 51);
+  padding: 10px;
+  margin-top: 20px;
+}
+
+aside h2 {
+  font-size: 1.5em;
+  color: rgb(25, 39, 51);
+}
+
+aside p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ main {
+  padding-top: 20%;
+ }
+
+  h1 {
+    font-size: larger;
+  }
+
+  h2 {
+    font-size: large;
+  }
+
+  h3 {
+    font-size: medium;
+  }
+
+  p, ul li {
+    font-size: medium;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .references {
+    padding: 15px;
+  }
+}
+
+.social-share {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.social-share a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px; /* Added for better spacing on smaller screens */
+  padding: 10px 15px;
+  background-color: rgb(43, 245, 255, 1);
+  color: rgb(25, 39, 51, 1);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 14px; /* Adjusted for better readability on mobile */
+}
+
+.social-share a:hover {
+  background-color: rgb(25, 39, 51, 1);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .social-share a {
+    display: block; /* Stack buttons vertically on smaller screens */
+    width: 100%; /* Full width for better touch interaction */
+    text-align: center; /* Center text */
+  }
+}

@@ -1,0 +1,78 @@
+
+
+.conditions-list {
+  color:rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+  padding: 1% 5%;
+  list-style: none;
+  width: 100%;
+}
+
+.conditions-list li {
+ margin: 7% 1%;
+ width: 100%;
+}
+
+/*
+.conditions-list li::marker {
+  content: "  أولاً  ";
+ } 
+ */
+
+.conditions-list li a {
+  color: rgb(43, 245, 255, 1);
+  width: 100%;
+  display: flex;
+  border-style: ridge;
+  border-width: 5px;
+}
+
+.conditions-list li a::selection {
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+}
+
+.conditions-list h1 {
+  color: rgb(43, 245, 255, 1);
+  width: 60%;
+  height: 100%;
+  font-size:xx-large;
+  font-weight: bolder;
+  margin: 10%;
+  padding: 2% 10%;
+}
+
+.conditions-list h1:hover {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+.conditions-list h1::selection{
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+}
+
+
+.conditions-list li a img {
+  background-color: rgb(43, 245, 255, 1);
+  width: 20%; 
+  height: 80%;
+  margin-top: 3%;
+  margin-right: 10%;
+  padding: 1%;
+}
+
+@media (max-width: 800px) {
+  .conditions-list li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .conditions-list li a img {
+    width: 50%; 
+    margin: 10% 0;
+  }
+
+}

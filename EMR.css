@@ -1,0 +1,199 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(25, 39, 51);
+  color: rgb(43, 245, 255);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: rgb(25, 39, 51);
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+  .form-column {
+    width: 45%;
+  }
+}
+
+.form-column label {
+  margin-bottom: 5px;
+}
+
+.form-column input, .form-column textarea {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(25, 39, 51);
+  border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(25, 39, 51);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(25, 39, 51);
+  border-radius: 4px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(43, 245, 255);
+  color: rgb(25, 39, 51);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: rgb(25, 39, 51);
+  color: rgb(43, 245, 255);
+}
+
+.attachment-entry {
+  display: flex;
+  align-items: center;
+}
+
+.attachment-entry input[type="file"] {
+  flex: 1;
+}
+
+.attachment-button {
+  padding: 8px;
+  width: 25%;
+  background-color: rgb(43, 245, 255);
+  color: rgb(25, 39, 51);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.attachment-button:hover {
+  background-color: rgb(25, 39, 51);
+  color: rgb(43, 245, 255);
+}
+
+.attachment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.attachment-item button {
+  padding: 8px;
+  width: 25%;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.attachment-item button:hover {
+  background-color: #c82333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  display: block;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid rgb(25, 39, 51);
+  text-align: left;
+  max-width: 200px; 
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+th {
+  background-color: rgb(25, 39, 51);
+  color: rgb(43, 245, 255);
+}
+
+.actions button {
+  background-color: rgb(25, 39, 51);
+  border: none;
+  color: rgb(43, 245, 255);
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.actions button:hover {
+  background-color: rgb(43, 245, 255);
+  color: rgb(25, 39, 51);
+}
+
+.actions .delete {
+  background-color: #dc3545;
+}
+
+.actions .delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-column {
+    width: 100%;
+  }
+
+  .attachment-button, .attachment-item button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  حجز المواعيد - الدكتور جاد الصمادي استشاري الكى والمسالك البولية و العقم و الذكورة  </title>
+    <link rel="stylesheet" href="reservations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <special-header></special-header>
+
+<main>
+    <div class="container">
+        <h1>اختر لحجز موعد في العيادة</h1>
+        <p>احجز أونلاين برقم موبايلك، بدون الحاجة للتسجيل!</p>
+        <div class="calendar-slider">
+            <button id="prev-week" class="nav-button">&lt;</button>
+            <div class="calendar-wrapper">
+                <div class="calendar" id="calendar">
+                    <!-- JavaScript will populate this with days and times -->
+                </div>
+            </div>
+            <button id="next-week" class="nav-button">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Modal for reservation form -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>حجز موعد</h2>
+            <form id="reservation-form" method="POST" action="https://script.google.com/macros/s/AKfycbyGtgECMcQvWAhykR_r0FGfuz_MeXaV6Sy4oK5rFsk2std4LLNuFjRO8YyKKm7dyP0e/exec">
+                <label for="first-name">الاسم الأول:</label>
+                <input type="text" id="first-name" name="firstName">
+                <label for="family-name">اسم العائلة:</label>
+                <input type="text" id="family-name" name="familyName">
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" min="0">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email">
+                <input type="hidden" id="selected-time" name="selectedTime">
+                <button type="submit">تأكيد الحجز</button>
+            </form>
+            
+            <div id="confirmation-details" style="display: none;">
+                <h2>تم تأكيد الحجز</h2>
+                <p id="confirmation-text"></p>
+                <button id="save-reservation">حفظ</button>
+                <button id="share-reservation">مشاركة</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+    <special-footer></special-footer>
+
+    <script src="js/headerFooterManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="js/reservations.js"></script>
+</body>
+</html>
