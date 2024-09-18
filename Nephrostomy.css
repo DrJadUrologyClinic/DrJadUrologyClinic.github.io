@@ -8,6 +8,12 @@
   width: 90%;
 } 
 
+.Nephrostomy-image {
+  width: 50%;
+  margin-left: 5px;
+}
+
+
 
 
 li::selection{
