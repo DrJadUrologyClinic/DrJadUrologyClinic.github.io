@@ -34,11 +34,12 @@ h3 {
 p {
   line-height: 1.8;
   font-size: 1.1em;
-  color: #333;
+
 }
 
-p a {
-  color: black;
+a:hover {
+  color: rgb(43, 245, 255);
+  background-color: rgb(25, 39, 51);
 }
 
 ul {
@@ -99,7 +100,7 @@ ul li {
 }
 
 .references .References-list a {
-  text-decoration: none;
+  background: none;
 }
 
 .references .References-list h6 {

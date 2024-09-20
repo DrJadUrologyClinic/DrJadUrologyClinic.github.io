@@ -28,7 +28,7 @@ main {
 
 a {
   text-decoration: none;
-  color: rgb(43, 245, 255, 1);
+  
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -41,9 +41,6 @@ img {
 
 
  
-
-
-
   
 /* here is the slider */
 
