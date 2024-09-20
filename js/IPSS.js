@@ -141,3 +141,16 @@ window.onload = function() {
   hideAllSections();  // Ensure all questions and recommendations are hidden initially
   document.getElementById('patientInfoSection').style.display = 'block';  // Show patient info section by default
 };
+
+
+        // Toggle duration input for medical conditions
+        function toggleDurationInput(condition) {
+            const conditionCheckbox = document.getElementById(condition);
+            const yearsInput = document.getElementById('years_' + condition);
+            if (conditionCheckbox.checked) {
+                yearsInput.style.display = 'inline-block';
+            } else {
+                yearsInput.style.display = 'none';
+                yearsInput.value = '';  // Clear the value if unchecked
+            }
+        }

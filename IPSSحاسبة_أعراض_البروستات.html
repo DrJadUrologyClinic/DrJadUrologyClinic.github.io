@@ -18,6 +18,11 @@
       <section id="patientInfoSection" class="active">
         <h1>الرجاء إدخال بياناتك الشخصية</h1>
         <form id="userForm" onsubmit="return false;">
+          <label>
+            تاريخ ملأ الاستبيان
+          </label>
+          <input type="date" name="date" id="date" required>
+
           <label>الاسم</label>
           <input type="text" name="name" id="name" required>
 
@@ -36,18 +41,65 @@
           <label>الوزن (بالكيلوغرام)</label>
           <input type="number" id="weight" name="weight" step="0.1">
 
-          <label>مؤشر كتلة الجسم (BMI)</label>
+          <label>مؤشر كتلة الجسم (BMI) (تلقائي)  </label>
           <input type="text" id="bmi" name="bmi" readonly>
 
-          <h2>نتائج PSA</h2>
           <label>PSA الكلي</label>
           <input type="number" id="totalPSA" name="totalPSA" step="0.01">
 
           <label>PSA الحر</label>
           <input type="number" id="freePSA" name="freePSA" step="0.01">
 
-          <label>النسبة بين PSA الحر و PSA الكلي (%)</label>
+          <label>النسبة بين PSA الحر و PSA الكلي (%) (تلقائي) </label>
           <input type="text" id="psaRatio" name="psaRatio" readonly>
+
+          <br><br>
+          <!-- Known Medical Conditions -->
+          <p>الأمراض الطبية المعروفة</p>
+          <div id="medicalConditions">
+              
+
+              <div class="condition-row">
+                  <input type="checkbox" id="diabetes" name="conditions" value="diabetes" onchange="toggleDurationInput('diabetes')">
+                  <label for="diabetes">السكري</label>
+                  <input type="number" id="years_diabetes" name="years_diabetes" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="hypertension" name="conditions" value="hypertension" onchange="toggleDurationInput('hypertension')">
+                  <label for="hypertension">ارتفاع ضغط الدم</label>
+                  <input type="number" id="years_hypertension" name="years_hypertension" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="heart_stents" name="conditions" value="heart_stents" onchange="toggleDurationInput('heart_stents')">
+                  <label for="heart_stents">  شبكيات القلب  </label>
+                  <input type="number" id="years_heart_stents" name="years_heart_stents" min="0" placeholder="  قبل كم؟ سنوات  " style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="renal_failure" name="conditions" value="renal_failure" onchange="toggleDurationInput('renal_failure')">
+                  <label for="renal_failure">الفشل الكلوي</label>
+                  <input type="number" id="years_renal_failure" name="years_renal_failure" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="prostate_enlargement" name="conditions" value="prostate_enlargement" onchange="toggleDurationInput('prostate_enlargement')">
+                  <label for="prostate_enlargement">تضخم البروستات</label>
+                  <input type="number" id="years_prostate_enlargement" name="years_prostate_enlargement" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+          </div>
+
+              <!-- Cancer Information -->
+              <label>هل لديك أي سرطانات؟</label>
+              <textarea name="cancer" rows="4" placeholder="اذكر السرطانات إن وجدت؛ وقبل كم سنة تم التشخيص"></textarea>
+
+              <!-- Medications -->
+              <label>الأدوية</label>
+              <textarea name="medications" rows="4" placeholder="اذكر الأدوية التي تأخذها أو انتقل للتالي لارفاق وصفة سابقة"></textarea>
+
+              <label>ارفق الوصفة الطبية الأخيرة</label>
+              <input type="file" name="prescription" accept=".jpg, .jpeg, .png, .pdf">
 
           <div class="button-container">
             <button type="submit" onclick="submitForm()">التالي</button>
@@ -66,13 +118,13 @@
         <form id="symptomForm">
           <!-- Question 1 -->
           <div class="question" id="question1">
-            <label>خلال الشهر الماضي، كم مرة شعرت بعدم إفراغ مثانتك بالكامل بعد التبول؟</label>
+            <label>خلال الشهر الماضي، كم مرة شعرت بعدم إفراغ مثانتك بالكامل؟</label>
             <select name="q1" required>
               <option value="0">أبداً (0 نقاط)</option>
               <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-              <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-              <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-              <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+              <option value="2">أقل من نصف المرات (2 نقاط)</option>
+              <option value="3">حوالي نصف المرات (3 نقاط)</option>
+              <option value="4">أكثر من نصف المرات (4 نقاط)</option>
               <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
@@ -82,13 +134,13 @@
 
           <!-- Question 2 -->
           <div class="question" id="question2" style="display:none;">
-            <label>خلال الشهر الماضي، كم مرة تبولت مرة أخرى أقل من ساعتين بعد أن أنهيت التبول؟</label>
+            <label>خلال الشهر الماضي، كم مرة ذهبت لدورة المياه لتفريغ المثانة مرة أخرى خلال أقل من ساعتين بعد أن أنهيت التبول؟</label>
             <select name="q2" required>
                 <option value="0">أبداً (0 نقاط)</option>
                 <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
                 <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
@@ -99,13 +151,13 @@
 
         <!-- Question 3 -->
         <div class="question" id="question3" style="display:none;">
-            <label>خلال الشهر الماضي، كم مرة توقفت وبدأت مرة أخرى عدة مرات أثناء التبول؟</label>
+            <label>خلال الشهر الماضي، كم مرة توقف دفع البول وبدأ مرة أخرى؛ عدة مرات، أثناء التبول؟</label>
             <select name="q3" required>
                 <option value="0">أبداً (0 نقاط)</option>
                 <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
                 <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
@@ -116,13 +168,13 @@
 
         <!-- Question 4 -->
         <div class="question" id="question4" style="display:none;">
-            <label>خلال الشهر الماضي، كم مرة وجدت صعوبة في تأجيل التبول؟</label>
+            <label>خلال الشهر الماضي، كم مرة وجدت صعوبة في تأجيل الذهاب لدورة المياه للتبول؟</label>
             <select name="q4" required>
                 <option value="0">أبداً (0 نقاط)</option>
                 <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
                 <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
@@ -133,13 +185,13 @@
 
         <!-- Question 5 -->
         <div class="question" id="question5" style="display:none;">
-            <label>خلال الشهر الماضي، كم مرة كان تدفق البول لديك ضعيفاً؟</label>
+            <label>خلال الشهر الماضي، كم مرة كان تدفق البول (قوة الدفع) لديك ضعيفاً؟</label>
             <select name="q5" required>
                 <option value="0">أبداً (0 نقاط)</option>
                 <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
                 <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
@@ -154,9 +206,9 @@
             <select name="q6" required>
                 <option value="0">أبداً (0 نقاط)</option>
                 <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
-                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
-                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
-                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
                 <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">

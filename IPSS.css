@@ -30,6 +30,11 @@ h3 {
   background-color: rgb(43, 245, 255, 1);
 }
 
+p {
+  margin: 5%;
+  padding: 5%;
+}
+
 label, select {
   display: block;
   margin: 5% 0 0 0;
@@ -45,6 +50,7 @@ select {
 
 input {
   width: 50%;
+  height: 35px;
 }
 
 textarea {
@@ -75,4 +81,33 @@ button:hover {
 
 #resultSection.active, .question.active, #patientInfoSection.active, #questionnaireSection.active, #mildSymptoms.active, #moderateSymptoms.active, #severeSymptoms.active {
   display: block;
+}
+
+#medicalConditions {
+
+  margin-right: 3%;
+  padding-right: 1%;
+}
+
+.condition-row {
+  display: flex;
+  width: 100% ;
+}
+
+.condition-row label {
+  width: 75%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.condition-row input {
+  margin: 1%;
+  padding: 1%;
+  width: 8%;
+}
+
+.condition-row #years_diabetes, #years_hypertension, #years_heart_stents, #years_renal_failure, #years_prostate_enlargement {
+width: 100%;
+margin-left: 10%;
+padding: 1%;
 }
