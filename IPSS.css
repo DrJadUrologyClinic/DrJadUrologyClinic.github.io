@@ -1,0 +1,78 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  direction: rtl;
+}
+
+.container {
+  max-width: 85%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  margin: 0 10%;
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+h3 {
+  margin: 0 20%;
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+label, select {
+  display: block;
+  margin: 5% 0 0 0;
+  text-align: right;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input {
+  width: 50%;
+}
+
+textarea {
+  width: 50%;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.question {
+  display: none;
+}
+
+#resultSection, #patientInfoSection, #questionnaireSection, #mildSymptoms, #moderateSymptoms, #severeSymptoms {
+  display: none;
+}
+
+#resultSection.active, .question.active, #patientInfoSection.active, #questionnaireSection.active, #mildSymptoms.active, #moderateSymptoms.active, #severeSymptoms.active {
+  display: block;
+}

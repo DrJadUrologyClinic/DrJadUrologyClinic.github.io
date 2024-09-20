@@ -37,6 +37,10 @@ p {
   color: #333;
 }
 
+p a {
+  color: black;
+}
+
 ul {
   list-style-type: circle;
   padding-left: 20px;
@@ -47,14 +51,7 @@ ul li {
   padding: 10px 0;
 }
 
-a {
-  color: rgb(25, 39, 51);
-  text-decoration: underline;
-}
 
-a:hover {
-  color: rgb(43, 245, 255);
-}
 
 .references {
   padding: 20px;

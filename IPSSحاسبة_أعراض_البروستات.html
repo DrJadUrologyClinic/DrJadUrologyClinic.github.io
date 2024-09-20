@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عيادة الدكتور جاد الصمادي - حاسبة البروستات</title>
+  <link rel="stylesheet" href="IPSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+  <special-header></special-header>
+
+  <main id="result-content">
+    <div class="container">
+      <!-- Patient Information Section -->
+      <section id="patientInfoSection" class="active">
+        <h1>الرجاء إدخال بياناتك الشخصية</h1>
+        <form id="userForm" onsubmit="return false;">
+          <label>الاسم</label>
+          <input type="text" name="name" id="name" required>
+
+          <label>العمر</label>
+          <input type="number" name="age" id="age" min="1" required>
+
+          <label>رقم الهاتف المحمول</label>
+          <input type="text" name="mobile" id="mobile" required>
+
+          <label>البريد الإلكتروني</label>
+          <input type="email" name="email" id="email">
+
+          <label>الطول (بالمتر)</label>
+          <input type="number" id="height" name="height" step="0.01" placeholder="1.** أو 2.**">
+
+          <label>الوزن (بالكيلوغرام)</label>
+          <input type="number" id="weight" name="weight" step="0.1">
+
+          <label>مؤشر كتلة الجسم (BMI)</label>
+          <input type="text" id="bmi" name="bmi" readonly>
+
+          <h2>نتائج PSA</h2>
+          <label>PSA الكلي</label>
+          <input type="number" id="totalPSA" name="totalPSA" step="0.01">
+
+          <label>PSA الحر</label>
+          <input type="number" id="freePSA" name="freePSA" step="0.01">
+
+          <label>النسبة بين PSA الحر و PSA الكلي (%)</label>
+          <input type="text" id="psaRatio" name="psaRatio" readonly>
+
+          <div class="button-container">
+            <button type="submit" onclick="submitForm()">التالي</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- IPSS Questionnaire Section -->
+      <section id="questionnaireSection">
+        <h1>تقييم الأعراض البولية</h1>
+
+        <div class="button-container">
+          <button type="button" onclick="goBack()">الرجوع إلى الصفحة السابقة</button>
+        </div>
+
+        <form id="symptomForm">
+          <!-- Question 1 -->
+          <div class="question" id="question1">
+            <label>خلال الشهر الماضي، كم مرة شعرت بعدم إفراغ مثانتك بالكامل بعد التبول؟</label>
+            <select name="q1" required>
+              <option value="0">أبداً (0 نقاط)</option>
+              <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+              <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+              <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+              <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+              <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+              <button type="button" onclick="nextQuestion(1)">التالي</button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question" id="question2" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة تبولت مرة أخرى أقل من ساعتين بعد أن أنهيت التبول؟</label>
+            <select name="q2" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(2)">الرجوع</button>
+                <button type="button" onclick="nextQuestion(2)">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" id="question3" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة توقفت وبدأت مرة أخرى عدة مرات أثناء التبول؟</label>
+            <select name="q3" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(3)">الرجوع</button>
+                <button type="button" onclick="nextQuestion(3)">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question" id="question4" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة وجدت صعوبة في تأجيل التبول؟</label>
+            <select name="q4" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(4)">الرجوع</button>
+                <button type="button" onclick="nextQuestion(4)">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question" id="question5" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة كان تدفق البول لديك ضعيفاً؟</label>
+            <select name="q5" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(5)">الرجوع</button>
+                <button type="button" onclick="nextQuestion(5)">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question" id="question6" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة اضطررت إلى الدفع أو الشد لبدء التبول؟</label>
+            <select name="q6" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف الوقت (2 نقاط)</option>
+                <option value="3">حوالي نصف الوقت (3 نقاط)</option>
+                <option value="4">أكثر من نصف الوقت (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(6)">الرجوع</button>
+                <button type="button" onclick="nextQuestion(6)">التالي</button>
+            </div>
+        </div>
+
+          <!-- Last question (7th) -->
+          <div class="question" id="question7" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة استيقظت للتبول من وقت ذهابك إلى الفراش حتى استيقاظك في الصباح؟</label>
+            <select name="q7" required>
+              <option value="0">أبداً (0 نقاط)</option>
+              <option value="1">مرة واحدة (1 نقطة)</option>
+              <option value="2">مرتين (2 نقاط)</option>
+              <option value="3">ثلاث مرات (3 نقاط)</option>
+              <option value="4">أربع مرات (4 نقاط)</option>
+              <option value="5">خمس مرات أو أكثر (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+              <button type="button" onclick="previousQuestion(7)">الرجوع</button>
+              <button type="button" onclick="calculateScore()">احسب النتيجة</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Result Section -->
+      <section id="resultSection">
+        <h2>النتيجة: <span id="score"></span></h2>
+        <p id="symptomCategory"></p>
+        <button onclick="nextPage()">التالي</button>
+      </section>
+
+      <!-- Recommendation Sections -->
+      <section id="mildSymptoms">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض خفيفة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية خفيفة.</h2>
+        <ul>
+          <li>من المستحسن متابعة الأعراض بانتظام.</li>
+          <li>يُنصح بزيارة عيادة استشاري جراحة مسالك بولية قريب منك لإجراء فحص دوري.</li>
+          <li>قد لا تكون هناك حاجة للعلاج الفوري، ولكن ينبغي مراقبة الأعراض لتجنب تفاقمها.</li>
+        </ul>
+        <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+      </section>
+
+      <section id="moderateSymptoms">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض متوسطة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية متوسطة.</h2>
+        <ul>
+          <li>نوصي بمراجعة طبيب مختص لفحص حالتك بشكل دقيق.</li>
+          <li>قد يتطلب الأمر علاجاً دوائياً أو إجراء فحوصات إضافية.</li>
+          <li>يُنصح بعدم تجاهل هذه الأعراض لتجنب تطورها إلى حالة أكثر حدة.</li>
+        </ul>
+        <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+      </section>
+
+      <section id="severeSymptoms">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض شديدة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية شديدة.</h2>
+        <ul>
+          <li>ننصح بمراجعة أخصائي بشكل عاجل للحصول على العلاج المناسب.</li>
+          <li>قد تكون هناك حاجة إلى فحوصات أكثر تفصيلاً أو تدخلات علاجية.</li>
+          <li>يجب عدم تأجيل الفحص الطبي لتجنب حدوث مضاعفات صحية خطيرة.</li>
+        </ul>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+      </section>
+    </div>
+  </main>
+
+  <special-footer></special-footer>
+  <script src="js/headerFooterManager.js"></script>
+  <script src="js/IPSS.js"></script>
+</body>
+</html>
