@@ -55,11 +55,45 @@ hr {
   color: lightgrey;
 }
 
-.contact-form button{
+#contact-form #submit{
   display: flex;
   align-items: center;
   padding: 1% 10%;
   font-size: xx-large;
   gap: 20px;
  
+}
+
+/** the submit button format **/
+
+.contact-form button, 
+.contact-form input[type="submit"] {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white; /* Default text color */
+  background-color: rgb(25, 39, 51, 1); /* Dark background */
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+.contact-form button:hover, 
+.contact-form input[type="submit"]:hover {
+  background-color: rgb(43, 245, 255, 1); /* Light background on hover */
+  color: rgb(25, 39, 51, 1); /* Dark text on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.contact-form button:active, 
+.contact-form input[type="submit"]:active {
+  transform: translateY(1px); /* Button presses down slightly on click */
+}
+
+.contact-form button:focus, 
+.contact-form input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 245, 255, 0.5); /* Focus ring */
 }

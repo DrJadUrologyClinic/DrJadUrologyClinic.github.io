@@ -11,37 +11,29 @@
 
 </head>
 
-
-  <special-header></special-header>
-
+<special-header></special-header>
 
 <body>
   <div class="contact-container">
-
-    <form action="https://api.web3forms.com/submit" method="post" class="contact-form">
+    <form id="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbwxyXsPWOobFr0IrK-Jd8QtdY_095WYfFKdOBCGQ2goMElM7e7tjM117uq9K2UGzmBf/exec"  class="contact-form" name="contact-form">
       <h2>هل لديك استفسار أو ملاحظة؟</h2>
-      <h3>   أترك ملاحظاتك و سنقوم بالرد عليها في أقرب وقت ممكن  </h3>
+      <h3>أترك ملاحظاتك و سنقوم بالرد عليها في أقرب وقت ممكن</h3>
 
-      <input type="hidden" name="access_key" value="b88272ec-d6b4-412d-aa8d-f06a5c528e32">
-      
-      <input type="text" name="name" placeholder="الإسم الأول و اسم العائلة" class="contact-inputs" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" class="contact-inputs" required>
-      <input type="number" name="Mobile Number" placeholder="  رقم الجوال " class="contact-inputs" required>
-      <input type="text" name="subject" placeholder="  الموضوع " class="contact-inputs" required>
-      <textarea name="message" placeholder="  اكتب ملاحظاتك " class="contact-inputs" required></textarea>
-      <button type="submit">  إرسال </button>
-      <input type="hidden" name="_next" value="Thankyouforcontact.html">
+      <input type="text" id="name" name="name" placeholder="الإسم الأول و اسم العائلة" class="contact-inputs" required>
+      <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" class="contact-inputs" required>
+      <input type="number" id="mobile" name="mobile" placeholder="رقم الجوال" class="contact-inputs" required>
+      <input type="text" id="subject" name="subject" placeholder="الموضوع" class="contact-inputs" required>
+      <textarea id="message" name="message" placeholder="اكتب ملاحظاتك" class="contact-inputs" required></textarea>
+      <input type="submit" value="submit" id="submit">
 
     </form>
   </div>
 
-
-
   <special-footer></special-footer>
 
+  <script src="js/headerFooterManager.js"></script>
+  <script src="js/contact.js"></script>
+
+
 </body>
-
-<script src="js/headerFooterManager.js"></script>
-
 </html>
-
