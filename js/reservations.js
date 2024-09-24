@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     timeButton.addEventListener('click', () => {
                         selectedTimeInput.value = `${date.toLocaleDateString('ar-EG')} ${hourText}`;
+                        
                         modal.style.display = 'block';
                         reservationForm.setAttribute('data-selected-button-id', timeButton.id);
                     });
@@ -98,16 +99,24 @@ document.addEventListener('DOMContentLoaded', () => {
     reservationForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const formData = new FormData(reservationForm);
-        const formDataObject = {};
-        formData.forEach((value, key) => formDataObject[key] = value);
+        // Capture current date and time for submission
+    const submissionTime = new Date();
+    const formattedSubmissionTime = formatDate(submissionTime);
+
+    // Set the submission time in the hidden input field
+    document.getElementById('submission-time').value = formattedSubmissionTime;
+
+    const formData = new FormData(reservationForm);
+    const formDataObject = {};
+    formData.forEach((value, key) => formDataObject[key] = value);
 
         confirmationText.innerHTML = `
             <strong> الإسم الكامل:</strong> ${formDataObject.name}<br>
             <strong>العمر:</strong> ${formDataObject.age}<br>
             <strong>رقم الهاتف:</strong> ${formDataObject.phone}<br>
-            <strong>البريد الإلكتروني:</strong> ${formDataObject.email}<br>
-            <strong>موعد الحجز:</strong> ${formDataObject.selectedTime}<br>
+            <strong>البريد الإلكتروني:</strong> ${formDataObject.email}<br><br>
+            <strong>موعد الحجز:</strong> ${formDataObject.selectedTime}<br><br>
+             <strong>تاريخ ووقت الإرسال:</strong> ${formDataObject.submissionTime}<br>
         `;
         
         confirmationDetails.style.display = 'block';
@@ -118,6 +127,31 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedButton.classList.add('disabled');
             selectedButton.disabled = true;
         }
+
+        function formatDate(date) {
+            const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            const dateString = new Intl.DateTimeFormat('ar-EG', options).format(date);
+        
+            let hours = date.getHours();
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'م' : 'ص';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+        
+            return `${dateString} ${hours}:${minutes} ${ampm}`;
+        }
+        
+
+        // Send the form data to Google Apps Script (Google Sheet)
+    fetch(reservationForm.action, {
+        method: 'POST',
+        body: formData
+    }).then(response => response.json())
+      .then(data => {
+        console.log("Success:", data);
+    }).catch(error => {
+        console.error("Error:", error);
+    });
 
         // Clear the form fields
         reservationForm.reset();
@@ -176,3 +210,4 @@ document.addEventListener('DOMContentLoaded', () => {
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
     });
 });
+
