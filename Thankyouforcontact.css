@@ -8,9 +8,16 @@
 
 .Thankyou-container a {
   color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
 }
 
 .Thankyou-container a:hover{
   text-decoration: underline;
-  color: rgb(21, 88, 94, 1);
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+}
+
+.Thankyou-container h2 {
+border-color: black;
+
 }
