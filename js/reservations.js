@@ -103,8 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.forEach((value, key) => formDataObject[key] = value);
 
         confirmationText.innerHTML = `
-            <strong>الاسم الأول:</strong> ${formDataObject.firstName}<br>
-            <strong>اسم العائلة:</strong> ${formDataObject.familyName}<br>
+            <strong> الإسم الكامل:</strong> ${formDataObject.name}<br>
             <strong>العمر:</strong> ${formDataObject.age}<br>
             <strong>رقم الهاتف:</strong> ${formDataObject.phone}<br>
             <strong>البريد الإلكتروني:</strong> ${formDataObject.email}<br>
@@ -127,7 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function captureImage(callback) {
         const buttons = document.querySelectorAll('#save-reservation, #share-reservation');
         buttons.forEach(button => button.classList.add('hidden-for-image'));
-        html2canvas(document.getElementById('confirmation-details')).then(canvas => {
+        html2canvas(document.getElementById('confirmation-details'), {
+            backgroundColor: window.getComputedStyle(document.getElementById('confirmation-details')).backgroundColor // Set the background color to match the popup
+        }).then(canvas => {
             buttons.forEach(button => button.classList.remove('hidden-for-image'));
             callback(canvas.toDataURL('image/png'));
         });
