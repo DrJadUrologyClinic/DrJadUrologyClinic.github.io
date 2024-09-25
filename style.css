@@ -21,6 +21,13 @@ main {
   margin-top: 12%;
 }
 
+@media all and (max-width: 685px) {
+ main {
+  margin-top: 35%;
+ }
+}
+
+
 /* Global styles */
 *, *::before, *::after {
   box-sizing: border-box;
