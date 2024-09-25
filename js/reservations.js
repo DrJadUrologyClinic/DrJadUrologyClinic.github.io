@@ -159,20 +159,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function captureImage(callback) {
         const buttons = document.querySelectorAll('#save-reservation, #share-reservation');
+        const confirmationDetails = document.getElementById('confirmation-details');
+        
+        // Hide buttons during the capture
         buttons.forEach(button => button.classList.add('hidden-for-image'));
     
-        // Detect if the device is mobile and adjust the scale for smaller screens
+        // Copy background color and other relevant styles explicitly
+        const computedStyle = window.getComputedStyle(confirmationDetails);
+        confirmationDetails.style.backgroundColor = computedStyle.backgroundColor;
+        confirmationDetails.style.color = computedStyle.color;
+    
+        // Detect if device is mobile and adjust scale for better image quality on small screens
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
-        html2canvas(document.getElementById('confirmation-details'), {
-            backgroundColor: window.getComputedStyle(document.getElementById('confirmation-details')).backgroundColor,
-            scale: isMobile ? 2 : 1, // Increase scale for mobile devices to improve quality
-            useCORS: true  // Handle cross-origin issues for styles or images
+        // Capture the image with html2canvas
+        html2canvas(confirmationDetails, {
+            backgroundColor: computedStyle.backgroundColor,  // Force background color
+            scale: isMobile ? 2 : 1,  // Increase scale for mobile devices for higher quality
+            useCORS: true,  // Handle cross-origin resources if needed
+            logging: true   // Enable logging to see any potential issues
         }).then(canvas => {
+            // Show buttons back after capture
             buttons.forEach(button => button.classList.remove('hidden-for-image'));
             callback(canvas.toDataURL('image/png'));
         });
     }
+    
     
 
     saveReservation.addEventListener('click', () => {
