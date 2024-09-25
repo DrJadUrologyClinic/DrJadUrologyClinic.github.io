@@ -406,8 +406,8 @@ class SpecialFooter extends HTMLElement {
           معلومات التواصل
         </li>
         <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
-        <li><a href="">  WhatsApp </a></li>
-        <li><a href="">  0778089234  </a></li>
+        <li><a href="https://wa.me/00962778089234" target="_blank">Contact us on WhatsApp</a></li>
+        <li><a href="https://wa.me/00962778089234" target="_blank">  +962778089234  </a></li>
         <li><a href="location.html">  الموقع </a></li>
       </ul>
       <ul class="footer-box">
