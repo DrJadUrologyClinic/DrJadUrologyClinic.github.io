@@ -160,30 +160,34 @@ document.addEventListener('DOMContentLoaded', () => {
     function captureImage(callback) {
         const buttons = document.querySelectorAll('#save-reservation, #share-reservation');
         const confirmationDetails = document.getElementById('confirmation-details');
-        
+    
         // Hide buttons during the capture
         buttons.forEach(button => button.classList.add('hidden-for-image'));
     
-        // Copy background color and other relevant styles explicitly
+        // Ensure background color is set explicitly
         const computedStyle = window.getComputedStyle(confirmationDetails);
-        confirmationDetails.style.backgroundColor = computedStyle.backgroundColor;
-        confirmationDetails.style.color = computedStyle.color;
+        const backgroundColor = computedStyle.backgroundColor || '#ffffff'; // Fallback to white if no background
     
-        // Detect if device is mobile and adjust scale for better image quality on small screens
+        // Detect if device is mobile and adjust scale
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
-        // Capture the image with html2canvas
+        // Capture the image using html2canvas with forced background color
         html2canvas(confirmationDetails, {
-            backgroundColor: computedStyle.backgroundColor,  // Force background color
-            scale: isMobile ? 2 : 1,  // Increase scale for mobile devices for higher quality
-            useCORS: true,  // Handle cross-origin resources if needed
-            logging: true   // Enable logging to see any potential issues
+            backgroundColor: backgroundColor,  // Force a solid background color for the image
+            scale: isMobile ? 2 : 1,  // Increase scale for mobile devices
+            useCORS: true,  // Handle cross-origin resources
+            logging: true,  // Enable logging to detect any issues
+            onclone: (clonedDocument) => {
+                // Force the same background color on the cloned document
+                clonedDocument.getElementById('confirmation-details').style.backgroundColor = backgroundColor;
+            }
         }).then(canvas => {
             // Show buttons back after capture
             buttons.forEach(button => button.classList.remove('hidden-for-image'));
             callback(canvas.toDataURL('image/png'));
         });
     }
+    
     
     
 
