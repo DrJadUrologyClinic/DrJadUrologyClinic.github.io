@@ -160,13 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function captureImage(callback) {
         const buttons = document.querySelectorAll('#save-reservation, #share-reservation');
         buttons.forEach(button => button.classList.add('hidden-for-image'));
+    
+        // Detect if the device is mobile and adjust the scale for smaller screens
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
         html2canvas(document.getElementById('confirmation-details'), {
-            backgroundColor: window.getComputedStyle(document.getElementById('confirmation-details')).backgroundColor // Set the background color to match the popup
+            backgroundColor: window.getComputedStyle(document.getElementById('confirmation-details')).backgroundColor,
+            scale: isMobile ? 2 : 1, // Increase scale for mobile devices to improve quality
+            useCORS: true  // Handle cross-origin issues for styles or images
         }).then(canvas => {
             buttons.forEach(button => button.classList.remove('hidden-for-image'));
             callback(canvas.toDataURL('image/png'));
         });
     }
+    
 
     saveReservation.addEventListener('click', () => {
         captureImage(dataUrl => {
