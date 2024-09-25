@@ -22,7 +22,7 @@ class SpecialHeader extends HTMLElement {
         <li><a href="about.html">الدكتور جاد الصمادي</a></li>
         <li><a href="مشاكل_المسالك_البولية.html">مشاكل المسالك البولية</a></li>
         <li><a href="services.html">الإجراءات داخل العيادة</a></li>
-        <li><a href="blog.html">المدونة</a></li>
+        <!--<li><a href="blog.html">المدونة</a></li>-->
         <li><a href="FAQ.html">أسئلة شائعة</a></li>
         <li><a href="reservations.html">حجز موعد</a></li>
         <li><a href="location.html">الموقع</a></li>
