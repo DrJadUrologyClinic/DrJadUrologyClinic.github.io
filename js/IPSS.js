@@ -1,3 +1,15 @@
+function toggleOperationDetails() {
+  var prostateOperation = document.getElementById("prostateOperation").value;
+  var operationDetails = document.getElementById("operationDetails");
+
+  if (prostateOperation === "yes") {
+    operationDetails.style.display = "block";
+  } else {
+    operationDetails.style.display = "none";
+  }
+}
+
+
 let currentQuestion = 1;
 
 // Function to hide all sections (questions, result, recommendations)
