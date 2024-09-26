@@ -160,46 +160,31 @@ outline: none;
 /* resize images for different screen sizes */
 @media all and (max-width: 900px) {
   .carousel {
-      height: 300px;
-      max-width: 600px;
+      height: 500px;
+      max-width: auto;
   }
-  .carousel-slide {
-     width: 600px;
-     height: 300px;
-  }    
+
 } 
 
 @media all and (max-width: 720px) {
   .carousel {
-      height: 250px;
-      max-width: 500px;
+      height: 350px;
+      max-width: auto;
   }
-  .carousel-slide {
-     width: 500px;
-     height: 250px;
-  }    
+ 
 } 
 
 @media all and (max-width: 600px) {
   .carousel {
-      height: 200px;
-      max-width: 400px;
+      height: 300px;
   }
-  .carousel-slide {
-     width: 400px;
-     height: 200px;
-  }    
+
 } 
 
 @media all and (max-width: 485px) {
   .carousel {
-      height: 150px;
-      max-width: 350px;
-  }
-  .carousel-slide {
-     width: 350px;
-     height: 150px;
-  }    
+      height: 250px;
+  }  
 } 
 
 @media all and (max-width: 400px) {
