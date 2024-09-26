@@ -187,17 +187,6 @@ outline: none;
   }  
 } 
 
-@media all and (max-width: 400px) {
-  .carousel {
-      height: 120px;
-      max-width: 300px;
-  }
-  .carousel-slide {
-     width: 300px;
-     height: 120px;
-  }    
-} 
-
 /* the end of the slider */
 
 
