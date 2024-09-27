@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>   عيادة الدكتور جاد الصمادي - حاسبة البروستات  </title>
+  <link rel="icon" href="images/favicon.ICO">
   <link rel="stylesheet" href="IPSS.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
@@ -17,7 +18,7 @@
       <!-- Patient Information Section -->
       <section id="patientInfoSection" class="active">
         <h1>الرجاء إدخال بياناتك الشخصية</h1>
-        <form id="userForm"  method="POST" action="https://script.google.com/macros/s/AKfycbygXrA4xV3W2q3w1NLV1yvkAytFqVzFqMO8NqbqJJ4v4DXoxweVi-DX0Davw3g5vDIX/exec">
+        <form id="userForm"  method="POST" action="https://script.google.com/macros/s/AKfycbzMTWqdDju2IL4uVuEpxH1GWwgCH2HvFTeoIGAuDfb_69ojaiq1ZvLacnW3zd2tJ1yp/exec">
           <label>
             تاريخ ملأ الاستبيان
           </label>
@@ -133,7 +134,7 @@
               <input type="file" name="prescription" accept=".jpg, .jpeg, .png, .pdf">
 
           <div class="button-container">
-            <button type="submit" onclick="submitForm()">التالي</button>
+            <button type="button" onclick="submitPartialData('userForm', showFirstQuestion)">التالي</button>
           </div>
         </form>
       </section>
@@ -146,7 +147,7 @@
           <button type="button" onclick="goBack()">الرجوع إلى الصفحة السابقة</button>
         </div>
 
-        <form id="symptomForm" method="POST" action="https://script.google.com/macros/s/AKfycbygXrA4xV3W2q3w1NLV1yvkAytFqVzFqMO8NqbqJJ4v4DXoxweVi-DX0Davw3g5vDIX/exec">
+        <form id="symptomForm" method="POST" action="https://script.google.com/macros/s/AKfycbzMTWqdDju2IL4uVuEpxH1GWwgCH2HvFTeoIGAuDfb_69ojaiq1ZvLacnW3zd2tJ1yp/exec">
           <!-- Question 1 -->
           <div class="question" id="question1">
             <label>خلال الشهر الماضي، كم مرة شعرت بعدم إفراغ مثانتك بالكامل؟</label>
@@ -159,7 +160,8 @@
               <option value="5">تقريباً دائماً (5 نقاط)</option>
             </select>
             <div class="button-container">
-              <button type="button" onclick="nextQuestion(1)">التالي</button>
+              <button type="button" onclick="previousQuestion(1)">الرجوع</button>
+              <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 1))">التالي</button>
             </div>
           </div>
 
@@ -176,7 +178,7 @@
             </select>
             <div class="button-container">
                 <button type="button" onclick="previousQuestion(2)">الرجوع</button>
-                <button type="button" onclick="nextQuestion(2)">التالي</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 2))">التالي</button>
             </div>
         </div>
 
@@ -193,7 +195,7 @@
             </select>
             <div class="button-container">
                 <button type="button" onclick="previousQuestion(3)">الرجوع</button>
-                <button type="button" onclick="nextQuestion(3)">التالي</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 3))">التالي</button>
             </div>
         </div>
 
@@ -210,7 +212,7 @@
             </select>
             <div class="button-container">
                 <button type="button" onclick="previousQuestion(4)">الرجوع</button>
-                <button type="button" onclick="nextQuestion(4)">التالي</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 4))">التالي</button>
             </div>
         </div>
 
@@ -227,7 +229,7 @@
             </select>
             <div class="button-container">
                 <button type="button" onclick="previousQuestion(5)">الرجوع</button>
-                <button type="button" onclick="nextQuestion(5)">التالي</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 5))">التالي</button>
             </div>
         </div>
 
@@ -244,7 +246,7 @@
             </select>
             <div class="button-container">
                 <button type="button" onclick="previousQuestion(6)">الرجوع</button>
-                <button type="button" onclick="nextQuestion(6)">التالي</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 6))">التالي</button>
             </div>
         </div>
 
@@ -261,21 +263,21 @@
             </select>
             <div class="button-container">
               <button type="button" onclick="previousQuestion(7)">الرجوع</button>
-              <button type="button" onclick="calculateScore()">احسب النتيجة</button>
+              <button type="button" onclick="submitPartialData('symptomForm', calculateScore())">إرسال</button>
             </div>
           </div>
         </form>
       </section>
 
       <!-- Result Section -->
-      <section id="resultSection">
+      <section id="resultSection" style="display:none;">
         <h2>النتيجة: <span id="score"></span></h2>
         <p id="symptomCategory"></p>
         <button onclick="nextPage()">التالي</button>
       </section>
 
       <!-- Recommendation Sections -->
-      <section id="mildSymptoms">
+      <section id="mildSymptoms" style="display:none;">
         <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض خفيفة)</h1>
         <h2>تقييمك يشير إلى أعراض بولية خفيفة.</h2>
         <ul>
@@ -285,9 +287,11 @@
         </ul>
         <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
         <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
       </section>
+      
 
-      <section id="moderateSymptoms">
+      <section id="moderateSymptoms" style="display:none;">
         <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض متوسطة)</h1>
         <h2>تقييمك يشير إلى أعراض بولية متوسطة.</h2>
         <ul>
@@ -297,9 +301,11 @@
         </ul>
         <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
         <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
       </section>
+      
 
-      <section id="severeSymptoms">
+      <section id="severeSymptoms" style="display:none;">
         <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض شديدة)</h1>
         <h2>تقييمك يشير إلى أعراض بولية شديدة.</h2>
         <ul>
@@ -308,7 +314,9 @@
           <li>يجب عدم تأجيل الفحص الطبي لتجنب حدوث مضاعفات صحية خطيرة.</li>
         </ul>
         <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
       </section>
+      
     </div>
   </main>
 
