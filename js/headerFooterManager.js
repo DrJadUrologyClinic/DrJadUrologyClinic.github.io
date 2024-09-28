@@ -374,11 +374,13 @@ class SpecialFooter extends HTMLElement {
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
+      <!--
       <div class="media-icons">
        <a href=""><img src="images/youtube.png"></a>
        <a href=""><img src="images/instagram.png"></a>
        <a href=""><img src="images/facebook.png"></a>
       </div>
+      -->
 
     </div>
 
