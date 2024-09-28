@@ -407,7 +407,7 @@ class SpecialFooter extends HTMLElement {
         </li>
         <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
         <li><a href="https://wa.me/962778089234" target="_blank"> تواصل معنا واتس أب </a></li>
-        <li><a href="https://wa.me/00962778089234" target="_blank">  962778089234+  </a></li>
+        <li><a href="https://wa.me/962778089234" target="_blank">  962778089234+  </a></li>
         <li><a href="location.html">  الموقع </a></li>
       </ul>
       <ul class="footer-box">
