@@ -12,7 +12,7 @@ class SpecialHeader extends HTMLElement {
   <link rel="icon" type="image/DRJADALSMADI-Icon" href="images/favicon.ico">
   <meta property="og:title" content="Dr. Jad Alsmadi Urology Clinic" />
   <meta property="og:description" content="The best urologist in Amman Jordan" />
-  <meta property="og:image" content="https://drjadurologyclinic.com/images/favicon.ico" />
+  <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.jpg" />
   <meta property="og:url" content="https://drjadurologyclinic.com/" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css">
