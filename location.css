@@ -5,8 +5,8 @@
 }
 
 .location-container {
-  max-width: 95%;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 1%;
   padding: 1%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -23,17 +23,17 @@ h1 {
 
 /* Optional: Makes the sample page fill the window. */
 #map {
-  height: 700px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  height: auto;
+  width: auto;
+  margin: 1%;
+  padding: 1%;
 }
 
 #map img {
   height: auto;
   width: auto;
-  margin: 0;
-  padding: 0;
+  margin: 1%;
+  padding: 1%;
   text-align: center;
 }
 
