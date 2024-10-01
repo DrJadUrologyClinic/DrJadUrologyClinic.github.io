@@ -35,9 +35,13 @@ main {
 
 a {
   text-decoration: none;
-  
+  color: rgb(43, 245, 255, 1);
   padding-left: 10px;
   padding-right: 10px;
+}
+
+a:hover {
+  color: rgb(25, 39, 51, 1);
 }
 
 
