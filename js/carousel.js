@@ -31,57 +31,49 @@ const updateDots = (currentDot, targetDot) => {
 
 // When next clicked, move to slide on the right
 nextButton.addEventListener('click', e => {
-    counter --; // decr counter (for checking slide pos)
+    counter ++; // Increment counter for moving to the next slide
     const currentSlide = track.querySelector('.current-slide');
+
+    const nextSlide = currentSlide.nextElementSibling; // Move to the next slide
+
     const prevSlide = currentSlide.previousElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
-    const prevDot = currentDot.previousElementSibling;
+    const nextDot = currentDot ? currentDot.nextElementSibling : null; // Define next dot, handle null case
 
-    // if prev clicked when on the first slide 
-    if ((counter) == -1) {
-        const lastSlide = slides[slidesLength - 1];
-        const lastDot = dots[slidesLength - 1];
-        counter = slidesLength - 1;  // set counter to last slide index
-        track.style.transform = 'translateX(-' + totalWidth + ')'; // shift ul to the last slide
-        currentSlide.classList.remove('current-slide'); // remove .current-slide CSS on current slide
-        lastSlide.classList.add('current-slide'); // add .current-slide CSS on the last slide
-        currentDot.classList.remove('current-slide');
-        lastDot.classList.add('current-slide');
-        
-        slideResize(); // call resize function (shifts track correctly)
-
+    // if the current slide is the last one, loop back to the first slide
+    if (!nextSlide) {
+        const firstSlide = slides[0]; // Loop to the first slide
+        const firstDot = dots[0];
+        moveToSlide(track, currentSlide, firstSlide); // Move to first slide
+        updateDots(currentDot, firstDot); // Update dots to the first one
+        counter = 0; // Reset the counter to 0
     } else {
-        // not the first slide
-        moveToSlide(track, currentSlide, prevSlide);
-        updateDots(currentDot, prevDot);
+        moveToSlide(track, currentSlide, nextSlide); // Move to the next slide
+        updateDots(currentDot, nextDot); // Update the dots
     }
 });
 
 // When prev clicked, move to slide on the left
 prevButton.addEventListener('click', e => {  // track the event (click)
-    counter ++; // incr counter for tracking index pos
-    const currentSlide = track.querySelector('.current-slide');  
-    const nextSlide = currentSlide.nextElementSibling;
+    counter --; // Decrement counter for moving to the previous slide
+    const currentSlide = track.querySelector('.current-slide');
+
+    const prevSlide = currentSlide.previousElementSibling; // Move to the previous slide
+
     const currentDot = dotsNav.querySelector('.current-slide')
-    const nextDot = currentDot.nextElementSibling;
+    const prevDot = currentDot ? currentDot.previousElementSibling : null; // Define previous dot, handle null case
 
-    // if the next button is clicked when the current-slide is the last slide...
-    if ((counter) == slidesLength) {
-        const firstSlide = slides[0];
-        const firstDot = dots[0];
-        counter = 0;
-        track.style.transform = 'translateX(-' + 0 + 'px' + ')'; // shift ul to first slide
-        currentSlide.classList.remove('current-slide'); // remove .current-slide CSS on current slide
-        firstSlide.classList.add('current-slide'); // add .current-slide CSS on the first slide
-
-        currentDot.classList.remove('current-slide');
-        firstDot.classList.add('current-slide');
-
-    } else {
-        // not the last slide...
-        moveToSlide(track, currentSlide, nextSlide);
-        updateDots(currentDot, nextDot);
-    }
+ // if the current slide is the first one, loop back to the last slide
+ if (!prevSlide) {
+    const lastSlide = slides[slides.length - 1]; // Loop to the last slide
+    const lastDot = dots[dots.length - 1];
+    moveToSlide(track, currentSlide, lastSlide); // Move to the last slide
+    updateDots(currentDot, lastDot); // Update dots to the last one
+    counter = slides.length - 1; // Reset the counter to the last index
+} else {
+    moveToSlide(track, currentSlide, prevSlide); // Move to the previous slide
+    updateDots(currentDot, prevDot); // Update the dots
+}
 })
 
 // When I click the nav indicators, move to that slide
@@ -120,3 +112,39 @@ function slideResize(){
     var currentTrackPos = newSlideWidth * currentIndex + 'px';
     track.style.transform = 'translateX(-' + currentTrackPos + ')'; // shift ul
 } 
+
+// Enable touch scrolling (swiping)
+let startX;
+let isDragging = false;
+
+track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    if (deltaX > 50) {
+        prevButton.click(); // swipe right
+        isDragging = false;
+    } else if (deltaX < -50) {
+        nextButton.click(); // swipe left
+        isDragging = false;
+    }
+});
+
+track.addEventListener('touchend', () => {
+    isDragging = false;
+});
+
+// Enable mouse scrolling
+track.addEventListener('wheel', (e) => {
+    if (e.deltaY < 0) {
+        prevButton.click(); // scroll up (previous slide)
+    } else if (e.deltaY > 0) {
+        nextButton.click(); // scroll down (next slide)
+    }
+});
+

@@ -64,9 +64,11 @@ img {
 }
 
 .carousel-image {
- height: 100%;
- width: 100%;
- object-fit:contain;
+  width: auto;        /* Let the width adjust automatically */
+  height: auto;       /* Let the height adjust automatically */
+  max-width: 100%; /* Ensure the image doesn't exceed the width of its parent */
+  max-height: 100%; /* Ensure the image doesn't exceed the height of its parent */
+  object-fit: contain; /* Scale the image while maintaining its aspect ratio */
 }
 
 .img-h {
@@ -91,11 +93,14 @@ img {
 
 .carousel-slide {
   position: absolute; /* stack images on top of each other */
-  width: auto;
+  width: 100%;
+  height: 100%;
   top: 0;
   bottom: 0;
-  height: 100%;
-  width: 100%;
+  display: flex; /* This is important for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+ 
 }
 
 .carousel-button {
