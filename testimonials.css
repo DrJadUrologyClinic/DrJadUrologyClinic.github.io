@@ -40,7 +40,7 @@ width: 20%;
 
 
 
-.testimonials-slides {
+.testimonials-slider {
   position: relative;
   max-width: auto;
   width: 100%;
@@ -49,7 +49,7 @@ width: 20%;
   overflow: hidden;
 }
 
-.testmonials-slides .img {
+.testmonials-slider .img {
   height: 170px;
   width: 170px;
   object-fit: cover;
@@ -68,7 +68,7 @@ width: 20%;
   margin-right: 10px;
 }
 
-.slider {
+.testimonials-slider-inner {
 height: 100%;
 display: flex;
 width: 500%;
@@ -78,7 +78,7 @@ flex-shrink: 0;
 
 
 
-.slider section{
+.testimonials-slider section{
   flex-basis: 20%;
   width: 20%;
   flex-shrink: 0;
@@ -97,21 +97,26 @@ flex-shrink: 0;
   justify-content: center;
 }
 
-.slider .star {
+.testimonials-slider .star {
   width: 15px;
 }
 
-.slider p {
-  width: 80%;
+.testimonials-slider p {
+width: 80%;
 text-align: center;
+margin-bottom: 1%;
 padding: 0;
+padding-bottom: 1%;
 font-size: large;
 font-weight: 400;
 }
 
+.testimonials-controls {
+  display: flex;
+  justify-content: space-between;
+}
 
-
-.controls .arrow {
+.testimonials-controls .testimonials-arrow {
 position:absolute;
 top: 50%;
 transform: translateY(-50%);
@@ -119,21 +124,20 @@ cursor: pointer;
 width: 7%;
 height: 30%;
 }
-
-.controls .arrow img {
+.testimonials-controls .testimonials-arrow img {
   width: 100%;
   height: 100%;
 }
 
-.controls .arrow img:hover {
+.testimonials-controls .testimonials-arrow img:hover {
   background-color: rgb(43, 245, 255, 1);
 }
 
-.arrow.prev {
+.testimonials-arrow.testimonials-prev {
 right: 10px;
 }
 
-.arrow.next {
+.testimonials-arrow.testimonials-next {
 left: 10px;
 }
 
