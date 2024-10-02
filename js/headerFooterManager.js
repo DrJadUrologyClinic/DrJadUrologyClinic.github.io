@@ -375,7 +375,7 @@ class SpecialFooter extends HTMLElement {
     <div class="top">
 
       <div class="logo-footer">
-        <img src="images/logo.jpeg">
+        <img src="images/logo.jpeg" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  ">
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
