@@ -9,6 +9,16 @@ main {
   margin-top: 10%;
 }
 
+article a {
+background-color: rgb(25, 39, 51);
+font-style: italic;
+text-decoration: underline;
+}
+
+article a:hover {
+  color: rgb(25, 39, 51);
+  background-color: rgb(43, 245, 255, 1);
+}
 
 h1 {
 font-size: 3em;
@@ -36,11 +46,6 @@ p {
   line-height: 1.8;
   font-size: 1.1em;
 
-}
-
-a:hover {
-  color: rgb(43, 245, 255);
-  background-color: rgb(25, 39, 51);
 }
 
 ul {
