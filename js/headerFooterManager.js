@@ -11,7 +11,7 @@ class SpecialHeader extends HTMLElement {
   <title>عيادة الدكتور جاد الصمادي </title>
   <link rel="icon" type="image/DRJADALSMADI-Icon" href="images/favicon.ico">
   <meta property="og:title" content="Dr. Jad Alsmadi Urology Clinic" />
-  <meta property="og:description" content="Dr. Jad Alsmadi Urology Clinic - DJUC Amman Jordan" />
+  <meta property="og:description" content="DJUC - عيادة الدكتور جاد الصمادي - استشاري جراحة الكلى والمسالك البولية  " />
   <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.jpg" />
   <meta property="og:url" content="https://drjadurologyclinic.com/" />
   <meta property="og:type" content="website" />
