@@ -159,3 +159,11 @@ left: 10px;
   text-align: center;
 }
 }
+.testimonials-slider-inner {
+  cursor: grab;
+}
+
+.testimonials-slider-inner:active {
+  cursor: grabbing;
+}
+

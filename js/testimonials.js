@@ -72,3 +72,7 @@ testimonialsSlider.addEventListener('touchend', (e) => {
         testimonialsSlider.style.transition = 'transform 0.3s ease';
     }
 });
+
+
+
+
