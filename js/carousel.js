@@ -25,9 +25,14 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
 }
 
 const updateDots = (currentDot, targetDot) => {
-    currentDot.classList.remove('current-slide');
-    targetDot.classList.add('current-slide');
-}
+    if (currentDot && targetDot) {
+        currentDot.classList.remove('current-slide');
+        targetDot.classList.add('current-slide');
+    } else {
+        console.warn('One of the dots is null:', { currentDot, targetDot });
+    }
+};
+
 
 // When next clicked, move to slide on the right
 nextButton.addEventListener('click', e => {
