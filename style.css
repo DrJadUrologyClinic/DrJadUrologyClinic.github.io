@@ -57,7 +57,7 @@ img {
 
 .carousel {
   position: relative;
-  height: 1000px;
+  height: 300px;
   width: 90%;
   max-width: 1800px;
   margin: 0 auto;
@@ -166,7 +166,7 @@ outline: none;
 }
 
 
-/* resize images for different screen sizes */
+/* No more needed; resize images for different screen sizes 
 @media all and (max-width: 900px) {
   .carousel {
       height: 500px;
@@ -195,6 +195,7 @@ outline: none;
       height: 250px;
   }  
 } 
+  */
 
 /* the end of the slider */
 
