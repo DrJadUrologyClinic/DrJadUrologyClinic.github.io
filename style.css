@@ -58,7 +58,7 @@ img {
 .carousel {
   position: relative;
   height: 300px;
-  width: 90%;
+  width: 50%;
   max-width: 1800px;
   margin: 0 auto;
 }
@@ -166,15 +166,17 @@ outline: none;
 }
 
 
-/* No more needed; resize images for different screen sizes 
-@media all and (max-width: 900px) {
+ /*resize images for different screen sizes */
+
+ @media screen and (max-width: 900px) {
   .carousel {
-      height: 500px;
-      max-width: auto;
+      height: 300px;
+      width: 90%;
+      max-width: 100%;
   }
+}
 
-} 
-
+/* No more needed;
 @media all and (max-width: 720px) {
   .carousel {
       height: 350px;
