@@ -104,6 +104,11 @@ class SpecialHeader extends HTMLElement {
     margin-top: 1%;
     padding: 0;
     }
+
+    .logo img {
+  width: 500;
+  height: 500;
+    }
     
     .logo h1 {
       background-color: rgb(25, 39, 51, 1);
@@ -375,7 +380,7 @@ class SpecialFooter extends HTMLElement {
     <div class="top">
 
       <div class="logo-footer">
-        <img src="images/logo.webp" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  ">
+        <a href="index.html"><img src="images/logo.webp" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  "></a>
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
@@ -488,9 +493,15 @@ footer .content .top {
   font-size:larger;
 }
 
-.logo-footer img {
-  width: 40px;
-  height: 40px;
+.logo-footer a {
+  width: 10%;
+  display: inline-block;
+}
+
+.logo-footer a img {
+  width: 500;
+  height: 500;
+  object-fit: contain;
   border-radius: 50%;
   margin-bottom: -8px;
 }
@@ -587,7 +598,10 @@ text-decoration: underline;
   footer .content .link-boxes {
     flex-wrap: wrap;
   }
-  .logo-footer img {
+      .logo-footer a {
+    width: 10%;
+  }
+  .logo-footer a img {
     margin-bottom: -5px;
   }
 }
@@ -596,10 +610,7 @@ text-decoration: underline;
   .content .top .logo-footer {
     font-size:medium;
 }
-.logo-footer img {
-  width: 20px;
-  height: 20px;
-}
+
 
 .content .top .media-icons a {
   width: 35px;
@@ -617,8 +628,11 @@ footer .content .link-boxes .footer-box {
 footer .bottom-details {
   font-size: medium;
 }
-.logo-footer img {
-  margin-bottom: -5px;
+    .logo-footer a {
+    width: 20%;
+  }
+.logo-footer a img {
+  margin-bottom: -15px;
 }
 }
 
@@ -633,8 +647,8 @@ footer .bottom-details {
   .content .top .media-icons {
     margin-top: 10px;
   }
-  .logo-footer img {
-    margin-bottom: -5px;
+  .logo-footer a {
+    width: 20%;
   }
 
 }

@@ -56,6 +56,11 @@ margin-top: 1%;
 padding: 0;
 }
 
+.logo img {
+  width: 500;
+  height: 500;
+}
+
 .logo h1 {
   background-color: rgb(25, 39, 51, 1);
   color: rgb(43, 245, 255, 1);
