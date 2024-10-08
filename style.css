@@ -462,15 +462,17 @@ color: rgb(25, 39, 51, 1);
 }
 
 .container-location a {
-  width: 90%;
-  height: 70%;
+  width: 1000;
+  height: 500;
   filter: invert(100%);
   border:0;
+  display: block;
 }
 
 .container-location a img {
-  width:auto;
-  height: 100%;
+  width: 1000;
+  height: 500;
+  object-fit: contain;
 }
 
 section.location {
