@@ -64,8 +64,8 @@ img {
 }
 
 .carousel-image {
-  width: auto;        /* Let the width adjust automatically */
-  height: auto;       /* Let the height adjust automatically */
+  width: 300;        /* Let the width adjust automatically */
+  height: 300;       /* Let the height adjust automatically */
   max-width: 100%; /* Ensure the image doesn't exceed the width of its parent */
   max-height: 100%; /* Ensure the image doesn't exceed the height of its parent */
   object-fit: contain; /* Scale the image while maintaining its aspect ratio */
@@ -149,8 +149,8 @@ z-index: 10;
 }
 
 .carousel-button img {
-  width: 100%;
-  height: 100%;
+  width: 100;
+  height: 100;
 }
 
 .carousel-button:focus, .carousel-indicator:focus {
@@ -222,6 +222,8 @@ outline: none;
 }
 
 .container-about img {
+  width: 1000;
+  height: 1000;
   border-style: ridge;
   border-width: 15px;
   border-radius: 5%;
@@ -378,7 +380,7 @@ padding: 5px;
 margin-bottom: 10px;
 }
 
-.devider :hover {
+.devider:hover {
   background-color: rgb(43, 245, 255, 1);
 }
 
@@ -389,6 +391,8 @@ margin-bottom: 10px;
 }
 
 .container-services img {
+  width: 512;
+  height: 512;
   justify-content: center;
   padding: 5px;
 }
