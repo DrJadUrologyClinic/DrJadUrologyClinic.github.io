@@ -9,7 +9,7 @@ class SpecialHeader extends HTMLElement {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عيادة الدكتور جاد الصمادي </title>
-  <link rel="icon" type="image/DRJADALSMADI-Icon" href="images/favicon.ico">
+  <link rel="icon" type="image/DRJADALSMADI-Icon" href="images/favicon.ICO">
   <meta property="og:title" content="Dr. Jad Alsmadi Urology Clinic" />
   <meta property="og:description" content="DJUC - عيادة الدكتور جاد الصمادي - استشاري جراحة الكلى والمسالك البولية  " />
   <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
@@ -39,7 +39,7 @@ class SpecialHeader extends HTMLElement {
     </label>
   </div>
   <div class="logo">
-    <a class="logo-image" href="index.html"><img src="images/logo.jpeg" alt="أفضل شعار دكتور كلى ومسالك"></a>
+    <a class="logo-image" href="index.html"><img src="images/logo.webp" alt="أفضل شعار دكتور كلى ومسالك"></a>
       <a class="logo-txt" href="index.html"><h1>عيادة الدكتور جاد الصمادي</h1></a>
   </div>
 </header>
@@ -375,7 +375,7 @@ class SpecialFooter extends HTMLElement {
     <div class="top">
 
       <div class="logo-footer">
-        <img src="images/logo.jpeg" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  ">
+        <img src="images/logo.webp" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  ">
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
