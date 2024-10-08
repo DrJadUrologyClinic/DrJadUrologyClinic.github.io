@@ -58,7 +58,7 @@ img {
 .carousel {
   position: relative;
   height: 300px;
-  width: 50%;
+  width: 80%;
   max-width: 1800px;
   margin: 0 auto;
 }
@@ -100,7 +100,17 @@ img {
   display: flex; /* This is important for centering */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
- 
+  
+  background: linear-gradient(135deg, #f0f0f0, #ffffff); /* Soft gradient background */
+  border-radius: 15px; /* Rounded corners for modern look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), /* Subtle shadow for card */
+              inset 0 0 15px rgba(255, 255, 255, 0.8); /* Light inner glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
 
 .carousel-button {
