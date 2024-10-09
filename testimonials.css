@@ -50,8 +50,8 @@ width: 20%;
 }
 
 .testmonials-slider .img {
-  height: 170px;
-  width: 170px;
+  height: 170;
+  width: 170;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -98,7 +98,8 @@ flex-shrink: 0;
 }
 
 .testimonials-slider .star {
-  width: 15px;
+  width: 30;
+  height: 30;
 }
 
 .testimonials-slider p {
