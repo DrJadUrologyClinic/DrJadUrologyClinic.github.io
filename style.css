@@ -364,7 +364,7 @@ p.container-box{
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:center;
   padding: 10px;
   margin: 10px;
   background-color: rgb(25, 39, 51, 1);
@@ -373,11 +373,12 @@ p.container-box{
 .devider {
 border-style:ridge;
 border-width: 5px;
-width: 30%;
+width: 300;
+height: 600;
 box-sizing: border-box;
 justify-content: center;
-padding: 5px;
-margin-bottom: 10px;
+padding: 10px;
+margin: 10px;
 }
 
 .devider:hover {
@@ -394,6 +395,7 @@ margin-bottom: 10px;
   width: 512;
   height: 512;
   justify-content: center;
+  object-fit: contain;
   padding: 5px;
 }
 
