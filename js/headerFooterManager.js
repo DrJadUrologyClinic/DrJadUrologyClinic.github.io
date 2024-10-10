@@ -367,7 +367,7 @@ class SpecialFooter extends HTMLElement {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عيادة الدكتور جاد الصمادي </title>
-  <link rel="icon" type="image/DRJADALSMADI-Icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-Icon" href="images/favicon.ico">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="footer.css">
 </head>
