@@ -8,7 +8,7 @@ body {
 
 
 
-article.symptom-article {
+.symptom-article, aside {
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -16,18 +16,14 @@ article.symptom-article {
   max-width: 95%;
   margin: 20px auto;
   padding: 20px;
-}
-
-.symptom-article header {
-  border-radius: 25%;
-  width: 90%;
-  z-index: 99;
+  line-height: 1.5;
 }
 
 .symptom-article h1 {
   font-size: xx-large;
   color: #2bf5ff;
   background-color: rgb(25, 39, 51, 1);
+  border-radius: 35%;
   margin-bottom: 10px;
   padding-top: 10px;
 }
@@ -42,10 +38,7 @@ article.symptom-article {
 
 .symptom-article h3 {
   font-size: 1.5em;
-  color: #2bf5ff;
   margin-bottom: 10px;
-  margin-top: 5%;
-  padding-top: 5%;
 }
 
 .symptom-article h4 {
