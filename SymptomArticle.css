@@ -24,14 +24,16 @@ body {
   color: #2bf5ff;
   background-color: rgb(25, 39, 51, 1);
   border-radius: 35%;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .symptom-article h2 {
   font-size: xx-large;
   color: #2bf5ff;
   background-color: rgb(25, 39, 51, 1);
+  border-radius: 10%;
   margin-bottom: 10px;
   padding-top: 10px;
 }
