@@ -67,6 +67,7 @@ body {
 .symptom-article a {
   text-decoration: underline;
   color:  #192733;
+  background-color: rgb(43, 245, 255, 1);
 }
 
 .symptom-article a:hover {
