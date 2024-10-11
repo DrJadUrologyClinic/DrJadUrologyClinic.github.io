@@ -16,7 +16,7 @@ body {
   max-width: 95%;
   margin: 20px auto;
   padding: 20px;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .symptom-article h1 {
@@ -33,9 +33,9 @@ body {
   font-size: xx-large;
   color: #2bf5ff;
   background-color: rgb(25, 39, 51, 1);
-  border-radius: 10%;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  border-radius: 20%;
+  margin: 10px;
+  padding: 10px;
 }
 
 .symptom-article h3 {
@@ -117,30 +117,35 @@ body {
 }
 
 @media (max-width : 770px) {
-  article h2 {
+  .symptom-article h1 {
+    font-size: large;
+    padding-top: 10px;
+  }
+
+  .symptom-article h2 {
     font-size: large;
     padding-top: 10px;
   }
   
   
-  article h3 {
+  .symptom-article h3 {
     font-size: large;
     margin-top: 15%;
     padding-top: 20%;
   }
 
-  article h4 {
+  .symptom-article h4 {
     font-size: large;
     margin-bottom: 10px;
   }
   
-  article p {
+  .symptom-article p {
     line-height: 1.6;
     font-size: large;
 
   }
 
-  article ul li {
+  .symptom-article ul li {
     font-size: large;
     line-height: 1.6;
   }
