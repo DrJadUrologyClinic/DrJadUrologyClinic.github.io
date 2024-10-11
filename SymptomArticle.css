@@ -24,14 +24,23 @@ article.symptom-article {
   z-index: 99;
 }
 
-article h2 {
+.symptom-article h1 {
   font-size: xx-large;
   color: #2bf5ff;
+  background-color: rgb(25, 39, 51, 1);
   margin-bottom: 10px;
-  padding-top: 0;
+  padding-top: 10px;
 }
 
-article h3 {
+.symptom-article h2 {
+  font-size: xx-large;
+  color: #2bf5ff;
+  background-color: rgb(25, 39, 51, 1);
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.symptom-article h3 {
   font-size: 1.5em;
   color: #2bf5ff;
   margin-bottom: 10px;
@@ -39,33 +48,33 @@ article h3 {
   padding-top: 5%;
 }
 
-article h4 {
+.symptom-article h4 {
   font-size: 1.2em;
   color: #192733;
   margin-bottom: 10px;
 }
 
-article p {
+.symptom-article p {
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-article ul {
+.symptom-article ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-bottom: 20px;
 }
 
-article ul li {
+.symptom-article ul li {
   margin-bottom: 10px;
 }
 
-article a {
+.symptom-article a {
   text-decoration: underline;
   color:  #192733;
 }
 
-article a:hover {
+.symptom-article a:hover {
   color: #2bf5ff;
   background-color: #192733;
 }
