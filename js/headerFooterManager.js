@@ -9,7 +9,7 @@ class SpecialHeader extends HTMLElement {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عيادة الدكتور جاد الصمادي </title>
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://drjadurologyclinic.com/images/favicon.ico">
   <meta property="og:title" content="Dr. Jad Alsmadi Urology Clinic" />
   <meta property="og:description" content="DJUC - عيادة الدكتور جاد الصمادي - استشاري جراحة الكلى والمسالك البولية  " />
   <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
