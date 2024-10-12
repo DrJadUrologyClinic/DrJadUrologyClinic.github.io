@@ -43,6 +43,7 @@ h3 {
 }
 
 p {
+  display: flex;
   line-height: 1.8;
   font-size: 1.1em;
 
