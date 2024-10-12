@@ -9,6 +9,15 @@ main {
   margin-top: 10%;
 }
 
+.article-image {
+  float: left;
+  margin: 0 15px 10px 0; /* Adjusts the spacing around the image */
+  width: 512; 
+  height: 512;
+  aspect-ratio: 1/1;
+}
+
+
 article a {
 background-color: rgb(25, 39, 51);
 font-style: italic;
