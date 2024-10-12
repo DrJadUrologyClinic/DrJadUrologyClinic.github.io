@@ -164,6 +164,7 @@ aside p {
 
   p, ul li {
     font-size: medium;
+    flex-direction: column;
   }
 
   ul {
