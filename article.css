@@ -52,6 +52,7 @@ p {
 ul {
   list-style-type: circle;
   padding-left: 20px;
+
 }
 
 ul li {
@@ -164,7 +165,6 @@ aside p {
 
   p, ul li {
     font-size: medium;
-    flex-direction: column;
   }
 
   ul {
