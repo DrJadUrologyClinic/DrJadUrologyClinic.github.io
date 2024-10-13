@@ -32,6 +32,7 @@ article a:hover {
 h1 {
 font-size: 3em;
 margin: 1%;
+padding: 1%;
 color: rgb(43, 245, 255, 1);
 background-color: rgb(25, 39, 51, 1);
 }
@@ -39,6 +40,9 @@ background-color: rgb(25, 39, 51, 1);
 
 h2, h3 {
   color: rgb(25, 39, 51);
+  background-color: rgb(43, 245, 255, 1);
+  margin: 1%;
+  padding: 1%;
 }
 
 h2 {
