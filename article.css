@@ -35,41 +35,38 @@ margin: 1%;
 padding: 1%;
 color: rgb(43, 245, 255, 1);
 background-color: rgb(25, 39, 51, 1);
+border-radius: 5%;
 }
 
 
 h2, h3 {
   color: rgb(25, 39, 51);
   background-color: rgb(43, 245, 255, 1);
+  border-radius: 25%;
+  margin: 1%;
+  padding: 1%;
+  line-height: 2;
+}
+
+h4 {
   margin: 1%;
   padding: 1%;
 }
 
-h2 {
-  font-size: 2em;
-  margin-top: 5px;
-}
-
-h3 {
-  font-size: 1.5em;
-  margin-top: 5px;
-}
-
 p {
   line-height: 1.8;
-  font-size: 1.1em;
-
+  margin: 1%;
+  padding: 1%;
 }
 
 ul {
   list-style-type: circle;
-  padding-left: 20px;
 
 }
 
 ul li {
-  font-size: 1.1em;
-  padding: 10px 0;
+  margin: 1%;
+  padding: 1%;
 }
 
 
@@ -161,26 +158,6 @@ aside p {
 
   body {
     margin: 0;
-  }
-
-  h1 {
-    font-size: larger;
-  }
-
-  h2 {
-    font-size: large;
-  }
-
-  h3 {
-    font-size: medium;
-  }
-
-  p, ul li {
-    font-size: medium;
-  }
-
-  ul {
-    padding-left: 15px;
   }
 
   .references {
