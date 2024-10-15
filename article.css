@@ -12,6 +12,7 @@ main {
 .article-image {
   float: left;
   margin: 10px 15px 10px 0; /* Adjusts the spacing around the image */
+  padding: 1%;
   width: 512; 
   height: 512;
   aspect-ratio: 1/1;
