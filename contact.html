@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html dir="rtl" lang="ar-JO">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +7,20 @@
   <title> Contact Form </title>
   <link rel="icon" type="image/x-icon" href="https://drjadurologyclinic.com/images/favicon.ico">
   
-    <!-- Meta Tags for SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="تواصل مع عيادة الدكتور جاد الصمادي إذا كان لديك أي استفسارات أو ملاحظات. املأ نموذج الاتصال وسنقوم بالرد عليك في أقرب وقت ممكن.">
-    <meta name="keywords" content="نموذج الاتصال, عيادة الدكتور جاد الصمادي, عمان, الأردن, استفسارات, التواصل">
   
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="التواصل - عيادة الدكتور جاد الصمادي" />
-    <meta property="og:description" content="إذا كان لديك أي استفسارات أو ملاحظات، يمكنك ملء نموذج الاتصال وسنقوم بالرد عليك في أقرب وقت ممكن." />
-    <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
-    <meta property="og:url" content="https://drjadurologyclinic.com/contact.html" />
-    <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="تواصل مع عيادة الدكتور جاد الصمادي إذا كان لديك أي استفسارات أو ملاحظات. املأ نموذج الاتصال وسنقوم بالرد عليك في أقرب وقت ممكن.">
+  <meta name="keywords" content="نموذج الاتصال, عيادة الدكتور جاد الصمادي, عمان, الأردن, استفسارات, التواصل">
   
-    <!-- Structured Data Markup for Contact -->
-    <script type="application/ld+json">
+   
+  <meta property="og:title" content="التواصل - عيادة الدكتور جاد الصمادي" />
+  <meta property="og:description" content="إذا كان لديك أي استفسارات أو ملاحظات، يمكنك ملء نموذج الاتصال وسنقوم بالرد عليك في أقرب وقت ممكن." />
+  <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
+  <meta property="og:url" content="https://drjadurologyclinic.com/contact.html" />
+  <meta property="og:type" content="website" />
+  
+
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
@@ -37,7 +37,7 @@
         }
       }
     }
-    </script>
+  </script>
 
 
   <link rel="stylesheet" href="contact.css">
@@ -52,11 +52,11 @@
       <h2>هل لديك استفسار أو ملاحظة؟</h2>
       <h3>أترك ملاحظاتك و سنقوم بالرد عليها في أقرب وقت ممكن</h3>
 
-      <input type="text" id="name" name="name" placeholder="الإسم الأول و اسم العائلة" class="contact-inputs" required>
-      <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" class="contact-inputs" required>
-      <input type="number" id="mobile" name="mobile" placeholder="رقم الجوال (مثل: 07XXXXXXXX)" class="contact-inputs" required>
-      <input type="text" id="subject" name="subject" placeholder="الموضوع" class="contact-inputs" required>
-      <textarea id="message" name="message" placeholder="اكتب ملاحظاتك" class="contact-inputs" required></textarea>
+      <input type="text" id="name" name="name" placeholder="الإسم الأول و اسم العائلة" class="contact-inputs" aria-label="الإسم الأول و اسم العائلة" required>
+      <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" class="contact-inputs" aria-label="البريد الإلكتروني" required>
+      <input type="number" id="mobile" name="mobile" placeholder="رقم الجوال (مثل: 07XXXXXXXX)" class="contact-inputs" aria-label="رقم الجوال" required>
+      <input type="text" id="subject" name="subject" placeholder="الموضوع" class="contact-inputs" aria-label="الموضوع" required>
+      <textarea id="message" name="message" placeholder="اكتب ملاحظاتك" class="contact-inputs" aria-label="اكتب ملاحظاتك" required></textarea>
       <input type="submit" value="إرسال" id="submit">
 
     </form>
