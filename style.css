@@ -245,32 +245,7 @@ outline: none;
 
 
  /* general */
-p::selection{
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-h1::selection {
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-h2::selection {
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-h3::selection {
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-a::selection {
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-li::selection {
+p::selection, h1::selection, h2::selection, h3::selection, a::selection, li::selection, h6::selection {
   color: rgb(43, 245, 255, 1);
   background-color: rgb(25, 39, 51, 1);
 }
@@ -280,26 +255,13 @@ p {
   margin: 5px;
 }
 
-h1 {
-  padding: 10px;
-}
-
-h2 {
-  padding: 10px;
-}
-
-h3 {
+h1, h2, h3 {
   padding: 10px;
 }
 
 h6 {
   padding: 0;
   margin: 0;
-}
-
-h6::selection {
-  color: rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
 }
 
 u {
