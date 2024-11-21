@@ -175,14 +175,13 @@ class SpecialHeader extends HTMLElement {
       margin: 0;
       padding: 0;
       list-style: none;
-     
     }
     
     nav li {
       margin-bottom: 1em;
       margin-left: 1em;
       background-color: rgb(25, 39, 51, 1);
-    
+
     }
     
     
@@ -197,7 +196,10 @@ class SpecialHeader extends HTMLElement {
       background-color: rgb(25, 39, 51, 1);
       opacity: 0;
       transition: opacity 150ms ease-in-out;
-     
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
     }
     
     nav a:hover {
@@ -464,6 +466,7 @@ footer .content .top {
 }
 
 .logo-footer a img {
+  aspect-ratio: 500 / 500;
   width: 500;
   height: 500;
   object-fit: contain;
