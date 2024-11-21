@@ -3,22 +3,7 @@ class SpecialHeader extends HTMLElement {
     this.innerHTML = `
  <!-- header.html -->
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عيادة الدكتور جاد الصمادي </title>
-  <link rel="icon" type="image/x-Icon" href="https://drjadurologyclinic.com/images/favicon.ico">
-  
-  <meta property="og:title" content="Dr. Jad Alsmadi Urology Clinic" />
-  <meta property="og:description" content="DJUC - عيادة الدكتور جاد الصمادي - استشاري جراحة الكلى والمسالك البولية  " />
-  <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
-  <meta property="og:url" content="https://drjadurologyclinic.com/" />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="header.css">
-</head>
+<html dir="rtl" lang="ar-Jo">
 <header>
   <div class="header-nav"> 
     <input type="checkbox" aria-label="nav-toggle" id="nav-toggle" class="nav-toggle">
@@ -362,18 +347,7 @@ class SpecialFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عيادة الدكتور جاد الصمادي </title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="footer.css">
-</head>
-
-
-<body>
+<html dir="rtl" lang="ar-Jo">
   
 <footer>
   <div class="content">
