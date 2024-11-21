@@ -25,7 +25,7 @@ class SpecialHeader extends HTMLElement {
     </label>
   </div>
   <div class="logo">
-    <a class="logo-image" href="index.html"><img src="images/logo.webp" alt="أفضل شعار دكتور كلى ومسالك"></a>
+    <a class="logo-image" href="index.html"><img src="images/logo.webp" alt="أفضل شعار دكتور كلى ومسالك في الاردن عمان"></a>
       <a class="logo-txt" href="index.html"><h1>عيادة الدكتور جاد الصمادي</h1></a>
   </div>
 </header>
@@ -53,18 +53,18 @@ class SpecialHeader extends HTMLElement {
     }
     
     
-    header li {
+    .header-nav li {
       padding: 0;
       padding-bottom: 5px;
       margin: 0;
     }
     
-    header a {
+    .header-nav a {
       margin-top: 20px;
       margin-bottom: 5px;
     }
     
-    header .nav-menu {
+    .nav-menu {
       flex-wrap: wrap;
       width: 100%;
     }
@@ -74,11 +74,10 @@ class SpecialHeader extends HTMLElement {
       justify-content:space-around;
       align-items: center;
       align-content: center;
-      display: flex;
     }
     
     .logo-image {
-    height: auto;
+    aspect-ratio: 500 / 500;
     width: 20%;
     margin: 0;
     margin-top: 1%;
@@ -89,11 +88,6 @@ class SpecialHeader extends HTMLElement {
     margin: 0;
     margin-top: 1%;
     padding: 0;
-    }
-
-    .logo img {
-  width: 500;
-  height: 500;
     }
     
     .logo h1 {
@@ -327,9 +321,6 @@ class SpecialHeader extends HTMLElement {
           font-size:medium;
         }
       }
-      
-
-  
   </style>  `
   }
 }
