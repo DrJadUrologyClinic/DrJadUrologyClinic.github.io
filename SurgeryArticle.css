@@ -21,6 +21,7 @@ article {
 article a {
   background-color: rgb(25, 39, 51);
   text-decoration: underline;
+  font-size: large;
 }
 
 article a:hover {
@@ -81,7 +82,7 @@ ul {
   h1 {
     font-size: large;
   }
-  h2, h3, p, a, li {
+  h2, h3, h4, p, a, li {
     font-size: medium;
   }
 
