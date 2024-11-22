@@ -526,10 +526,6 @@ aside {
   line-height: 2;
 }
 
-.clinicService {
-  display: flex;
-}
-
 .clinicService img{
   aspect-ratio: 1000 / 1250;
   max-width: 50%;
