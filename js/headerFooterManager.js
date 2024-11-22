@@ -4,6 +4,11 @@ class SpecialHeader extends HTMLElement {
  <!-- header.html -->
 <!DOCTYPE html>
 <html dir="rtl" lang="ar-Jo">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <header>
   <div class="header-nav"> 
     <input type="checkbox" aria-label="nav-toggle" id="nav-toggle" class="nav-toggle">
