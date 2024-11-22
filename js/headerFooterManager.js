@@ -91,8 +91,10 @@ class SpecialHeader extends HTMLElement {
     
     .logo img {
     aspect-ratio: 150 / 150;
-    width: 100%;
+    width: 60%;
+    height: auto;
     object-fit: contain;
+    margin-top: 5%;
     }
   
     

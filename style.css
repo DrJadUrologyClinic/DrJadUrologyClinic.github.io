@@ -473,21 +473,34 @@ footer {
   color: rgb(25, 39, 51);
   background-color: transparent;
   text-decoration: none;
-  font-size: small;
+  font-size: xx-small;
 }
 
 .references a:hover {
   text-decoration: underline;
+  font-size: x-small;
 }
 
 
 article {
   max-width: 95%;
-  margin: 12% auto;
+  margin: 20% auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article img{
+  aspect-ratio: 1000 / 1250;
+  max-width: 50%;
+  height: auto;
+  float: left;
+  object-fit: contain;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 2%;
+  padding-right: 1%;
 }
 
 article a {
@@ -524,16 +537,4 @@ aside {
   margin: 20px auto;
   padding: 20px;
   line-height: 2;
-}
-
-.clinicService img{
-  aspect-ratio: 1000 / 1250;
-  max-width: 50%;
-  height: auto;
-  float: left;
-  object-fit: contain;
-  margin-left: 0;
-  padding-left: 0;
-  margin-right: 2%;
-  padding-right: 1%;
 }
