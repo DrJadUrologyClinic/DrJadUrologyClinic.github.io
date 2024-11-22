@@ -33,6 +33,8 @@ padding-right: 10px;
 width: 20%;
 }
 
+.testimonials .testimonials-google h2 {
+color: rgb(43, 245, 255, 1);}
 
 .testimonials-google .Google-Review-Logo {
   width: 60%;
