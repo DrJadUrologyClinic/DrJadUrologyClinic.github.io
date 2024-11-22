@@ -30,8 +30,8 @@ class SpecialHeader extends HTMLElement {
     </label>
   </div>
   <div class="logo">
-    <a class="logo-image" href="index.html"><img src="images/logo.webp" alt="أفضل شعار دكتور كلى ومسالك في الاردن عمان"></a>
-      <a class="logo-txt" href="index.html"><h1>عيادة الدكتور جاد الصمادي</h1></a>
+    <a href="index.html"><img src="images/logo.webp" alt="أفضل شعار دكتور كلى ومسالك في الاردن عمان"></a>
+    <a href="index.html">عيادة الدكتور جاد الصمادي</a>
   </div>
 </header>
 
@@ -80,34 +80,21 @@ class SpecialHeader extends HTMLElement {
       align-items: center;
       align-content: center;
     }
-    
-    .logo-image {
-    aspect-ratio: 500 / 500;
-    width: 20%;
-    margin: 0;
-    margin-top: 1%;
-    padding: 0;
-    }
-    
-    .logo-txt{
-    margin: 0;
-    margin-top: 1%;
-    padding: 0;
-    }
-    
-    .logo h1 {
-      background-color: rgb(25, 39, 51, 1);
-      color: rgb(43, 245, 255, 1);
+
+    .logo a {
       font-size: xx-large;
     }
-    
-    button {
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-left: 10px;
-      padding-right: 10px;
-      margin: 10px;
+
+    .logo a:hover {
+      background-color: rgb(43, 245, 255, 1);
     }
+    
+    .logo img {
+    aspect-ratio: 150 / 150;
+    width: 100%;
+    object-fit: contain;
+    }
+  
     
     /* Navigation styles */
     
@@ -260,28 +247,23 @@ class SpecialHeader extends HTMLElement {
     
       .logo {
         width: 50%;
-        font-size: medium;
+        font-size: large;
       }
     }
     
-    @media (max-width: 795px) {
+    @media (max-width: 1250px) {
       .logo {
         display: flex;
         align-items: center;
         align-content: center;
-        width: 50%;
+        width: 80%;
       }
-    
-      .logo-image {
-       width: 25%;
+       .logo a {
+      font-size: medium;
       }
     
       .logo img {
         border-radius: 50%;
-      }
-      
-      .logo h1 {
-        font-size:large;
       }
     }
     
@@ -312,21 +294,6 @@ class SpecialHeader extends HTMLElement {
       
       nav a:hover::before, .touch-effect:active {
         transform: scale(1,1);
-      }
-      
-    
-      @media (max-width: 450px) {
-        .logo {
-          width: 80%;
-        }
-      
-        .logo-image {
-         width: 50%;
-        }
-    
-        .logo h1 {
-          font-size:medium;
-        }
       }
   </style>  `
   }
@@ -476,9 +443,7 @@ footer .content .top {
 }
 
 .logo-footer a img {
-  aspect-ratio: 500 / 500;
-  width: 500;
-  height: 500;
+  aspect-ratio: 150 / 150;
   object-fit: contain;
   border-radius: 50%;
   margin-bottom: -8px;
