@@ -12,6 +12,11 @@ body {
   text-align: center;
 }
 
+main {
+  color: rgb(43, 245, 255);
+  text-align: center;
+}
+
 .login-container, .admin-section {
   width: 80%;
   margin: 100px auto;
