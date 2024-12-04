@@ -1,13 +1,6 @@
 class SpecialHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-<!DOCTYPE html>
-<html dir="rtl" lang="ar-Jo">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <header>
   <div class="header-nav"> 
     <input type="checkbox" aria-label="nav-toggle" id="nav-toggle" class="nav-toggle">
@@ -32,9 +25,7 @@ class SpecialHeader extends HTMLElement {
   </div>
 </header>
 
-
     <style>
-
 
     /* Header styles */
     header {
@@ -306,18 +297,9 @@ customElements.define('special-header', SpecialHeader)
 
 
 
-
 class SpecialFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-<!DOCTYPE html>
-<html dir="rtl" lang="ar-Jo">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-  
 <footer>
   <div class="content">
     <div class="top">
@@ -375,7 +357,6 @@ class SpecialFooter extends HTMLElement {
          <!-- <li><a href="blog.html">  المدونة </a></li>   -->
       </ul>
     </div>
-
 
     <div class="bottom-details">
       <div class="bottom-text">
@@ -510,7 +491,6 @@ opacity: 1;
 text-decoration:underline;
 }
 
-
 footer .bottom-details {
   width: 100%;
 }
@@ -552,7 +532,6 @@ text-decoration: underline;
   .content .top .logo-footer {
     font-size:medium;
 }
-
 
 .content .top .media-icons a {
   width: 35px;
@@ -600,4 +579,3 @@ footer .bottom-details {
 }
 
 customElements.define('special-footer', SpecialFooter)
-
