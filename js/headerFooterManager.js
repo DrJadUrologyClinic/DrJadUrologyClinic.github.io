@@ -1,7 +1,6 @@
 class SpecialHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
- <!-- header.html -->
 <!DOCTYPE html>
 <html dir="rtl" lang="ar-Jo">
 <head>
@@ -22,7 +21,6 @@ class SpecialHeader extends HTMLElement {
         <li><a href="reservations.html">حجز موعد</a></li>
         <li><a href="location.html">الموقع</a></li>
         <li><a href="contact.html">  تواصل معنا </a></li>
-        <li><a href="admin.html">مدراء صفحة العيادة</a></li>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
       <span type="nav-toggle"></span>
