@@ -10,7 +10,7 @@ form.addEventListener('submit', e => {
   const jordanMobileRegex = /^07[7-9]\d{7}$/; // Pattern for Jordanian mobile numbers
 
   if (!jordanMobileRegex.test(mobileInput)) {
-    alert('يرجى إدخال رقم جوال صالح من الأردن (مثل: 079XXXXXXX أو 077XXXXXXX).');
+    alert('يرجى إدخال رقم جوال صالح من الأردن (مثل: 079XXXXXXX أو 077XXXXXXX أو 078XXXXXXX).');
     return;
   }
 
