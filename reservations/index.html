@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VB4N66BB2B');
+</script>
+
+<base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  حجز المواعيد - الدكتور جاد الصمادي استشاري الكى والمسالك البولية و العقم و الذكورة  </title>
+    <link rel="icon" type="image/x-icon" href="https://drjadurologyclinic.com/images/favicon.ico">
+
+        <!-- Meta Tags for SEO -->
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="احجز موعدك مع الدكتور جاد الصمادي، استشاري جراحة الكلى والمسالك البولية، العقم، والذكورة عبر الموقع الإلكتروني باستخدام رقم الهاتف.">
+        <meta name="keywords" content="حجز مواعيد, استشاري مسالك بولية, عيادة دكتور جاد الصمادي, عمان, الأردن, العقم والذكورة, طبيب الكلى والمسالك و العقم و الذكورة">
+    
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="حجز المواعيد - الدكتور جاد الصمادي" />
+        <meta property="og:description" content="احجز موعدك مع الدكتور جاد الصمادي أونلاين برقم موبايلك بدون الحاجة للتسجيل. خدمات استشارية وجراحية في عمان." />
+        <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
+        <meta property="og:url" content="https://drjadurologyclinic.com/reservations/" />
+        <meta property="og:type" content="website" />
+    
+        <!-- Structured Data Markup -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "name": "عيادة الدكتور جاد الصمادي",
+          "description": "احجز موعدك مع الدكتور جاد الصمادي استشاري جراحة الكلى والمسالك البولية والعقم عبر الموقع الإلكتروني.",
+          "image": "https://drjadurologyclinic.com/images/ogimage.webp",
+          "url": "https://drjadurologyclinic.com/reservations/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "شارع مي زيادة – مستشفى فرح الشامل",
+            "addressLocality": "عمان",
+            "addressCountry": "JO"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+962778089234",
+            "contactType": "customer service"
+          },
+          "openingHours": "Su,Mo,Tu,We,Th,Sa 10:00-16:00",
+          "priceRange": "$$"
+        }
+        </script>
+
+    <link rel="canonical" href="https://drjadurologyclinic.com/reservations/" />
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reservations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <special-header></special-header>
+
+<main>
+    <div class="container">
+        <h1>اختر لحجز موعد في العيادة</h1>
+        <p>احجز أونلاين برقم موبايلك، بدون الحاجة للتسجيل!</p>
+        <div class="calendar-slider">
+            <button id="prev-week" class="nav-button">&lt;</button>
+            <div class="calendar-wrapper">
+                <div class="calendar" id="calendar">
+                    <!-- JavaScript will populate this with days and times -->
+                </div>
+            </div>
+            <button id="next-week" class="nav-button">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Modal for reservation form -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>حجز موعد</h2>
+            <form id="reservation-form" method="POST" action="https://script.google.com/macros/s/AKfycbzYGsVx67EtNWUr4orAOW9FzU9AoQtlXkG89G0dX76BUkOrbnhI8ewsmkkYC7WUHTHm/exec">
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" name="name">
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" min="0">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" required> <br>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email">
+                <input type="hidden" id="selected-time" name="selectedTime">
+                <input type="hidden" id="submission-time" name="submissionTime"> <!-- New hidden field for submission time -->
+                <button type="submit">تأكيد الحجز</button>
+            </form>
+            
+            <div id="confirmation-details" style="display: none;">
+                <h2>تم تأكيد الحجز</h2>
+                <p id="confirmation-text"></p>
+                <button id="save-reservation">حفظ</button>
+                <button id="share-reservation">مشاركة</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+    <special-footer></special-footer>
+
+    <script src="../js/headerFooterManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="../js/reservations.js"></script>
+</body>
+</html>

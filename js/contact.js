@@ -21,7 +21,7 @@ form.addEventListener('submit', e => {
   })
     .then(() => {
       alert('شكراً. لقد تم إرسال الملاحظات بنجاح. سيتم التواصل معكم في أقرب وقت.');
-      window.location.href = 'Thankyouforcontact.html'; // Redirect to the Thank You page
+      window.location.href = '/contactUs/thankYouForContactingUs/index.html'; // Redirect to the Thank You page
     })
     .catch(error => {
       console.error('Error:', error.message);

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar-JO">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VB4N66BB2B');
+</script>
+
+<base href="../../../">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>   عيادة الدكتور جاد الصمادي - حاسبة البروستات  </title>
+  <link rel="icon" type="image/x-icon" href="https://drjadurologyclinic.com/images/favicon.ico">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="حاسبة البروستات - الدكتور جاد الصمادي" />
+  <meta property="og:description" content="حاسبة لتقييم أعراض البروستات بناءً على أسئلة متعددة، مع توصيات بناءً على النتائج." />
+  <meta property="og:image" content="https://drjadurologyclinic.com/images/ogimage.webp" />
+  <meta property="og:url" content="https://drjadurologyclinic.com/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/تضخم_البروستات_الحميد/IPSSحاسبة_أعراض_البروستات.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="عيادة الدكتور جاد الصمادي" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "headline": "حاسبة البروستات",
+    "description": "حاسبة لتقييم أعراض البروستات بناءً على أسئلة متعددة، مع توصيات بناءً على النتائج.",
+    "url": "https://drjadurologyclinic.com/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/تضخم_البروستات_الحميد/IPSSحاسبة_أعراض_البروستات.html",
+    "author": {
+      "@type": "Consultant urologist",
+      "name": "الدكتور جاد الصمادي",
+      "url": "https://drjadurologyclinic.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "عيادة الدكتور جاد الصمادي",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://drjadurologyclinic.com/images/logo.webp"
+      }
+    },
+    "image": "https://drjadurologyclinic.com/images/ogimage.webp",
+    "datePublished": "2024-9-11",
+    "dateModified": "2024-9-11"
+  }
+  </script>
+
+  <link rel="canonical" href="https://drjadurologyclinic.com/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/تضخم_البروستات_الحميد/IPSSحاسبة_أعراض_البروستات.html">
+
+  <link rel="stylesheet" href="../../../css/IPSS.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+  <special-header></special-header>
+
+  <main id="result-content">
+    <div class="container">
+      <!-- Patient Information Section -->
+      <section id="patientInfoSection" class="active">
+        <h1>الرجاء إدخال بياناتك الشخصية</h1>
+        <form id="userForm"  method="POST" action="https://script.google.com/macros/s/AKfycbzMTWqdDju2IL4uVuEpxH1GWwgCH2HvFTeoIGAuDfb_69ojaiq1ZvLacnW3zd2tJ1yp/exec">
+          <label>
+            تاريخ ملأ الاستبيان
+          </label>
+          <input type="date" name="date" id="date" required>
+
+          <label>الاسم</label>
+          <input type="text" name="name" id="name" required>
+
+          <label>العمر</label>
+          <input type="number" name="age" id="age" min="1" required>
+
+          <label>رقم الهاتف المحمول</label>
+          <input type="text" name="mobile" id="mobile" required>
+
+          <label>البريد الإلكتروني</label>
+          <input type="email" name="email" id="email">
+
+          <label>الطول (بالمتر)</label>
+          <input type="number" id="height" name="height" step="0.01" placeholder="1.11 متر أو 2.22  متر">
+
+          <label>الوزن (بالكيلوغرام)</label>
+          <input type="number" id="weight" name="weight" step="0.1">
+
+          <label>مؤشر كتلة الجسم (BMI) (تلقائي)  </label>
+          <input type="text" id="bmi" name="bmi" readonly>
+
+          <label>PSA الكلي</label>
+          <input type="number" id="totalPSA" name="totalPSA" step="0.01">
+
+          <label>PSA الحر</label>
+          <input type="number" id="freePSA" name="freePSA" step="0.01">
+
+          <label>النسبة بين PSA الحر و PSA الكلي (%) (تلقائي) </label>
+          <input type="text" id="psaRatio" name="psaRatio" readonly>
+
+          <label>هل قمت بإجراء عملية لغدة البروستات؟</label>
+<select id="prostateOperation" name="prostateOperation" onchange="toggleOperationDetails()">
+  <option value="no">لا</option>
+  <option value="yes">نعم</option>
+</select>
+
+<!-- Dropdown for operation types (Visible only if 'Yes' is selected) -->
+<div id="operationDetails" style="display:none;">
+  <label>نوع عملية البروستات</label>
+  <select id="operationType" name="operationType">
+    <option value="1">تجريف البروستات</option>
+    <option value="2">تبخير البروستات</option>
+    <option value="3">تقشير البروستات</option>
+    <option value="4">عملية ليزر للبروستات</option>
+    <option value="5">عملية استئصال جذري للبروستات</option>
+    <option value="6">عملية بروستات بالجرح المفتوح</option>
+    <option value="7">عملية للبروستات غير ما ذكر</option>
+  </select>
+
+  <!-- Time since the operation (Years, Months, Days) -->
+  <label>قبل كم سنة أو شهر أو يوم أجريت العملية؟</label>
+  <div class="operation-time">
+    <input type="number" id="operationYears" name="operationYears" min="0" placeholder="عدد السنوات">
+    <input type="number" id="operationMonths" name="operationMonths" min="0" placeholder="عدد الأشهر">
+    <input type="number" id="operationDays" name="operationDays" min="0" placeholder="عدد الأيام">
+  </div>
+</div>
+
+          <br><br>
+          <!-- Known Medical Conditions -->
+          <p>الأمراض الطبية المعروفة</p>
+          <div id="medicalConditions">
+              
+
+              <div class="condition-row">
+                  <input type="checkbox" id="diabetes" name="conditions" value="diabetes" onchange="toggleDurationInput('diabetes')">
+                  <label for="diabetes">السكري</label>
+                  <input type="number" id="years_diabetes" name="years_diabetes" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="hypertension" name="conditions" value="hypertension" onchange="toggleDurationInput('hypertension')">
+                  <label for="hypertension">ارتفاع ضغط الدم</label>
+                  <input type="number" id="years_hypertension" name="years_hypertension" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="heart_stents" name="conditions" value="heart_stents" onchange="toggleDurationInput('heart_stents')">
+                  <label for="heart_stents">  شبكيات القلب  </label>
+                  <input type="number" id="years_heart_stents" name="years_heart_stents" min="0" placeholder="  قبل كم؟ سنوات  " style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="renal_failure" name="conditions" value="renal_failure" onchange="toggleDurationInput('renal_failure')">
+                  <label for="renal_failure">الفشل الكلوي</label>
+                  <input type="number" id="years_renal_failure" name="years_renal_failure" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <div class="condition-row">
+                  <input type="checkbox" id="prostate_enlargement" name="conditions" value="prostate_enlargement" onchange="toggleDurationInput('prostate_enlargement')">
+                  <label for="prostate_enlargement">تضخم البروستات</label>
+                  <input type="number" id="years_prostate_enlargement" name="years_prostate_enlargement" min="0" placeholder="عدد السنوات" style="display:none;">
+              </div>
+
+              <label>هل لديك أي أمراض أخرى؟</label>
+              <textarea name="other_conditions" rows="4" placeholder="اذكر الأمراض الأخرى إن وجدت؛ وقبل كم سنة تم التشخيص"></textarea>
+          </div>
+
+              <!-- Cancer Information -->
+              <label>هل لديك أي سرطانات؟</label>
+              <textarea name="cancer" rows="4" placeholder="اذكر السرطانات إن وجدت؛ وقبل كم سنة تم التشخيص"></textarea>
+
+              <!-- Medications -->
+              <label>الأدوية</label>
+              <textarea name="medications" rows="4" placeholder="اذكر الأدوية التي تأخذها أو انتقل للتالي لارفاق وصفة سابقة"></textarea>
+
+              <label>ارفق الوصفة الطبية الأخيرة</label>
+              <input type="file" name="prescription" accept=".jpg, .jpeg, .png, .pdf">
+
+          <div class="button-container">
+            <button type="button" onclick="submitPartialData('userForm', showFirstQuestion)">التالي</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- IPSS Questionnaire Section -->
+      <section id="questionnaireSection">
+        <h1>تقييم الأعراض البولية</h1>
+
+        <div class="button-container">
+          <button type="button" onclick="goBack()">الرجوع إلى الصفحة السابقة</button>
+        </div>
+
+        <form id="symptomForm" method="POST" action="https://script.google.com/macros/s/AKfycbzMTWqdDju2IL4uVuEpxH1GWwgCH2HvFTeoIGAuDfb_69ojaiq1ZvLacnW3zd2tJ1yp/exec">
+          <!-- Question 1 -->
+          <div class="question" id="question1">
+            <label>خلال الشهر الماضي، كم مرة شعرت بعدم إفراغ مثانتك بالكامل؟</label>
+            <select name="q1" required>
+              <option value="0">أبداً (0 نقاط)</option>
+              <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+              <option value="2">أقل من نصف المرات (2 نقاط)</option>
+              <option value="3">حوالي نصف المرات (3 نقاط)</option>
+              <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+              <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+              <button type="button" onclick="previousQuestion(1)">الرجوع</button>
+              <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 1))">التالي</button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question" id="question2" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة ذهبت لدورة المياه لتفريغ المثانة مرة أخرى خلال أقل من ساعتين بعد أن أنهيت التبول؟</label>
+            <select name="q2" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(2)">الرجوع</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 2))">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" id="question3" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة توقف دفع البول وبدأ مرة أخرى؛ عدة مرات، أثناء التبول؟</label>
+            <select name="q3" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(3)">الرجوع</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 3))">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question" id="question4" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة وجدت صعوبة في تأجيل الذهاب لدورة المياه للتبول؟</label>
+            <select name="q4" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(4)">الرجوع</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 4))">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question" id="question5" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة كان تدفق البول (قوة الدفع) لديك ضعيفاً؟</label>
+            <select name="q5" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(5)">الرجوع</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 5))">التالي</button>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question" id="question6" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة اضطررت إلى الدفع أو الشد لبدء التبول؟</label>
+            <select name="q6" required>
+                <option value="0">أبداً (0 نقاط)</option>
+                <option value="1">أقل من مرة واحدة من كل 5 مرات (1 نقطة)</option>
+                <option value="2">أقل من نصف المرات (2 نقاط)</option>
+                <option value="3">حوالي نصف المرات (3 نقاط)</option>
+                <option value="4">أكثر من نصف المرات (4 نقاط)</option>
+                <option value="5">تقريباً دائماً (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+                <button type="button" onclick="previousQuestion(6)">الرجوع</button>
+                <button type="button" onclick="submitPartialData('symptomForm', nextQuestion.bind(null, 6))">التالي</button>
+            </div>
+        </div>
+
+          <!-- Last question (7th) -->
+          <div class="question" id="question7" style="display:none;">
+            <label>خلال الشهر الماضي، كم مرة استيقظت للتبول من وقت ذهابك إلى الفراش حتى استيقاظك في الصباح؟</label>
+            <select name="q7" required>
+              <option value="0">أبداً (0 نقاط)</option>
+              <option value="1">مرة واحدة (1 نقطة)</option>
+              <option value="2">مرتين (2 نقاط)</option>
+              <option value="3">ثلاث مرات (3 نقاط)</option>
+              <option value="4">أربع مرات (4 نقاط)</option>
+              <option value="5">خمس مرات أو أكثر (5 نقاط)</option>
+            </select>
+            <div class="button-container">
+              <button type="button" onclick="previousQuestion(7)">الرجوع</button>
+              <button type="button" onclick="submitPartialData('symptomForm', calculateScore())">إرسال</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Result Section -->
+      <section id="resultSection" style="display:none;">
+        <h2>النتيجة: <span id="score"></span></h2>
+        <p id="symptomCategory"></p>
+        <button onclick="nextPage()">التالي</button>
+      </section>
+
+      <!-- Recommendation Sections -->
+      <section id="mildSymptoms" style="display:none;">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض خفيفة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية خفيفة.</h2>
+        <ul>
+          <li>من المستحسن متابعة الأعراض بانتظام.</li>
+          <li>يُنصح بزيارة عيادة استشاري جراحة مسالك بولية قريب منك لإجراء فحص دوري.</li>
+          <li>قد لا تكون هناك حاجة للعلاج الفوري، ولكن ينبغي مراقبة الأعراض لتجنب تفاقمها.</li>
+        </ul>
+        <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
+      </section>
+      
+
+      <section id="moderateSymptoms" style="display:none;">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض متوسطة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية متوسطة.</h2>
+        <ul>
+          <li>نوصي بمراجعة طبيب مختص لفحص حالتك بشكل دقيق.</li>
+          <li>قد يتطلب الأمر علاجاً دوائياً أو إجراء فحوصات إضافية.</li>
+          <li>يُنصح بعدم تجاهل هذه الأعراض لتجنب تطورها إلى حالة أكثر حدة.</li>
+        </ul>
+        <h3>لحجز موعد مع الدكتور جاد الصمادي بإمكانك التواصل على الرقم 0778089234</h3>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
+      </section>
+      
+
+      <section id="severeSymptoms" style="display:none;">
+        <h1>توصيات بناءً على تقييم الأعراض البولية (أعراض شديدة)</h1>
+        <h2>تقييمك يشير إلى أعراض بولية شديدة.</h2>
+        <ul>
+          <li>ننصح بمراجعة أخصائي بشكل عاجل للحصول على العلاج المناسب.</li>
+          <li>قد تكون هناك حاجة إلى فحوصات أكثر تفصيلاً أو تدخلات علاجية.</li>
+          <li>يجب عدم تأجيل الفحص الطبي لتجنب حدوث مضاعفات صحية خطيرة.</li>
+        </ul>
+        <button id="downloadButton" onclick="downloadAsImage()">تحميل النتيجة كصورة</button>
+        <button id="shareButton" onclick="shareImage()">مشاركة النتيجة</button>
+      </section>
+      
+    </div>
+  </main>
+
+  <special-footer></special-footer>
+  <script src="../../../js/headerFooterManager.js"></script>
+  <script src="../../../js/IPSS.js"></script>
+</body>
+</html>

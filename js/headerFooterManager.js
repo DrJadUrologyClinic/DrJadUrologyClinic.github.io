@@ -7,14 +7,14 @@ class SpecialHeader extends HTMLElement {
     <input type="checkbox" aria-label="nav-toggle" id="nav-toggle" class="nav-toggle">
     <nav>
       <ul class="nav-menu">
-        <li><a href="${base}/index.html">الرئيسية</a></li>
-        <li><a href="${base}/about.html">الدكتور جاد الصمادي</a></li>
-        <li><a href="${base}/مشاكل_المسالك_البولية.html">مشاكل المسالك البولية</a></li>
-        <li><a href="${base}/services.html">الإجراءات داخل العيادة</a></li>
-        <li><a href="${base}/FAQ.html">أسئلة شائعة</a></li>
-        <li><a href="${base}/reservations.html">حجز موعد</a></li>
-        <li><a href="${base}/location.html">الموقع</a></li>
-        <li><a href="${base}/contact.html">  تواصل معنا </a></li>
+        <li><a href="${base}/index.html" title="أفضل دكتور كلى ومسالك بولية في عمان">الرئيسية</a></li>
+        <li><a href="${base}/about/index.html" title="استشاري جراحة الكلى والمسالك البولية">الدكتور جاد الصمادي</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/index.html" title="مشاكل المسالك البولية">مشاكل المسالك البولية</a></li>
+        <li><a href="${base}/services/index.html" title="الإجراءات داخل العيادة">الإجراءات داخل العيادة</a></li>
+        <li><a href="${base}/FAQ/index.html" title="الأسئلة الشائعة">أسئلة شائعة</a></li>
+        <li><a href="${base}/reservations/index.html" title="حجز موعد لدى دكتور مسالك بولية في عمان">حجز موعد</a></li>
+        <li><a href="${base}/location/index.html" title="موقع أفضل وأرتب عيادة كلى ومسالك في الأردن">الموقع</a></li>
+        <li><a href="${base}/contactUs/index.html" title="تواصل معنا في عيادة الدكتور جاد استشاري الكلى والمسالك البوليه">تواصل معنا</a></li>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
       <span type="nav-toggle"></span>
@@ -307,7 +307,7 @@ class SpecialFooter extends HTMLElement {
     <div class="top">
 
       <div class="logo-footer">
-        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  "></a>
+        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  "></a>
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
@@ -326,19 +326,19 @@ class SpecialFooter extends HTMLElement {
         <li class="footer-link-name">
              العيادة
         </li>
-        <li><a href="${base}/index.html">  الرئيسية </a></li>
-        <li><a href="${base}/about.html">  الدكتور جاد الصمادي </a></li>
-        <li><a href="${base}/reservations.html">  المواعيد</a></li>
-        <li><a href="${base}/location.html">  الموقع </a></li>
+        <li><a href="${base}/index.html" title="الرئيسية - افضل دكتور كلى ومسالك في الاردن">الرئيسية</a></li>
+        <li><a href="${base}/about/index.html" title="الدكتور جاد الصمادي - احسن استشاري مسالك وكلى وانجاب في الاردن">الدكتور جاد الصمادي</a></li>
+        <li><a href="${base}/reservations/index.html" title="احجز موعد مع أفضل دكتور كلى ومسالك وعقم وانجاب في الاردن">المواعيد</a></li>
+        <li><a href="${base}/location/index.html" title="موقع اشطر دكتور كلى ومسالك في الاردن">الموقع</a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
              الخدمات
         </li>
-        <li><a href="${base}/flexiblecystoscopy.html">  تنظير المثانة </a></li>
-        <li><a href="${base}/Urodynamictesting.html">  تخطيط ديناميكية المثانة </a></li>
-        <li><a href="${base}/Prostatebiopsy.html">  خزعة البروستات </a></li>
-        <li><a href="${base}/services.html">  التصوير بالالتراساوند </a></li>
+        <li><a href="${base}/services/flexibleCystoscopy/index.html" title="أفضل دكتور تنظير مسالك ومثانة في الأردن">  تنظير المثانة </a></li>
+        <li><a href="${base}/services/urodynamicTesting/index.html" title="أفضل دكتور مسالك تخطيط مثانة في الأردن">  تخطيط ديناميكية المثانة </a></li>
+        <li><a href="${base}/services/prostateBiopsy/index.html" title="أفضل دكتور خزعة بروستات في الأردن">  خزعة البروستات </a></li>
+        <li><a href="${base}/services/index.html" title="أفضل دكتور كلى ومسالك التراساوند في الأردن the best urologist ultrasound in Amman">  التصوير بالالتراساوند </a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
@@ -347,23 +347,23 @@ class SpecialFooter extends HTMLElement {
         <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
         <li><a href="https://wa.me/962778089234" target="_blank"> تواصل معنا واتس أب </a></li>
         <li><a href="https://wa.me/962778089234" target="_blank">  962778089234+  </a></li>
-        <li><a href="location.html">  الموقع </a></li>
+        <li><a href="${base}/location/index.html" title="موقع احسن دكتور كلى ومسالك في الاردن">الموقع</a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
           معلومات عامة
         </li>
-        <li><a href="${base}/أعراض_الكلى_والمسالك_البولية.html">أعراض الكلى والمسالك البولية</a></li>
-        <li><a href="${base}/articlesأمراض_الكى_والمسالك_البولية.html">أمراض الكلى والمسالك البولية</a></li>
-        <li><a href="${base}/articlesعمليات_الكلى_والمسالك_البولية.html">عمليات الكلى والمسالك البولية</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/أعراض_الكلى_والمسالك_البولية/index.html">أعراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/index.html">أمراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/عمليات_الكلى_والمسالك_البولية/index.html">عمليات الكلى والمسالك البولية</a></li>
       </ul>
     </div>
 
     <div class="bottom-details">
       <div class="bottom-text">
-       <span class="copyright-text">Copyright &#169; 2024 <a href="index.html">  عيادة الدكتور جاد الصمادي </a> جميع الحقوق محفوظة  </span>
-       <span class="policy-terms"><a href="${base}/Privacypolicy.html">   سياسة الخصوصية   </a></span>
-       <span class="policy-terms"><a href="${base}/Terms&conditions.html#">  الشروط و الأحكام  </a></span>
+        <span class="copyright-text">Copyright &#169; 2024 <a href="${base}/index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
+        <span class="policy-terms"><a href="${base}/privacy-policy/index.html">سياسة الخصوصية</a></span>
+        <span class="policy-terms"><a href="${base}/terms-and-conditions/index.html">الشروط والأحكام</a></span>
       </div>
     </div> 
   </div>    
