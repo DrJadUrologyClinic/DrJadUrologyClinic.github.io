@@ -50,36 +50,7 @@ header nav ul li {
 
 header nav a {
   text-decoration: none;
-
 }
-
-header nav a:hover {
-  background-color: rgb(43, 245, 255, 1);
-  color: rgb(25, 39, 51, 1); /* Fix hover contrast */
-  border-radius: 5px;
-  padding: 5px;
-}
-
-/* Footer */
-footer ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-}
-
-footer a {
-  text-decoration: none;
-  color: rgb(43, 245, 255, 1);
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-
 
 
 
@@ -97,6 +68,7 @@ a {
 
 a:hover {
   color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
 }
 
 img {

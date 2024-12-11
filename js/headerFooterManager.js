@@ -30,64 +30,280 @@ document.addEventListener("DOMContentLoaded", function () {
     </header>
   `;
 
-  // Updated Footer
-const footer = `
-<footer style="background-color: rgb(25, 39, 51, 1); color: rgb(43, 245, 255, 1); padding: 20px; width: 100%; text-align: center; font-size: 0.9em;">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: flex-start;">
-    <!-- Logo and Name -->
-    <div style="flex: 1; min-width: 200px; text-align: center;">
-      <a href="${base}/index.html">
-        <img src="${base}/images/logo.webp" alt="Logo" style="width: 60px; height: 60px; object-fit: contain; border-radius: 50%; margin-bottom: 10px;">
-      </a>
-      <p style="margin: 5px 0; font-size: 1.1em;">عيادة الدكتور جاد الصمادي</p>
+ // Updated Footer
+ const footer = `
+<footer>
+  <div class="content">
+    <div class="top">
+
+      <div class="logo-footer">
+        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  "></a>
+        <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
+      </div>
+
+      <!--
+      <div class="media-icons">
+       <a href=""><img src="${base}/images/youtube.png"></a>
+       <a href=""><img src="${base}/images/instagram.png"></a>
+       <a href=""><img src="${base}/images/facebook.png"></a>
+      </div>
+      -->
+
     </div>
 
-    <!-- Footer Links -->
-    <div style="flex: 2; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
-      <!-- Clinic Links -->
-      <div>
-        <h4 style="margin-bottom: 10px; font-size: 1em;">العيادة</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; text-align: right;">
-          <li><a href="${base}/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">الرئيسية</a></li>
-          <li><a href="${base}/about/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">عن الدكتور</a></li>
-          <li><a href="${base}/reservations/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">حجز موعد</a></li>
-          <li><a href="${base}/location/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">الموقع</a></li>
-        </ul>
-      </div>
-
-      <!-- Services Links -->
-      <div>
-        <h4 style="margin-bottom: 10px; font-size: 1em;">الخدمات</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; text-align: right;">
-          <li><a href="${base}/services/flexibleCystoscopy/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">تنظير المثانة</a></li>
-          <li><a href="${base}/services/urodynamicTesting/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">تخطيط ديناميكية المثانة</a></li>
-          <li><a href="${base}/services/prostateBiopsy/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">خزعة البروستات</a></li>
-          <li><a href="${base}/services/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">التصوير بالالتراساوند</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Links -->
-      <div>
-        <h4 style="margin-bottom: 10px; font-size: 1em;">معلومات التواصل</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; text-align: right;">
-          <li><a href="mailto:Jadsmadi@live.com" style="text-decoration: none; color: rgb(43, 245, 255, 1);">البريد الإلكتروني</a></li>
-          <li><a href="https://wa.me/962778089234" target="_blank" style="text-decoration: none; color: rgb(43, 245, 255, 1);">واتساب</a></li>
-          <li><a href="${base}/location/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">الموقع</a></li>
-        </ul>
-      </div>
+    <div class="link-boxes">
+      <ul class="footer-box">
+        <li class="footer-link-name">
+             العيادة
+        </li>
+        <li><a href="${base}/index.html" title="الرئيسية - افضل دكتور كلى ومسالك في الاردن">الرئيسية</a></li>
+        <li><a href="${base}/about/index.html" title="الدكتور جاد الصمادي - احسن استشاري مسالك وكلى وانجاب في الاردن">الدكتور جاد الصمادي</a></li>
+        <li><a href="${base}/reservations/index.html" title="احجز موعد مع أفضل دكتور كلى ومسالك وعقم وانجاب في الاردن">المواعيد</a></li>
+        <li><a href="${base}/location/index.html" title="موقع اشطر دكتور كلى ومسالك في الاردن">الموقع</a></li>
+      </ul>
+      <ul class="footer-box">
+        <li class="footer-link-name">
+             الخدمات
+        </li>
+        <li><a href="${base}/services/flexibleCystoscopy/index.html" title="أفضل دكتور تنظير مسالك ومثانة في الأردن">  تنظير المثانة </a></li>
+        <li><a href="${base}/services/urodynamicTesting/index.html" title="أفضل دكتور مسالك تخطيط مثانة في الأردن">  تخطيط ديناميكية المثانة </a></li>
+        <li><a href="${base}/services/prostateBiopsy/index.html" title="أفضل دكتور خزعة بروستات في الأردن">  خزعة البروستات </a></li>
+        <li><a href="${base}/services/index.html" title="أفضل دكتور كلى ومسالك التراساوند في الأردن the best urologist ultrasound in Amman">  التصوير بالالتراساوند </a></li>
+      </ul>
+      <ul class="footer-box">
+        <li class="footer-link-name">
+          معلومات التواصل
+        </li>
+        <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
+        <li><a href="https://wa.me/962778089234" target="_blank"> تواصل معنا واتس أب </a></li>
+        <li><a href="https://wa.me/962778089234" target="_blank">  962778089234+  </a></li>
+        <li><a href="${base}/location/index.html" title="موقع احسن دكتور كلى ومسالك في الاردن">الموقع</a></li>
+      </ul>
+      <ul class="footer-box">
+        <li class="footer-link-name">
+          معلومات عامة
+        </li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/أعراض_الكلى_والمسالك_البولية/index.html">أعراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/index.html">أمراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}/مشاكل_المسالك_البولية/عمليات_الكلى_والمسالك_البولية/index.html">عمليات الكلى والمسالك البولية</a></li>
+      </ul>
     </div>
-  </div>
 
-  <!-- Bottom Section -->
-  <div style="margin-top: 20px; border-top: 1px solid rgb(43, 245, 255, 1); padding-top: 10px;">
-    <p style="margin: 0;">&copy; 2024 عيادة الدكتور جاد الصمادي. جميع الحقوق محفوظة.</p>
-    <ul style="list-style: none; display: flex; justify-content: center; gap: 15px; padding: 0; margin: 10px 0 0;">
-      <li><a href="${base}/privacy-policy/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">سياسة الخصوصية</a></li>
-      <li><a href="${base}/terms-and-conditions/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">الشروط والأحكام</a></li>
-      <li><a href="${base}/contactUs/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1);">تواصل معنا</a></li>
-    </ul>
-  </div>
+    <div class="bottom-details">
+      <div class="bottom-text">
+        <span class="copyright-text">Copyright &#169; 2024 <a href="${base}/index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
+        <span class="policy-terms"><a href="${base}/privacy-policy/index.html">سياسة الخصوصية</a></span>
+        <span class="policy-terms"><a href="${base}/terms-and-conditions/index.html">الشروط والأحكام</a></span>
+      </div>
+    </div> 
+  </div>    
 </footer>
+
+    <style>
+/* Footer */
+footer {
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(25, 39, 51, 1);
+  color: rgb(43, 245, 255, 1);
+  padding: 5px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between; 
+  text-align: center;
+};
+
+footer::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+}
+
+footer .content {
+width: 100%;
+margin: auto;
+padding: 30px 40px 40px 40px;
+display: flex;
+flex-direction: column;
+border-right: 0;
+border-left: 0;
+border-bottom: 0;
+}
+
+footer .content .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.content .top .logo-footer {
+  color: rgb(43, 245, 255, 1);
+  font-size:larger;
+}
+
+.logo-footer a {
+  width: 10%;
+  display: inline-block;
+}
+
+.logo-footer a img {
+  aspect-ratio: 150 / 150;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: -8px;
+}
+
+.content .top .media-icons {
+  display: flex;
+}
+
+.content .top .media-icons a {
+  width: 40px;
+  height: 40px;
+  background-color:transparent;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.4s ease;
+}
+
+footer .content .link-boxes {
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .content .link-boxes .footer-box {
+  margin-right: 0;
+  padding-right: 0;
+  background-color: transparent;
+  width: calc(100% / 4 - 10px);
+}
+
+.content .link-boxes .footer-box .footer-link-name {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.content .link-boxes .footer-box .footer-link-name::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  width: 50px;
+  background: #fff;
+}
+
+footer .content .link-boxes .footer-box li {
+  margin: 6px 0;
+  list-style: none;
+}
+
+footer .content .link-boxes .footer-box li a {
+  color:rgb(190, 244, 240);
+  font-size: medium;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: all 0.4s ease;
+}
+
+footer .content .link-boxes .footer-box li a:hover {
+opacity: 1;
+text-decoration:underline;
+}
+
+footer .bottom-details {
+  width: 100%;
+}
+
+footer .bottom-details .bottom-text {
+ max-width: 1250px; 
+ margin: auto;
+ padding: 20px 40px;
+ display: flex;
+ justify-content: space-between;
+}
+
+.bottom-details .bottom-text span,
+.bottom-details .bottom-text a {
+  font-size: small;
+  color: rgb(43, 245, 255, 1);
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.bottom-details .bottom-text a:hover {
+  opacity: 1;
+text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  footer .content .link-boxes {
+    flex-wrap: wrap;
+  }
+      .logo-footer a {
+    width: 10%;
+  }
+  .logo-footer a img {
+    margin-bottom: -5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content .top .logo-footer {
+    font-size:medium;
+}
+
+.content .top .media-icons a {
+  width: 35px;
+  height: 35px;
+  font-size: small;
+  line-height: 35px;
+}
+footer .content .link-boxes .footer-box {
+  width: calc(100% / 2 - 10px);
+}
+.bottom-details .bottom-text span,
+.bottom-details .bottom-text a {
+  font-size: smaller;
+}
+footer .bottom-details {
+  font-size: medium;
+}
+    .logo-footer a {
+    width: 20%;
+  }
+.logo-footer a img {
+  margin-bottom: -15px;
+}
+}
+
+@media (max-width: 400px) {
+  footer::before{
+    right: 0;
+    top: 145px;
+  }
+  footer .content .top {
+    flex-direction: column;
+  }
+  .content .top .media-icons {
+    margin-top: 10px;
+  }
+  .logo-footer a {
+    width: 20%;
+  }
+
+}
+  
+  </style>
 `;
 
 
