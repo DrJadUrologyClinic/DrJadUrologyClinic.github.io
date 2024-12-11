@@ -27,7 +27,7 @@ main {
 
 @media all and (max-width: 685px) {
  main {
-  margin-top: 25%;
+  margin-top: 15%;
  }
 }
 
@@ -333,6 +333,12 @@ article {
 
 .primary {
   text-align: center;
+}
+
+@media screen {
+.primary {
+  font-size: large;
+}
 }
 
 article img{
