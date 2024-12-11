@@ -18,16 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- Hidden Navigation Menu -->
       <nav id="menu" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 50%; transform: translateX(50%); background: rgb(25, 39, 51, 1); border: 2px solid rgb(43, 245, 255, 1); border-radius: 5px; padding: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
         <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
-          <li style="margin: 10px 0;"><a href="${base}/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">الرئيسية</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/about/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">عن الدكتور</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/مشاكل_المسالك_البولية/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">مشاكل المسالك</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/services/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">الخدمات</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/FAQ/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">الأسئلة الشائعة</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/reservations/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">حجز موعد</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/contactUs/index.html" style="text-decoration: none; color: rgb(43, 245, 255, 1); font-size: 1.2em;">تواصل معنا</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/index.html" style="text-decoration: none; font-size: 1.2em;">الرئيسية</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/about/index.html" style="text-decoration: none; font-size: 1.2em;">عن الدكتور</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/مشاكل_المسالك_البولية/index.html" style="text-decoration: none; font-size: 1.2em;">مشاكل المسالك</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/services/index.html" style="text-decoration: none; font-size: 1.2em;">الخدمات</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/FAQ/index.html" style="text-decoration: none; font-size: 1.2em;">الأسئلة الشائعة</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/reservations/index.html" style="text-decoration: none; font-size: 1.2em;">حجز موعد</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/contactUs/index.html" style="text-decoration: none; font-size: 1.2em;">تواصل معنا</a></li>
         </ul>
       </nav>
     </header>
+
+    <style>
+    #menu li:hover {
+       background: rgb(25, 39, 51, 1);
+      }
+    </style>
   `;
 
  // Updated Footer
@@ -218,6 +224,7 @@ footer .content .link-boxes .footer-box li a {
 footer .content .link-boxes .footer-box li a:hover {
 opacity: 1;
 text-decoration:underline;
+color: rgb(25, 39, 51, 1);
 }
 
 footer .bottom-details {
@@ -242,7 +249,8 @@ footer .bottom-details .bottom-text {
 
 .bottom-details .bottom-text a:hover {
   opacity: 1;
-text-decoration: underline;
+  text-decoration: underline;
+  color: rgb(25, 39, 51, 1);
 }
 
 @media (max-width: 800px) {

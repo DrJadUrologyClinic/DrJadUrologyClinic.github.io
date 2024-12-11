@@ -32,7 +32,7 @@ main {
 }
 
 
-/* General */
+/* Header Footer */
 header, footer {
   font-family: Arial, sans-serif;
   font-display: swap;
@@ -46,6 +46,11 @@ header nav ul {
 
 header nav ul li {
   margin: 10px 0;
+}
+
+header nav ul li:hover {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
 }
 
 header nav a {
