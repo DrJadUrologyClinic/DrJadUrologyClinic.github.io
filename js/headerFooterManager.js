@@ -135,9 +135,7 @@ margin: auto;
 padding: 30px 40px 40px 40px;
 display: flex;
 flex-direction: column;
-border-right: 0;
-border-left: 0;
-border-bottom: 0;
+border-color: rgb(43, 245, 255, 1);
 }
 
 footer .content .top {
@@ -225,6 +223,7 @@ footer .content .link-boxes .footer-box li a:hover {
 opacity: 1;
 text-decoration:underline;
 color: rgb(25, 39, 51, 1);
+background-color: rgb(43, 245, 255, 1);
 }
 
 footer .bottom-details {
@@ -242,7 +241,6 @@ footer .bottom-details .bottom-text {
 .bottom-details .bottom-text span,
 .bottom-details .bottom-text a {
   font-size: small;
-  color: rgb(43, 245, 255, 1);
   opacity: 0.7;
   text-decoration: none;
 }
@@ -251,6 +249,7 @@ footer .bottom-details .bottom-text {
   opacity: 1;
   text-decoration: underline;
   color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
 }
 
 @media (max-width: 800px) {
