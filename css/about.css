@@ -21,6 +21,7 @@
 }
 
 .about-img {
+  float: left;
   display: flex;
   justify-content: center;
   object-fit: contain;
