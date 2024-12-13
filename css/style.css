@@ -136,8 +136,7 @@ button {
   font-size:larger;
   background-color: rgb(25, 39, 51, 1);
   color: rgb(43, 245, 255, 1);
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 0 5px;
   border-radius: 7px;
 }
 
@@ -197,8 +196,7 @@ p.container-box{
 }
 
 .devider {
-border-style:ridge;
-border-width: 5px;
+border: 5px ridge;
 width: 300;
 height: 600;
 box-sizing: border-box;
@@ -333,7 +331,7 @@ footer {
 }
 
 .references {
-  font-size: xx-small;
+  font-size: x-small;
   direction: ltr;
   text-align: left;
   padding: 0;
@@ -343,7 +341,7 @@ footer {
   color: rgb(25, 39, 51);
   background-color: transparent;
   text-decoration: none;
-  font-size: xx-small;
+  font-size: x-small;
 }
 
 .references a:hover {
