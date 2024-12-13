@@ -7,16 +7,33 @@
 <link rel="preload" href="/images/عمليةمنظارمرن.webp" as="image">
 
   <!-- Google tag (gtag.js) -->
-<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B"></script>
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VB4N66BB2B');
-   });
-</script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Wait for user interaction
+      let gtmLoaded = false;
+  
+      const loadGTM = () => {
+        if (gtmLoaded) return; // Avoid multiple loads
+        gtmLoaded = true;
+  
+        const script = document.createElement('script');
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B";
+        script.async = true;
+        document.head.appendChild(script);
+  
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VB4N66BB2B');
+      };
+  
+      // Load GTM after user interacts
+      document.body.addEventListener('click', loadGTM, { once: true });
+      document.body.addEventListener('scroll', loadGTM, { once: true });
+      document.body.addEventListener('keydown', loadGTM, { once: true });
+    });
+  </script>
+  
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
