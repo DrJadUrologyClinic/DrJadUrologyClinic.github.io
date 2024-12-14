@@ -183,59 +183,14 @@ div.review-widget_net {
 
 .location{
   text-align: center;
-}
-
-.location .container-address a {
-  color: rgb(43, 245, 255, 1);
-}
-
-.location .container-address u {
-  color:rgb(25, 39, 51, 1);
-  border-style: ridge;
-  border-color: aqua;
-}
-
-.location .container-address u:hover {
-  color:rgb(43, 245, 255, 1);
-  background-color: rgb(25, 39, 51, 1);
-}
-
-.location .container-address a:hover {
-color: rgb(25, 39, 51, 1);
-}
-
-.container-location {
-  width: 100%;
-  height: 50vh;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
-}
-
-.container-location a {
-  width: 1000;
-  height: 500;
-  filter: invert(100%);
-  border:0;
-  display: block;
 }
 
 .container-location a img {
-  width: 1000;
-  height: 500;
   object-fit: contain;
-}
-
-section.location {
-  display: flex;
-}
-
-@media (max-width: 600px) {
-  .location{
-    display: flex;
-    flex-direction: column;
-  } 
+  filter: invert(100%);
 }
 
 
