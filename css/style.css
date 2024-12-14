@@ -167,11 +167,8 @@ p.container-box{
 }
 
 .container-services img {
-  width: 512;
-  height: 512;
-  justify-content: center;
   object-fit: contain;
-  padding: 5px;
+  padding: 10px;
 }
 
 /* End of Sevices*/
