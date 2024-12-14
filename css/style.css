@@ -28,13 +28,6 @@ main {
  }
 }
 
-
-/* Header Footer */
-header, footer {
-  font-family: Arial, sans-serif;
-  font-display: swap;
-}
-
 /* Navigation Menu */
 header nav ul {
   margin: 0;
