@@ -201,7 +201,7 @@ footer {
 
 
 .references-section {
-  font-size: x-small;
+  font-size: small;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -212,7 +212,7 @@ footer {
 }
 
 .references {
-  font-size: x-small;
+  font-size: small;
   direction: ltr;
   text-align: left;
   padding: 0;
@@ -222,7 +222,7 @@ footer {
   color: rgb(25, 39, 51);
   background-color: transparent;
   text-decoration: none;
-  font-size: x-small;
+  font-size: small;
 }
 
 .references a:hover {
