@@ -141,19 +141,12 @@ background-size: cover;
 
 #container-box{
  width: 250px;
-text-align: center;
+ line-height: 3;
+ text-align: center;
 }
 
-#container-box :hover{
+#container-box:hover {
   background-color: rgb(43, 245, 255);
-}
-
-h2.container-box{
-  text-align: justify;
-}
-
-p.container-box{
-  text-align: justify;
 }
 
 /* Services section */
