@@ -160,44 +160,10 @@ p.container-box{
 
 .container-services {
   display:flex;
-  align-items: center;
-  width:auto;
-  top: 50px;
-}
-
-.side-column {
-  width: 20%;
-  height: auto;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
   flex-wrap: wrap;
-  justify-content:center;
-  padding: 10px;
-  margin: 10px;
-  background-color: rgb(25, 39, 51, 1);
-}
-
-.devider {
-border: 5px ridge;
-width: 300;
-height: 600;
-box-sizing: border-box;
-justify-content: center;
-padding: 10px;
-margin: 10px;
-}
-
-.devider:hover {
-  background-color: rgb(43, 245, 255, 1);
-}
-
-.description {
   justify-content: center;
-  text-align: center;
-  background-color: rgb(43, 245, 255, 1);
+  gap: 10px;
+  padding: 20px;
 }
 
 .container-services img {
@@ -207,28 +173,6 @@ margin: 10px;
   object-fit: contain;
   padding: 5px;
 }
-
-.container-services a {
-  padding: 0;
-  justify-content: center;
-  height: auto;
-  background-color: transparent;
-  color: rgb(25, 39, 51, 1);
-}
-
-.container-services a :hover {
-  background-color: transparent;
-}
-
-@media (max-width: 600px) {
-.container-services  .main-content {
-   flex-direction: column;
-  }
-.devider {
-  width: 100%;
-}
-}
-
 
 /* End of Sevices*/
 
