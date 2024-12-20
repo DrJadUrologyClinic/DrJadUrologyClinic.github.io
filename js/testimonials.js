@@ -50,14 +50,14 @@ testimonialsSlider.addEventListener('touchstart', (e) => {
     testimonialsStartX = e.touches[0].clientX;
     testimonialsIsDragging = true;
     testimonialsSlider.style.transition = 'none';
-});
+}, { passive: true });
 
 testimonialsSlider.addEventListener('touchmove', (e) => {
     if (!testimonialsIsDragging) return;
     const currentX = e.touches[0].clientX;
     const diff = currentX - testimonialsStartX;
     testimonialsSlider.style.transform = `translateX(${diff}px)`;
-});
+}, { passive: true });
 
 testimonialsSlider.addEventListener('touchend', (e) => {
     const endX = e.changedTouches[0].clientX;
@@ -71,8 +71,4 @@ testimonialsSlider.addEventListener('touchend', (e) => {
         testimonialsSlider.style.transform = 'translateX(0)';
         testimonialsSlider.style.transition = 'transform 0.3s ease';
     }
-});
-
-
-
-
+}, { passive: true });
