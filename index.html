@@ -576,16 +576,16 @@
 <script src="/js/headerFooterManager.js"></script>
 <script defer src="/js/carousel.js"></script>
 <script defer src="/js/testimonials.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B"></script>
 <script>
-  // Lazy-load Google Tag Manager after interaction
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.addEventListener('click', () => {
-      const gtmScript = document.createElement('script');
-      gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B";
-      gtmScript.async = true;
-      document.head.appendChild(gtmScript);
-    }, { once: true });
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'G-VB4N66BB2B');
 </script>
+
 </body>
 </html>
