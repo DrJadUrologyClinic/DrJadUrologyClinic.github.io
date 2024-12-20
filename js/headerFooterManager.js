@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="top">
 
       <div class="logo-footer">
-        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  "></a>
+        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  " loading="lazy" width="150"  height="150"></a>
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
@@ -156,7 +156,6 @@ footer .content .top {
 }
 
 .logo-footer a img {
-  aspect-ratio: 150 / 150;
   object-fit: contain;
   border-radius: 50%;
   margin-bottom: -8px;
@@ -241,12 +240,12 @@ footer .bottom-details .bottom-text {
 .bottom-details .bottom-text span,
 .bottom-details .bottom-text a {
   font-size: small;
-  opacity: 0.7;
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
   text-decoration: none;
 }
 
 .bottom-details .bottom-text a:hover {
-  opacity: 1;
   text-decoration: underline;
   color: rgb(25, 39, 51, 1);
   background-color: rgb(43, 245, 255, 1);
