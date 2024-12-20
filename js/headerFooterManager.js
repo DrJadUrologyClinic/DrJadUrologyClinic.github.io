@@ -155,6 +155,10 @@ footer .content .top {
   display: inline-block;
 }
 
+.logo-footer a:hover {
+  background-color: transparent;
+}
+
 .logo-footer a img {
   object-fit: contain;
   border-radius: 50%;
