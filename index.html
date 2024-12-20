@@ -50,8 +50,7 @@
 
   <link rel="canonical" href="https://drjadurologyclinic.com/"/>
 
-   <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript> 
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/theBestUrologistInAmmanCarousel.css">
 <link rel="stylesheet" href="/css/testimonials.css">
 </head>
@@ -576,14 +575,16 @@
 <script defer src="/js/carousel.js"></script>
 <script defer src="/js/testimonials.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'G-VB4N66BB2B');
+  // Lazy-load Google Tag Manager after interaction
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('click', () => {
+      const gtmScript = document.createElement('script');
+      gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B";
+      gtmScript.async = true;
+      document.head.appendChild(gtmScript);
+    }, { once: true });
+  });
 </script>
 
 </body>
