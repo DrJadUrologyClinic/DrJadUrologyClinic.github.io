@@ -576,31 +576,16 @@
 <script src="/js/headerFooterManager.js"></script>
 <script defer src="/js/carousel.js"></script>
 <script defer src="/js/testimonials.js"></script>
-
 <script>
-  // Lazy-load Google Tag Manager after user interaction
+  // Lazy-load Google Tag Manager after interaction
   window.addEventListener('DOMContentLoaded', () => {
-    const loadGTM = () => {
+    document.body.addEventListener('click', () => {
       const gtmScript = document.createElement('script');
       gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-VB4N66BB2B";
       gtmScript.async = true;
       document.head.appendChild(gtmScript);
-
-      // Initialize GTM
-      gtmScript.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-VB4N66BB2B');
-      };
-    };
-
-    // Attach the GTM loading to the first user interaction
-    document.body.addEventListener('click', loadGTM, { once: true });
+    }, { once: true });
   });
 </script>
-
 </body>
 </html>
