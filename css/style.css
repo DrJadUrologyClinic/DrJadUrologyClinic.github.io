@@ -190,9 +190,11 @@ footer {
 
 .references {
   font-size: small;
+  line-height: 2;
   direction: ltr;
   text-align: left;
-  padding: 0;
+  padding: 3%;
+  margin: 3%;
 }
 
 .references a {
