@@ -11,7 +11,6 @@
   display: flex;
 }
 
-
 .about-img {
   float: left;
   display: flex;
@@ -39,22 +38,6 @@
 }
 
 
-.about1 {
-  width: 600;
-  height: 800;
-  aspect-ratio: 3 / 4;
-}
-
-.about2 {
-  width: 800;
-  height: 600;
-  aspect-ratio: 4 / 3;
-}
-
-.about3 {
-  width: 250;
-  height: 250;
-}
 
 .about-container ul .certificates {
   margin-right: 0;
@@ -95,10 +78,6 @@ border-width: 5px;
 
   .about {
     width: auto;
-  }
-
-  .about-sidebar1, .about-sidebar2, .about-sidebar3,.about-sidebar4 {
-    display: none;
   }
 }
 
