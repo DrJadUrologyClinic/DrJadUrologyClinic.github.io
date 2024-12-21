@@ -13,12 +13,6 @@
  width: 100%;
 }
 
-/*
-.conditions-list li::marker {
-  content: "  أولاً  ";
- } 
- */
-
 .conditions-list li a {
   color: rgb(43, 245, 255, 1);
   width: 100%;
