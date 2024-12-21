@@ -17,6 +17,10 @@ html, body {
   height: auto;
 }
 
+.theBestUrologistDoctor img {
+  max-height: 800px;
+}
+
 .about h2 {
   text-align: center;
   border-bottom-style: double;
