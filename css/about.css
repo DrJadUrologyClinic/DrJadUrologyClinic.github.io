@@ -9,8 +9,6 @@ html, body {
 .about img {
   display: block;
   margin: 1rem auto; /* Center horizontally */
-  border-style: ridge;
-  border-width: 5px;
   object-fit: contain;
   width: 100%;
   max-width: 600px; /* Maintain responsiveness */
