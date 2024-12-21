@@ -52,6 +52,7 @@ html, body {
 }
 
 .theBestUrologistClinic div {
+  min-height: 300px; /* Reserve space for content */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
