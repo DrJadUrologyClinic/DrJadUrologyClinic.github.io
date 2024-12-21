@@ -28,6 +28,7 @@ html, body {
 
 .about ul {
   list-style: none;
+  margin-left: 2%;
 }
 
 .about li {
