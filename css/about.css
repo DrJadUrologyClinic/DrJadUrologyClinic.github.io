@@ -18,7 +18,7 @@ html, body {
 }
 
 .theBestUrologistDoctor img {
-  max-height: 800px;
+  min-height: 800px;
 }
 
 .about h2 {
