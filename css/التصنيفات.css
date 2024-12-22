@@ -39,21 +39,25 @@ body {
 
 .category-page li {
   margin-bottom: 10px;
-  background-color: rgb(25, 39, 51);
-  border-radius: 8px;
-  padding: 10px;
-  border: 2px solid rgb(43, 245, 255);
-  transition: background-color 0.3s ease;
+  padding: 5px;
+  
 }
 
 .category-page ul li a {
+  display: block;
   color: rgb(43, 245, 255);
-  text-decoration: none;
-  font-size: 1.2em;
+  background-color: rgb(25, 39, 51);
+  font-size: xx-large;
+  border: 2px solid rgb(43, 245, 255);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  padding: 5px;
 }
 
 .category-page ul li a:hover {
   text-decoration: underline;
+  color: rgb(25, 39, 51);
+  background-color: rgb(43, 245, 255);
 }
 
 .category-page .back-to-categories {
