@@ -37,21 +37,15 @@ header {
 }
 
 .articles .post h2 {
-  background-color: rgb(25, 39, 51, 1);
-  color: white;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
 }
 
 .articles .post h2 a {
   color: white;
   text-decoration: none;
-}
-
-.articles .post h2:hover {
-  background-color: rgb(43, 245, 255, 1);
+  width: 100%;
 }
 
 .articles .post p {
