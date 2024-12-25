@@ -124,6 +124,7 @@ header {
 .sidebar ul li a {
   text-decoration: none;
   color: rgb(25, 39, 51, 1);
+  background: #eee;
   transition: color 0.3s ease;
 }
 
@@ -143,8 +144,7 @@ header {
 }
 
 .sidebar .tag-cloud a:hover {
-  background: rgb(43, 245, 255, 1);
-  color: #fff;
+  color: rgb(43, 245, 255, 1);
 }
 
 .social-share {
