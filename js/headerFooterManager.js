@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="bottom-details">
       <div class="bottom-text">
-        <span class="copyright-text">Copyright &#169; 2024 <a href="${base}/index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
+        <span class="copyright-text">Copyright &#169; 2025 <a href="${base}/index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
         <span class="policy-terms"><a href="${base}/privacy-policy/index.html">سياسة الخصوصية</a></span>
         <span class="policy-terms"><a href="${base}/terms-and-conditions/index.html">الشروط والأحكام</a></span>
       </div>
