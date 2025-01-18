@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container a {
+  color: rgba(0, 0, 0);
+  font-style: oblique;
+  text-decoration: underline;
+ }
+
+.job-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.job-section div {
+  width: 48%;
+}
+.rtl {
+  text-align: right;
+  direction: rtl;
+}
+.ltr {
+  text-align: left;
+  direction: ltr;
+}
+
+.job-section h2 {
+  color: #444;
+  border-bottom: 2px solid rgb(43, 245, 255, 1);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.job-section p {
+  margin: 5px 0;
+}
+
+form {
+  margin-top: 20px;
+}
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: rgb(43, 245, 255, 1);
+  color: rgb(25, 39, 51, 1);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
+}
