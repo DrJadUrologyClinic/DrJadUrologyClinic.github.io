@@ -84,6 +84,14 @@ button:hover {
   border-radius: 8px;
   background-color: #f9f9f9;
 }
-iframe {
-  border: none;
+.google-forms {
+  font-size: xx-large;
+  text-align: center;
+  display: block;
+  background-color: rgb(43, 245, 255, 1);
+}
+
+.google-forms:hover {
+  color: rgb(43, 245, 255, 1);
+  background-color: rgb(25, 39, 51, 1);
 }
