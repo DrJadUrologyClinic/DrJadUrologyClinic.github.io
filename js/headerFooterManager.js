@@ -288,7 +288,7 @@ footer .content .link-boxes .footer-box {
   font-size: smaller;
 }
 footer .bottom-details {
-  font-size: medium;
+  font-size: small;
 }
     .logo-footer a {
     width: 20%;
