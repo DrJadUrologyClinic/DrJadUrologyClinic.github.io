@@ -88,6 +88,7 @@ button:hover {
   font-size: xx-large;
   text-align: center;
   display: block;
+  width: 100%;
   background-color: rgb(43, 245, 255, 1);
 }
 
