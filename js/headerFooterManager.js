@@ -296,6 +296,10 @@ footer .bottom-details {
 .logo-footer a img {
   margin-bottom: -15px;
 }
+
+.bottom-text span {
+ padding: 0 5%;
+}
 }
 
 @media (max-width: 400px) {
