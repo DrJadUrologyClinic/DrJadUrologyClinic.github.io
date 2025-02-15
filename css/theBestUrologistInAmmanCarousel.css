@@ -1,4 +1,6 @@
-/* here is the slider */
+/* ====================== */
+/* Carousel Styles */
+/* ====================== */
 
 .carousel {
   position: relative;
@@ -9,11 +11,11 @@
 }
 
 .carousel-image {
-  width: 300;        /* Let the width adjust automatically */
-  height: 300;       /* Let the height adjust automatically */
-  max-width: 100%; /* Ensure the image doesn't exceed the width of its parent */
-  max-height: 100%; /* Ensure the image doesn't exceed the height of its parent */
-  object-fit: contain; /* Scale the image while maintaining its aspect ratio */
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .img-h {
@@ -33,77 +35,87 @@
   list-style: none;
   position: relative;
   height: 100%;
-  display: flex; /* Aligns slides horizontally */
-  transform: translateX(0); /* Ensures first slide is visible immediately */
+  display: flex;
+  transform: translateX(0);
   transition: transform 700ms ease-in;
 }
 
 .carousel-slide {
-  position: absolute; /* stack images on top of each other */
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   bottom: 0;
-  display: flex; /* This is important for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background-color: #fff;
   background-image: radial-gradient(circle, #cccccc 10%, transparent 10%);
-  background-size: 20px 20px; /* Spacing of the dots */
+  background-size: 20px 20px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Subtle shadow for card */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-slide:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* Arrow Buttons - CSS Version */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
-  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
-  width: 8%;
-  height: 25%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
-.carousel-button img:hover  {
-  transform: scale(1.2);
-  transition: all ease-in 0.2s;
-
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-nav button:hover {
-  transform: scale(1.2);
-  transition: all ease-in 0.2s;
-  background-color: rgb(25, 39, 51, 1);
+.carousel-button::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 3px 3px 0 0;
+  border-color: #192732;
+  transform-origin: center;
+}
+
+.carousel-button--left::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+  margin-left: 2px;
+}
+
+.carousel-button--right::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-left: -2px;
 }
 
 .carousel-button--left {
-left: -5%;
-z-index: 10;
-} 
+  left: -50px;
+}
 
 .carousel-button--right {
-right: -5%;
-z-index: 10;
+  right: -50px;
 }
 
-.carousel-button img {
-  width: 100;
-  height: 100;
-}
-
-.carousel-button:focus, .carousel-indicator:focus {
-outline: none;
-}
-
+/* Navigation Dots */
 .carousel-nav {
   display: flex;
   justify-content: center;
@@ -115,25 +127,54 @@ outline: none;
   border-radius: 50px;
   width: 15px;
   height: 15px;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, 0.3);
   margin: 0 12px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .carousel-indicator.current-slide {
-  background: rgba(0,0,0,.75);
+  background: rgba(0, 0, 0, 0.75);
 }
 
+.carousel-indicator:hover {
+  transform: scale(1.2);
+  background-color: rgba(25, 39, 51, 1);
+}
 
- /*resize images for different screen sizes */
-
- @media screen and (max-width: 900px) {
+/* Responsive Adjustments */
+@media screen and (max-width: 900px) {
   .carousel {
-      height: 300px;
-      width: 90%;
-      max-width: 100%;
+    height: 300px;
+    width: 90%;
+    max-width: 100%;
   }
+  
   .carousel-slide {
     padding: 10px;
   }
+  
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-button--left {
+    left: -30px;
+  }
+
+  .carousel-button--right {
+    right: -30px;
+  }
+
+  .carousel-button::before {
+    width: 10px;
+    height: 10px;
+    border-width: 2px 2px 0 0;
+  }
 }
+
+/* ====================== */
+/* Existing Page Styles */
+/* ====================== */
+/* Your other CSS styles below... */
