@@ -27,7 +27,7 @@ body {
   gap: 20px;
 }
 .job-section div {
-  width: 48%;
+  width: 100%;
 }
 .rtl {
   text-align: right;
@@ -96,4 +96,69 @@ button:hover {
   color: rgb(43, 245, 255, 1);
   background-color: rgb(25, 39, 51, 1);
   
+}
+
+/* Position Filled Banner Styling */
+.position-filled-banner {
+  background-color: #ffebee; /* Soft red background */
+  border: 2px solid #ef9a9a; /* Light red border */
+  border-left: 0;
+  border-right: 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.position-filled-banner h2 {
+  color: #c62828; /* Dark red for emphasis */
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.position-filled-banner p {
+  color: #721c24; /* Complementary dark red */
+  font-size: 1.1rem;
+  margin: 0.8rem 0;
+}
+
+.position-filled-banner h2:first-child {
+  margin-bottom: 1.2rem;
+}
+
+.position-filled-banner h2:last-child {
+  margin-top: 1.5rem;
+}
+
+/* X icon styling */
+.position-filled-banner h2::before {
+  content: "✗";
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .position-filled-banner {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .position-filled-banner h2 {
+    font-size: 1.4rem;
+  }
+  
+  .position-filled-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* Optional animation */
+@keyframes banner-alert {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.position-filled-banner {
+  animation: banner-alert 0.5s ease-out;
 }
