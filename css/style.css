@@ -91,7 +91,7 @@ img {
 /* end of the profile */
 
  /* general */
-p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::selection, li::selection, h6::selection {
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::selection, li::selection, h6::selection, strong::selection {
   color: rgb(43, 245, 255, 1);
   background-color: rgb(25, 39, 51, 1);
 }
