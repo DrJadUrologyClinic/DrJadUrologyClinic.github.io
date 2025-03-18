@@ -76,7 +76,7 @@
     <!-- Modal for reservation form -->
     <div id="reservation-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <button class="close" aria-label="Close">&times;</button>
             <h2>حجز موعد</h2>
             <form id="reservation-form" method="POST" action="https://script.google.com/macros/s/AKfycbzYGsVx67EtNWUr4orAOW9FzU9AoQtlXkG89G0dX76BUkOrbnhI8ewsmkkYC7WUHTHm/exec">
                 <label for="name">الاسم الكامل:</label>
@@ -93,7 +93,7 @@
             </form>
             
             <div id="confirmation-details" style="display: none;">
-                <h2>تم تأكيد الحجز</h2>
+                <h1>تم تأكيد الحجز</h1>
                 <p id="confirmation-text"></p>
                 <button id="save-reservation">حفظ</button>
                 <button id="share-reservation">مشاركة</button>
