@@ -278,3 +278,77 @@ button[type="submit"]:disabled::after {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+/* Reservation Notice */
+.reservation-notice {
+  background-color: rgba(255, 165, 0, 0.15);
+  border: 2px solid orange;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.reservation-notice p {
+  color: #333;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.reservation-notice a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+/* Useful Links Section */
+.reservation-links {
+  margin: 40px 0;
+  padding: 20px;
+  border-top: 2px solid rgb(43, 245, 255);
+}
+
+.reservation-links h3 {
+  color: rgb(43, 245, 255);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.reservation-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.reservation-links li {
+  margin: 5px 0;
+}
+
+.reservation-links a {
+  color: rgb(43, 245, 255);
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 2px solid rgb(43, 245, 255);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.reservation-links a:hover {
+  background-color: rgb(43, 245, 255);
+  color: rgb(25, 39, 51);
+}
+
+@media (max-width: 768px) {
+  .reservation-links ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+  
+  .reservation-links a {
+      width: 200px;
+      text-align: center;
+  }
+}
