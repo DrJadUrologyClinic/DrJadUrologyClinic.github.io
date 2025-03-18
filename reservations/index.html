@@ -78,7 +78,7 @@
         <div class="modal-content">
             <button class="close" aria-label="Close">&times;</button>
             <h2>حجز موعد</h2>
-            <form id="reservation-form" method="POST" action="https://script.google.com/macros/s/AKfycbzYGsVx67EtNWUr4orAOW9FzU9AoQtlXkG89G0dX76BUkOrbnhI8ewsmkkYC7WUHTHm/exec">
+            <form id="reservation-form" method="POST" action="https://script.google.com/macros/s/AKfycbxHMxchipOPymqifQ2cg5ytIliP4VUI-Dd4KHdcj-OzKtVMQS0oPZ59ZIORi7P0jjo5RQ/exec">
                 <label for="name">الاسم الكامل:</label>
                 <input type="text" id="name" name="name">
                 <label for="age">العمر:</label>
@@ -89,6 +89,7 @@
                 <input type="email" id="email" name="email">
                 <input type="hidden" id="selected-time" name="selectedTime">
                 <input type="hidden" id="submission-time" name="submissionTime"> <!-- New hidden field for submission time -->
+                <div id="form-status"></div>
                 <button type="submit">تأكيد الحجز</button>
             </form>
             

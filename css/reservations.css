@@ -240,3 +240,41 @@ button[type="submit"]::after {
     transform: translateX(100%);
   }
 }
+
+/* Add to reservations.css */
+#form-status {
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(25, 39, 51, 0.1);
+  font-size: 0.9em;
+}
+
+button[type="submit"] {
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:disabled::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid rgb(43, 245, 255);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
