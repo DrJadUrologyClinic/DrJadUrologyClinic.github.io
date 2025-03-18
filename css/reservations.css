@@ -289,11 +289,7 @@ button[type="submit"]:disabled::after {
   text-align: center;
 }
 
-.reservation-notice p {
-  color: #333;
-  font-size: 0.95em;
-  margin: 0;
-}
+
 
 .reservation-notice a {
   color: #0066cc;
