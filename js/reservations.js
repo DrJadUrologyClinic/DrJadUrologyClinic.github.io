@@ -204,7 +204,72 @@ document.addEventListener('DOMContentLoaded', () => {
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
         });
     }
-
-    // Image capture functions (keep existing)
-    // ... [保留现有的 captureImage 和事件监听器代码] ...
 });
+
+// Add this to reservations.js (updated version)
+function initializeSaveShare() {
+    const saveBtn = document.getElementById('save-reservation');
+    const shareBtn = document.getElementById('share-reservation');
+
+    if (saveBtn && shareBtn) {
+        // Save functionality
+        saveBtn.addEventListener('click', () => {
+            captureImage(dataUrl => {
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'jad-clinic-reservation.png';
+                link.click();
+            });
+        });
+
+        // Share functionality
+        shareBtn.addEventListener('click', () => {
+            captureImage(dataUrl => {
+                fetch(dataUrl)
+                    .then(res => res.blob())
+                    .then(blob => {
+                        const file = new File([blob], 'reservation.png', { type: 'image/png' });
+                        navigator.share({
+                            title: 'حجز عيادة الدكتور جاد الصمادي',
+                            files: [file]
+                        }).catch(console.error);
+                    });
+            });
+        });
+    }
+}
+
+// Modify the updateConfirmationDetails function
+function updateConfirmationDetails(formData) {
+    confirmationText.innerHTML = `
+        <strong>الإسم الكامل:</strong> ${formData.get('name')}<br>
+        <strong>العمر:</strong> ${formData.get('age')}<br>
+        <strong>رقم الهاتف:</strong> ${formData.get('phone')}<br>
+        <strong>البريد الإلكتروني:</strong> ${formData.get('email')}<br>
+        <strong>موعد الحجز:</strong> ${formData.get('selectedTime')}<br>
+        <strong>تاريخ ووقت الإرسال:</strong> ${formData.get('submissionTime')}
+    `;
+    
+    confirmationDetails.style.display = 'block';
+    modal.style.display = 'block';
+    
+    // Reinitialize save/share buttons
+    setTimeout(initializeSaveShare, 100);
+}
+
+// Keep the existing captureImage function
+function captureImage(callback) {
+    const buttons = document.querySelectorAll('#save-reservation, #share-reservation');
+    const confirmationDetails = document.getElementById('confirmation-details');
+
+    buttons.forEach(button => button.classList.add('hidden-for-image'));
+    
+    html2canvas(confirmationDetails, {
+        backgroundColor: '#FFFFFF',
+        scale: window.devicePixelRatio,
+        useCORS: true
+    }).then(canvas => {
+        buttons.forEach(button => button.classList.remove('hidden-for-image'));
+        callback(canvas.toDataURL('image/png'));
+    });
+}
