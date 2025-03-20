@@ -4,6 +4,11 @@ html {
   height: 100%;
 }
 
+:root {
+  --color1: rgb(43, 245, 255, 1);
+  --color2: rgb(25, 39, 51, 1);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -91,7 +96,7 @@ img {
 /* end of the profile */
 
  /* general */
-p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::selection, li::selection, h6::selection, strong::selection {
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, a::selection, li::selection, h6::selection, strong::selection, table::selection, th::selection, td::selection, span::selection {
   color: rgb(43, 245, 255, 1);
   background-color: rgb(25, 39, 51, 1);
 }
@@ -133,6 +138,31 @@ button:hover {
   color: rgb(25, 39, 51, 1);
   cursor: pointer;
 }
+
+.button-style {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: rgb(25, 39, 51, 1);
+  color: rgb(43, 245, 255, 1);
+  text-decoration: none;
+  border-radius: 5px;
+  border: ridge;
+  border-width: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.button-style:hover {
+  color: rgb(25, 39, 51, 1);
+  background-color: rgb(43, 245, 255, 1);
+}
+
+.cta-section {
+text-align: center;
+}
+
 
 .container-background-image {
 background-image: url(https://drjadurologyclinic.com/images/Clinic_of_the_best_urologist_in_Amman_Jordan/corner.webp);
@@ -217,6 +247,33 @@ footer {
   text-decoration: underline;
 }
 
+/* Add to your style.css */
+.reference-item {
+  margin-bottom: 1.5rem;
+  padding: 10px;
+  border-left: 3px solid rgb(43, 245, 255);
+}
+
+.reference-item strong {
+  color: rgb(25, 39, 51);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reference-item p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.disclaimer {
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
 article {
   max-width: 95%;
   margin: 5% auto;
@@ -261,6 +318,13 @@ article h2 {
 
 article p, ul {
   margin: 20px 0;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 aside {
