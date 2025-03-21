@@ -349,3 +349,33 @@ button[type="submit"]:disabled::after {
       text-align: center;
   }
 }
+
+.working-hours {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  background: rgb(25, 39, 51, 1);
+  border-radius: 8px;
+}
+
+.working-hours table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.working-hours th, 
+.working-hours td {
+  padding: 12px;
+  border: 3px solid rgb(43, 245, 255, 1);
+  text-align: center;
+}
+
+.working-hours th {
+  background-color: rgb(43, 245, 255, 1);
+  color: rgb(25, 39, 51, 1);
+}
+
+.working-hours tr:nth-child(even) {
+  background-color: rgb(25, 39, 51, 1);
+}

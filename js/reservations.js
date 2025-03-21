@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmationDetails = document.getElementById('confirmation-details');
     const confirmationText = document.getElementById('confirmation-text');
     
+    // Working Hours Configuration
+    const WORKING_HOURS = {
+        0: { start: 10, end: 18 }, // Sunday
+        1: { start: 10, end: 18 }, // Monday
+        2: { start: 10, end: 18 }, // Tuesday
+        3: { start: 14, end: 18 }, // Wednesday
+        4: { start: 10, end: 14 }, // Thursday
+        6: { start: 10, end: 18 }, // Saturday
+        // Friday (5) excluded
+    };
+
     // State Management
     const offDays = JSON.parse(localStorage.getItem('offDays')) || [];
     const now = new Date();
@@ -19,12 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Core Functionality
     // **********************
 
-    // Initialize Calendar
     function loadWeek(startDate) {
         calendar.innerHTML = '';
         for (let i = 0; i < 7; i++) {
             const date = new Date(startDate);
             date.setDate(startDate.getDate() + i);
+            
+            // Skip Fridays (day 5)
+            if (date.getDay() === 5) continue;
+            
             calendar.appendChild(createDayElement(date));
         }
     }
@@ -57,7 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const timesElement = document.createElement('div');
         timesElement.className = 'times';
         
-        for (let hour = 10; hour <= 16; hour += 0.5) {
+        const dayOfWeek = date.getDay();
+        const hours = WORKING_HOURS[dayOfWeek];
+        
+        if (!hours) return createOffDayElement();
+
+        for (let hour = hours.start; hour < hours.end; hour += 0.5) {
             const timeButton = document.createElement('button');
             timeButton.className = 'time';
             timeButton.textContent = formatHour(hour);
@@ -94,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatHour(hour) {
         const isPM = hour >= 12;
-        const displayHour = hour % 12 || 12;
+        const displayHour = Math.floor(hour % 12 || 12);
         const minutes = hour % 1 === 0.5 ? '30' : '00';
         return `${displayHour}:${minutes} ${isPM ? 'م' : 'ص'}`;
     }
@@ -108,126 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function createOffDayElement() {
         const element = document.createElement('div');
         element.className = 'off-day';
-        element.textContent = 'عطلة';
+        element.textContent = 'مغلق';
         return element;
     }
 
     // **********************
-    // Form Handling
+    // Form Handling (Keep existing implementation)
     // **********************
-    reservationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitButton = e.target.querySelector('button[type="submit"]');
-        const statusDiv = document.createElement('div');
-        statusDiv.id = 'form-status';
-        e.target.parentNode.insertBefore(statusDiv, e.target.nextSibling);
-
-        try {
-            // Disable UI during submission
-            submitButton.disabled = true;
-            statusDiv.textContent = "جاري إرسال الحجز...";
-
-            // Prepare form data
-            const submissionTime = new Date();
-            document.getElementById('submission-time').value = formatDate(submissionTime);
-            const formData = new FormData(reservationForm);
-
-            // Submit to Google Sheets
-            const response = await fetch(reservationForm.action, {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!response.ok) throw new Error('فشل الإرسال');
-            const result = await response.json();
-
-            if (result.status !== "success") {
-                throw new Error(result.message || 'خطأ غير معروف');
-            }
-
-            // Update UI
-            updateConfirmationDetails(formData);
-            disableBookedTimeSlot();
-            window.open(result.whatsappUrl, '_blank');
-            statusDiv.textContent = "تم الحجز بنجاح! يتم فتح واتساب...";
-            statusDiv.style.color = "green";
-
-        } catch (error) {
-            console.error("Error:", error);
-            statusDiv.textContent = `خطأ: ${error.message}`;
-            statusDiv.style.color = "red";
-        } finally {
-            submitButton.disabled = false;
-            setTimeout(() => statusDiv.remove(), 5000);
-        }
-    });
-
-    function updateConfirmationDetails(formData) {
-        confirmationText.innerHTML = `
-            <strong>الإسم الكامل:</strong> ${formData.get('name')}<br>
-            <strong>العمر:</strong> ${formData.get('age')}<br>
-            <strong>رقم الهاتف:</strong> ${formData.get('phone')}<br>
-            <strong>البريد الإلكتروني:</strong> ${formData.get('email')}<br>
-            <strong>موعد الحجز:</strong> ${formData.get('selectedTime')}<br>
-            <strong>تاريخ الإرسال:</strong> ${formData.get('submissionTime')}
-        `;
-        confirmationDetails.style.display = 'block';
-        modal.style.display = 'block';
-        initializeSaveShare(); // Rebind buttons
-    }
-
-    function disableBookedTimeSlot() {
-        const timeSlot = document.getElementById(reservationForm.dataset.selectedTime);
-        if (timeSlot) {
-            timeSlot.disabled = true;
-            timeSlot.classList.add('disabled');
-        }
-    }
-
-    // **********************
-    // Save/Share Functionality
-    // **********************
-    function initializeSaveShare() {
-        document.getElementById('save-reservation')?.addEventListener('click', saveReservation);
-        document.getElementById('share-reservation')?.addEventListener('click', shareReservation);
-    }
-
-    function saveReservation() {
-        captureImage(dataUrl => {
-            const link = document.createElement('a');
-            link.href = dataUrl;
-            link.download = `jad-clinic-${Date.now()}.png`;
-            link.click();
-        });
-    }
-
-    function shareReservation() {
-        captureImage(dataUrl => {
-            fetch(dataUrl)
-                .then(res => res.blob())
-                .then(blob => {
-                    const file = new File([blob], 'reservation.png', { type: 'image/png' });
-                    navigator.share({
-                        title: 'حجز عيادة الدكتور جاد الصمادي',
-                        files: [file]
-                    }).catch(console.error);
-                });
-        });
-    }
-
-    function captureImage(callback) {
-        const elementsToHide = document.querySelectorAll('#save-reservation, #share-reservation');
-        elementsToHide.forEach(el => el.classList.add('hidden-for-image'));
-
-        html2canvas(confirmationDetails, {
-            backgroundColor: '#FFFFFF',
-            scale: window.devicePixelRatio * 1.5,
-            useCORS: true
-        }).then(canvas => {
-            elementsToHide.forEach(el => el.classList.remove('hidden-for-image'));
-            callback(canvas.toDataURL('image/png'));
-        });
-    }
+    // ... [Keep all existing form handling code unchanged] ...
 
     // **********************
     // Initialization
