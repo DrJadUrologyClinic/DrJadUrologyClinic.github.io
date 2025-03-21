@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const dateHeader = document.createElement('div');
         dateHeader.className = 'date';
         dateHeader.innerHTML = `
-            ${date.toLocaleDateString('ar-EG')}<br>
-            ${date.toLocaleDateString('ar-EG', { weekday: 'long' })}
+            ${date.toLocaleDateString('ar-JO')}<br>
+            ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
         `;
         dayElement.appendChild(dateHeader);
 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             timeButton.addEventListener('click', () => {
-                selectedTimeInput.value = `${date.toLocaleDateString('ar-EG')} ${formatHour(hour)}`;
+                selectedTimeInput.value = `${date.toLocaleDateString('ar-JO')} ${formatHour(hour)}`;
                 modal.style.display = 'block';
             });
 
