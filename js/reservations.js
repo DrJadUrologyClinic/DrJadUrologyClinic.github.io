@@ -163,10 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
-})}
-
-📍 العنوان: شارع مي زيادة - مستشفى فرح الشامل، عمان
-📞 للاستفسار: +962 7 7808 9234`;
+})}`;
 
             window.location.href = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
 
