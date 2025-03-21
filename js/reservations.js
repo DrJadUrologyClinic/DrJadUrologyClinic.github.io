@@ -146,37 +146,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) throw new Error('فشل الإرسال');
             
-            // Open WhatsApp
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const whatsappUrl = isMobile ? 
-                'https://wa.me/962778089234' : 
-                'https://web.whatsapp.com/send?phone=962778089234';
+            reservationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitButton = e.target.querySelector('button[type="submit"]');
+                const statusDiv = document.getElementById('form-status') || document.createElement('div');
+                statusDiv.id = 'form-status';
+                e.target.parentNode.insertBefore(statusDiv, e.target.nextSibling);
             
-            window.location.href = `${whatsappUrl}?text=${encodeURIComponent(
-                `حجز جديد\nالاسم: ${formData.get('name')}\nالوقت: ${formData.get('selectedTime')}`
-            )}`;
-
-            // Show confirmation
-            confirmationDetails.style.display = 'block';
-            confirmationText.innerHTML = `
-                <strong>الاسم:</strong> ${formData.get('name')}<br>
-                <strong>العمر:</strong> ${formData.get('age')}<br>
-                <strong>الهاتف:</strong> ${formData.get('phone')}<br>
-                <strong>الوقت:</strong> ${formData.get('selectedTime')}
-            `;
-
-            statusDiv.textContent = "تم الحجز بنجاح!";
-            statusDiv.style.color = "green";
-
-        } catch (error) {
-            statusDiv.textContent = `خطأ: ${error.message}`;
-            statusDiv.style.color = "red";
-        } finally {
-            submitButton.disabled = false;
-            setTimeout(() => statusDiv.remove(), 5000);
-        }
-    });
-
+                try {
+                    // ... existing validation code ...
+            
+                    // Open WhatsApp with formatted message
+                    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    const whatsappUrl = isMobile ? 
+                        'https://wa.me/962778089234' : 
+                        'https://web.whatsapp.com/send?phone=962778089234';
+            
+                    const message = `✅ حجز جديد - عيادة الدكتور جاد الصمادي\n\n
+                    🧑⚕️ اسم المريض: ${formData.get('name')}
+                    📅 العمر: ${formData.get('age') || 'غير محدد'}
+                    📞 الهاتف: ${formData.get('phone')}
+                    📧 الإيميل: ${formData.get('email') || 'غير محدد'}
+                    🕒 موعد الحجز: ${formData.get('selectedTime')}
+                    📆 تاريخ الإرسال: ${new Date().toLocaleDateString('ar-EG', { 
+                        weekday: 'long', 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    })}
+                    
+                    📍 العنوان: شارع مي زيادة - مستشفى فرح الشامل، عمان
+                    📞 للاستفسار: +962 7 7808 9234`;
+            
+                    window.location.href = `${whatsappUrl}?text=${encodeURIComponent(message)}`;
+            
+                    
     // ========== Save/Share Functionality ==========
     document.getElementById('save-reservation').addEventListener('click', () => {
         html2canvas(confirmationDetails).then(canvas => {
