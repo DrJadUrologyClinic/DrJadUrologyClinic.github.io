@@ -339,10 +339,9 @@ aside {
 }
 
 table {
-  width: 95%;
+  width: 90%;
 }
 
 tr, th, td {
   text-align: center;
-  padding: 0 5%;
 }

@@ -25,6 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentDate = new Date();
     const offDays = JSON.parse(localStorage.getItem('offDays')) || [];
 
+    // Special off-days (format: YYYY-MM-DD)
+    const FESTIVALS = [
+        // Example - Eid al-Fitr 2024
+        {
+            type: 'عيد الفطر',
+            dates: ['2024-03-30', '2024-03-31', '2024-04-01', '2024-04-02']
+        },
+        // Add other holidays here
+    ];
+
     // ========== Calendar Functions ==========
     function loadWeek(startDate) {
         calendar.innerHTML = '';
@@ -32,10 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const date = new Date(startDate);
             date.setDate(startDate.getDate() + i);
             
-            // Skip Fridays
-            if (date.getDay() === 5) continue;
-            
-            calendar.appendChild(createDayElement(date));
+            if (isWeekend(date) || isFestival(date)) {
+                calendar.appendChild(createOffDayElement(date));
+            } else {
+                calendar.appendChild(createDayElement(date));
+            }
         }
     }
 
@@ -62,6 +73,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return dayElement;
     }
+
+    function createOffDayElement(date) {
+        const element = document.createElement('div');
+        element.className = 'day off-day';
+        
+        // Weekend text
+        if (isWeekend(date)) {
+            element.innerHTML = `
+                <div class="weekend-text">
+                    ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+                    <br>
+                    عطلة نهاية الأسبوع
+                </div>
+            `;
+        }
+        // Festival text
+        else if (isFestival(date)) {
+            element.innerHTML = `
+                <div class="festival-text">
+                    ${getFestivalType(date)}
+                </div>
+            `;
+        }
+        
+        return element;
+    }
+
 
     function createTimeSlots(date) {
         const timesElement = document.createElement('div');
@@ -113,6 +151,24 @@ document.addEventListener('DOMContentLoaded', () => {
         element.textContent = 'مغلق';
         return element;
     }
+
+    function isWeekend(date) {
+        return date.getDay() === 5; // Friday
+    }
+
+    function isFestival(date) {
+        const dateString = date.toISOString().split('T')[0];
+        return FESTIVALS.some(festival => 
+            festival.dates.includes(dateString)
+        );
+    }
+
+    function getFestivalType(date) {
+        const dateString = date.toISOString().split('T')[0];
+        const festival = FESTIVALS.find(f => f.dates.includes(dateString));
+        return festival ? festival.type : '';
+    }
+
 
     // ========== Form Handling ==========
     reservationForm.addEventListener('submit', async (e) => {
