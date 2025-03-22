@@ -114,7 +114,7 @@ function createOffDayElement(date) {
     const closureContent = document.createElement('div');
     closureContent.className = 'closure-content';
     
-    let closureText = 'مغلق';
+    let closureText = 'عطلة';
     if (isWeekend(date)) closureText = 'عطلة نهاية الأسبوع';
     if (isFestival(date)) closureText = getFestivalType(date);
 
@@ -171,7 +171,7 @@ function createOffDayElement(date) {
     function createOffDayElement() {
         const element = document.createElement('div');
         element.className = 'off-day';
-        element.textContent = 'مغلق';
+        element.textContent = 'عطلة';
         return element;
     }
 

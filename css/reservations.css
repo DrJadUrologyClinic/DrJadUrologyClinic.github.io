@@ -447,7 +447,7 @@ button[type="submit"]:disabled::after {
 
 .off-day span {
   display: block;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   font-size: 1.4rem;
   color: #888;
 }
