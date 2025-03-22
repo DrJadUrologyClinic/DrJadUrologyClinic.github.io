@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Special off-days (format: YYYY-MM-DD)
     const FESTIVALS = [
-        // Example - Eid al-Fitr 2024
+        // Example - Eid al-Fitr 2025
         {
             type: 'عيد الفطر',
-            dates: ['2024-03-30', '2024-03-31', '2024-04-01', '2024-04-02']
+            dates: ['2025-03-30', '2025-03-31', '2025-04-01', '2025-04-02']
         },
         // Add other holidays here
     ];
