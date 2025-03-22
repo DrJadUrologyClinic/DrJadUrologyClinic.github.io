@@ -69,11 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Date Header
         const dateHeader = document.createElement('div');
         dateHeader.className = 'date';
-        // Modify the date header creation
         dateHeader.innerHTML = `
-        ${date.toLocaleDateString('ar-JO', { day: 'numeric', month: 'numeric', year: 'numeric' })}
-        <br>
-        ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+            ${date.toLocaleDateString('ar-JO', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            })}
+            <br>
+            ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
         `;
         dayElement.appendChild(dateHeader);
 
@@ -88,36 +91,38 @@ document.addEventListener('DOMContentLoaded', () => {
         return dayElement;
     }
 
-    function createOffDayElement(date) {
-        const element = document.createElement('div');
-        element.className = 'day off-day';
-        
-        // Create date header like regular days
-        const dateHeader = document.createElement('div');
-        dateHeader.className = 'date';
-        dateHeader.innerHTML = `
-            ${date.toLocaleDateString('ar-JO')}<br>
-            ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
-        `;
-        element.appendChild(dateHeader);
+    // In createOffDayElement function
+function createOffDayElement(date) {
+    const element = document.createElement('div');
+    element.className = 'day off-day';
     
-        // Create closure content
-        const closureContent = document.createElement('div');
-        closureContent.className = 'closure-content';
-        
-        let closureText = 'مغلق'; // Default closed text
-        
-        if (isWeekend(date)) {
-            closureText = 'عطلة نهاية الأسبوع';
-        } else if (isFestival(date)) {
-            closureText = getFestivalType(date);
-        }
+    // Date Header (Same as regular days)
+    const dateHeader = document.createElement('div');
+    dateHeader.className = 'date';
+    dateHeader.innerHTML = `
+        ${date.toLocaleDateString('ar-JO', { 
+            day: 'numeric', 
+            month: 'long', 
+            year: 'numeric' 
+        })}
+        <br>
+        ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+    `;
+    element.appendChild(dateHeader);
+
+    // Closure Content
+    const closureContent = document.createElement('div');
+    closureContent.className = 'closure-content';
     
-        closureContent.innerHTML = `<span>${closureText}</span>`;
-        element.appendChild(closureContent);
-    
-        return element;
-    }
+    let closureText = 'مغلق';
+    if (isWeekend(date)) closureText = 'عطلة نهاية الأسبوع';
+    if (isFestival(date)) closureText = getFestivalType(date);
+
+    closureContent.innerHTML = `<span>${closureText}</span>`;
+    element.appendChild(closureContent);
+
+    return element;
+}
 
     function createTimeSlots(date) {
         const timesElement = document.createElement('div');

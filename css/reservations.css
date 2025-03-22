@@ -393,11 +393,12 @@ button[type="submit"]:disabled::after {
 
 /* Time slot formatting */
 .time {
-  width: 100%;
-  margin: 3px 0;
-  padding: 6px;
+  width: 90%;
+  margin: 4px auto;
+  padding: 8px;
   font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
+  font-family: 'Arial Arabic', sans-serif;
 }
 
 /* Ensure proper number formatting */
@@ -406,13 +407,6 @@ button[type="submit"]:disabled::after {
   font-variant-numeric: tabular-nums;
 }
 
-/* Closure Content */
-.closure-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .closure-content span {
   writing-mode: vertical-rl;
