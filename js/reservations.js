@@ -69,9 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Date Header
         const dateHeader = document.createElement('div');
         dateHeader.className = 'date';
+        // Modify the date header creation
         dateHeader.innerHTML = `
-            ${date.toLocaleDateString('ar-JO')}<br>
-            ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+        ${date.toLocaleDateString('ar-JO', { day: 'numeric', month: 'numeric', year: 'numeric' })}
+        <br>
+        ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
         `;
         dayElement.appendChild(dateHeader);
 
@@ -90,30 +92,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const element = document.createElement('div');
         element.className = 'day off-day';
         
-        // Weekend text
-        if (isWeekend(date)) {
-            element.innerHTML = `
-                <div class="weekend-container">
-                    <div class="vertical-content">
-                        <span>الجمعة</span>
-                        <span>عطلة رسمية</span>
-                    </div>
-                </div>
-            `;
-        }
-        // Festival text
-        else if (isFestival(date)) {
-            element.className = 'day festival-day';
-            element.innerHTML = `
-                <div class="festival-text">
-                    ${getFestivalName(date)}
-                </div>
-            `;
-        }
+        // Create date header like regular days
+        const dateHeader = document.createElement('div');
+        dateHeader.className = 'date';
+        dateHeader.innerHTML = `
+            ${date.toLocaleDateString('ar-JO')}<br>
+            ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+        `;
+        element.appendChild(dateHeader);
+    
+        // Create closure content
+        const closureContent = document.createElement('div');
+        closureContent.className = 'closure-content';
         
+        let closureText = 'مغلق'; // Default closed text
+        
+        if (isWeekend(date)) {
+            closureText = 'عطلة نهاية الأسبوع';
+        } else if (isFestival(date)) {
+            closureText = getFestivalType(date);
+        }
+    
+        closureContent.innerHTML = `<span>${closureText}</span>`;
+        element.appendChild(closureContent);
+    
         return element;
     }
-
 
     function createTimeSlots(date) {
         const timesElement = document.createElement('div');
@@ -149,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isPM = hour >= 12;
         const displayHour = Math.floor(hour % 12 || 12);
         const minutes = hour % 1 === 0.5 ? '30' : '00';
-        return `${displayHour}:${minutes} ${isPM ? 'م' : 'ص'}`;
+        return `${displayHour.toString().padStart(2, '0')}:${minutes} ${isPM ? 'م' : 'ص'}`;
     }
 
     function isTimePassed(date, hour) {

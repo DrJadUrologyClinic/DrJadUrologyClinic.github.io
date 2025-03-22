@@ -66,14 +66,14 @@ p {
 }
 
 .calendar {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
 }
 
 .day {
   flex: 0 0 auto;
-  width: 120px;
   padding: 10px;
   background-color: rgb(25, 39, 51);
   color: rgb(43, 245, 255);
@@ -82,6 +82,8 @@ p {
   margin: 2px;
   text-align: center;
   font-size: 0.9em;
+  width: auto;
+  min-width: 120px;
 }
 
 .time {
@@ -380,70 +382,89 @@ button[type="submit"]:disabled::after {
   background-color: rgb(25, 39, 51, 1);
 }
 
-    
-.off-day {
-    background: #2b2b2b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 120px;
+
+/* Date formatting */
+.date {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  padding: 4px;
+  border-bottom: 1px solid #2b2b2b;
 }
 
+/* Time slot formatting */
+.time {
+  width: 100%;
+  margin: 3px 0;
+  padding: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
 
-/* Vertical Text for Fridays */
-.off-day {
-  background: #1a1a1a !important;
-  position: relative;
-  min-height: 180px;
+/* Ensure proper number formatting */
+.day {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Closure Content */
+.closure-content {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.vertical-container {
-  transform: rotate(-90deg);
-  white-space: nowrap;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.vertical-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.3rem;
-  color: #666;
-  text-align: center;
-}
-
-.vertical-content span {
+.closure-content span {
   writing-mode: vertical-rl;
   text-orientation: upright;
+  transform: rotate(180deg);
+  font-size: 1.2rem;
   letter-spacing: 3px;
+  line-height: 1.8;
+  color: #888;
 }
 
+/* Weekend Styling */
+.off-day .closure-content span {
+  color: #666;
+}
 
-.weekend-container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Festival Styling */
+.festival-day .closure-content span {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+    
+/* Vertical Text Fix */
+.off-day {
+  background: #1a1a1a !important;
+  min-height: 180px;
+  display: grid !important;
+  place-items: center;
+  padding: 15px;
+  border: 1px solid #2b2b2b !important;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-align: center;
+  line-height: 2.5;
+  letter-spacing: 5px;
+}
+
+.off-day span {
+  display: block;
+  transform: rotate(180deg);
+  font-size: 1.4rem;
+  color: #888;
 }
 
 /* Festival Days */
-.festival-day {
-  background: #2b1a0d !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+.festival-day span {
+  color: #ff9800 !important;
+  font-weight: bold;
 }
 
-.festival-text {
-  font-size: 1.2rem;
-  color: #ff9800;
-  text-align: center;
-  line-height: 1.4;
+/* Weekend Text */
+.weekend-text span {
+  letter-spacing: 3px;
 }
