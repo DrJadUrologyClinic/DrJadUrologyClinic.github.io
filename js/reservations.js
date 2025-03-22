@@ -29,10 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const FESTIVALS = [
         // Example - Eid al-Fitr 2025
         {
-            type: 'عيد الفطر',
-            dates: ['2025-03-30', '2025-03-31', '2025-04-01', '2025-04-02']
+            type: 'عيد الفطر المبارك',
+            dates: ['2025-03-30', '2025-03-31', '2025-04-01', '2025-04-02'],
+            type: 'religious'
         },
-        // Add other holidays here
+        // Add other holidays here 
+    /*
+        {
+            type: 'العيد الوطني',
+             dates: ['2024-05-25'] // Single day
+        },
+        {
+            type: 'عيد الاستقلال',
+            dates: ['2024-05-25', '2024-05-26', '2024-05-27'] // Date range
+        } 
+    */
+
     ];
 
     // ========== Calendar Functions ==========
@@ -81,18 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Weekend text
         if (isWeekend(date)) {
             element.innerHTML = `
-                <div class="weekend-text">
-                    ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
-                    <br>
-                    عطلة نهاية الأسبوع
+                <div class="weekend-container">
+                    <div class="vertical-content">
+                        <span>الجمعة</span>
+                        <span>عطلة رسمية</span>
+                    </div>
                 </div>
             `;
         }
         // Festival text
         else if (isFestival(date)) {
+            element.className = 'day festival-day';
             element.innerHTML = `
                 <div class="festival-text">
-                    ${getFestivalType(date)}
+                    ${getFestivalName(date)}
                 </div>
             `;
         }
