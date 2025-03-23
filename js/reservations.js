@@ -9,6 +9,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedTimeInput = document.getElementById('selected-time');
     const confirmationDetails = document.getElementById('confirmation-details');
     const confirmationText = document.getElementById('confirmation-text');
+    function isTimePassed(date, hour) {
+        const now = new Date();
+        const currentHour = now.getHours() + (now.getMinutes()/60);
+        const twoHoursLater = currentHour + 2;
+        
+        // Same day check + within next 2 hours
+        return date.toDateString() === now.toDateString() && hour < twoHoursLater;
+    }
+
+    const disabledSlots = [
+        // Format: { date: 'YYYY-MM-DD', times: ['HH:MM ص/م'] }
+        
+        // Example 1: Disable multiple slots on March 25th
+        { 
+            date: '2025-03-26',
+            times: ['10:00 ص', '10:30 ص', '01:30 م'] 
+        },
+        
+        // Example 2: Disable afternoon slots every Wednesday
+        {
+            date: '2025-03-23', // Specific Wednesday
+            times: ['05:30 م', '05:00 م', '04:30 م', '05:30 م']
+        },
+        
+        // Example 3: Disable all Friday slots (though Fridays are already off)
+        {
+            date: '2025-03-24',
+            times: ['10:00 ص', '10:30 ص', '05:00 م', '05:30 م']
+        }
+    ];
 
     // ========== Configuration ==========
     const WORKING_HOURS = {
@@ -23,6 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========== State Management ==========
     let currentDate = new Date();
+    currentDate = new Date( // Create new date instance
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate(),
+    );
+    
     const offDays = JSON.parse(localStorage.getItem('offDays')) || [];
 
     // Special off-days (format: YYYY-MM-DD)
@@ -30,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Example - Eid al-Fitr 2025
         {
             type: 'عيد الفطر المبارك',
-            dates: ['2025-03-30', '2025-03-31', '2025-04-01', '2025-04-02'],
-            type: 'religious'
+            dates: ['2025-03-29', '2025-03-30', '2025-03-31', '2025-04-01'],
         },
         // Add other holidays here 
     /*
@@ -47,18 +82,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ];
 
+    
+    // ========== Timezone Helpers ==========
+    function toJordanTime(date) {
+        const jordanDate = new Date(date);
+        jordanDate.setMinutes(jordanDate.getMinutes() + jordanDate.getTimezoneOffset() + 180);
+        return jordanDate;
+    }
+
+    function formatJordanDate(date) {
+        return toJordanTime(date).toISOString().split('T')[0];
+    }
+
     // ========== Calendar Functions ==========
+
     function loadWeek(startDate) {
         calendar.innerHTML = '';
+        const baseDate = new Date(startDate); // Clone the date
+        
         for (let i = 0; i < 7; i++) {
-            const date = new Date(startDate);
-            date.setDate(startDate.getDate() + i);
+            const date = new Date(baseDate);
+            date.setDate(baseDate.getDate() + i);
             
+            // Always create day element
+            const dayElement = document.createElement('div');
+            dayElement.className = 'day';
+            
+            // Add date header
+            const dateHeader = document.createElement('div');
+            dateHeader.className = 'date';
+            dateHeader.innerHTML = `
+                ${date.toLocaleDateString('ar-JO', { 
+                    day: 'numeric', 
+                    month: 'long', 
+                    year: 'numeric' 
+                })}
+                <br>
+                ${date.toLocaleDateString('ar-JO', { weekday: 'long' })}
+            `;
+            dayElement.appendChild(dateHeader);
+    
+            // Add time slots or closure
             if (isWeekend(date) || isFestival(date)) {
-                calendar.appendChild(createOffDayElement(date));
+                const closure = document.createElement('div');
+                closure.className = 'closure-content';
+                closure.textContent = 'عطلة';
+                dayElement.appendChild(closure);
             } else {
-                calendar.appendChild(createDayElement(date));
+                dayElement.appendChild(createTimeSlots(date));
             }
+            
+            calendar.appendChild(dayElement);
         }
     }
 
@@ -91,10 +165,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return dayElement;
     }
 
+    function getDayName(date) {
+        const jordanDate = new Date(date);
+        jordanDate.setMinutes(jordanDate.getMinutes() + jordanDate.getTimezoneOffset() + 180);
+        return jordanDate.toLocaleDateString('ar-JO', { weekday: 'long' }).toLowerCase();
+    }
+
     // In createOffDayElement function
 function createOffDayElement(date) {
     const element = document.createElement('div');
-    element.className = 'day off-day';
+    element.className = 'day off-day'  + (isFestival(date) ? ' festival-day' : '');
     
     // Date Header (Same as regular days)
     const dateHeader = document.createElement('div');
@@ -118,40 +198,68 @@ function createOffDayElement(date) {
     if (isWeekend(date)) closureText = 'عطلة نهاية الأسبوع';
     if (isFestival(date)) closureText = getFestivalType(date);
 
-    closureContent.innerHTML = `<span>${closureText}</span>`;
+    closureContent.textContent = closureText;
     element.appendChild(closureContent);
 
     return element;
 }
 
-    function createTimeSlots(date) {
-        const timesElement = document.createElement('div');
-        timesElement.className = 'times';
-        
-        const dayOfWeek = date.getDay();
-        const hours = WORKING_HOURS[dayOfWeek];
-        
-        if (!hours) return createOffDayElement();
+    // Modified createTimeSlots function
+function createTimeSlots(date) {
+    const timesElement = document.createElement('div');
+    timesElement.className = 'times';
+    
+    const dayOfWeek = date.getDay();
+    const hours = WORKING_HOURS[dayOfWeek];
+    
+    if (!hours) return createOffDayElement(date);
 
-        for (let hour = hours.start; hour < hours.end; hour += 0.5) {
-            const timeButton = document.createElement('button');
-            timeButton.className = 'time';
-            timeButton.textContent = formatHour(hour);
-            timeButton.disabled = isTimePassed(date, hour);
-            
-            if (timeButton.disabled) {
-                timeButton.classList.add('disabled');
-            }
-
-            timeButton.addEventListener('click', () => {
-                selectedTimeInput.value = `${date.toLocaleDateString('ar-JO')} ${formatHour(hour)}`;
-                modal.style.display = 'block';
-            });
-
-            timesElement.appendChild(timeButton);
-        }
+    if (!hours) {
+        // Add closure message to times container
+        const closure = document.createElement('div');
+        closure.className = 'closure-content';
+        closure.textContent = 'عطلة';
+        timesElement.appendChild(closure);
         return timesElement;
     }
+
+    for (let hour = hours.start; hour < hours.end; hour += 0.5) {
+        const timeButton = document.createElement('button');
+        timeButton.className = 'time';
+        timeButton.textContent = formatHour(hour);
+        
+        const formattedTime = formatHour(hour);
+        const dateString = formatJordanDate(date);
+
+        function formatJordanDate(date) {
+            const jordanDate = new Date(date);
+            jordanDate.setMinutes(jordanDate.getMinutes() + jordanDate.getTimezoneOffset() + 180);
+            return jordanDate.toISOString().split('T')[0];
+        }
+        
+        // Check if slot should be disabled
+        const isDisabled = isTimePassed(date, hour) || 
+            disabledSlots.some(slot => 
+                slot.date === dateString && 
+                slot.times.includes(formattedTime)
+            );
+
+        timeButton.disabled = isDisabled;
+        
+        if (isDisabled) {
+            timeButton.classList.add('disabled');
+        }
+
+        timeButton.addEventListener('click', () => {
+            selectedTimeInput.value = `${date.toLocaleDateString('ar-JO')} ${formattedTime}`;
+            modal.style.display = 'block';
+        });
+
+        // Crucial: Always append the button to the DOM
+        timesElement.appendChild(timeButton);
+    }
+    return timesElement;
+}
 
     // ========== Helper Functions ==========
     function formatHour(hour) {
