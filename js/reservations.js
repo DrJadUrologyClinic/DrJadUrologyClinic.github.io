@@ -19,25 +19,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const disabledSlots = [
-        // Format: { date: 'YYYY-MM-DD', times: ['HH:MM ص/م'] }
-        
-        // Example 1: Disable multiple slots on March 25th
         { 
             date: '2025-03-26',
             times: ['10:00 ص', '10:30 ص', '01:30 م'] 
         },
         
-        // Example 2: Disable afternoon slots every Wednesday
         {
             date: '2025-03-23', // Specific Wednesday
             times: ['05:30 م', '05:00 م', '04:30 م', '05:30 م']
         },
         
-        // Example 3: Disable all Friday slots (though Fridays are already off)
         {
             date: '2025-03-24',
             times: ['10:00 ص', '10:30 ص', '05:00 م', '05:30 م']
         }
+    ];
+
+    // Special off-days (format: YYYY-MM-DD)
+    const FESTIVALS = [
+        // Example - Eid al-Fitr 2025
+        {
+            type: 'عيد الفطر المبارك',
+            dates: ['2025-03-29', '2025-03-30', '2025-03-31', '2025-04-01'],
+        },
+        // Add other holidays here 
+    /*
+        {
+            type: 'العيد الوطني',
+             dates: ['2024-05-25'] // Single day
+        },
+        {
+            type: 'عيد الاستقلال',
+            dates: ['2024-05-25', '2024-05-26', '2024-05-27'] // Date range
+        } 
+    */
+
     ];
 
     // ========== Configuration ==========
@@ -60,27 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     
     const offDays = JSON.parse(localStorage.getItem('offDays')) || [];
-
-    // Special off-days (format: YYYY-MM-DD)
-    const FESTIVALS = [
-        // Example - Eid al-Fitr 2025
-        {
-            type: 'عيد الفطر المبارك',
-            dates: ['2025-03-29', '2025-03-30', '2025-03-31', '2025-04-01'],
-        },
-        // Add other holidays here 
-    /*
-        {
-            type: 'العيد الوطني',
-             dates: ['2024-05-25'] // Single day
-        },
-        {
-            type: 'عيد الاستقلال',
-            dates: ['2024-05-25', '2024-05-26', '2024-05-27'] // Date range
-        } 
-    */
-
-    ];
 
     
     // ========== Timezone Helpers ==========
