@@ -27,17 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
             times: ['10:00 ص', '10:30 ص', '01:30 م'] 
         },
         
-        // Example 2: Disable afternoon slots every Wednesday
         {
             date: '2025-03-23', // Specific Wednesday
             times: ['05:30 م', '05:00 م', '04:30 م', '05:30 م']
         },
-        
-        // Example 3: Disable all Friday slots (though Fridays are already off)
+
         {
             date: '2025-03-24',
             times: ['10:00 ص', '10:30 ص', '05:00 م', '05:30 م']
         }
+    ];
+
+     // Special off-days (format: YYYY-MM-DD)
+     const FESTIVALS = [
+        // Example - Eid al-Fitr 2025
+        {
+            type: 'عيد الفطر المبارك',
+            dates: ['2025-03-29', '2025-03-30', '2025-03-31', '2025-04-01'],
+        },
+        // Add other holidays here 
+    /*
+        {
+            type: 'العيد الوطني',
+             dates: ['2024-05-25'] // Single day
+        },
+        {
+            type: 'عيد الاستقلال',
+            dates: ['2024-05-25', '2024-05-26', '2024-05-27'] // Date range
+        } 
+    */
+
     ];
 
     // ========== Configuration ==========
@@ -61,26 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const offDays = JSON.parse(localStorage.getItem('offDays')) || [];
 
-    // Special off-days (format: YYYY-MM-DD)
-    const FESTIVALS = [
-        // Example - Eid al-Fitr 2025
-        {
-            type: 'عيد الفطر المبارك',
-            dates: ['2025-03-29', '2025-03-30', '2025-03-31', '2025-04-01'],
-        },
-        // Add other holidays here 
-    /*
-        {
-            type: 'العيد الوطني',
-             dates: ['2024-05-25'] // Single day
-        },
-        {
-            type: 'عيد الاستقلال',
-            dates: ['2024-05-25', '2024-05-26', '2024-05-27'] // Date range
-        } 
-    */
-
-    ];
 
     
     // ========== Timezone Helpers ==========
@@ -205,62 +204,40 @@ function createOffDayElement(date) {
 }
 
     // Modified createTimeSlots function
-function createTimeSlots(date) {
-    const timesElement = document.createElement('div');
-    timesElement.className = 'times';
-    
-    const dayOfWeek = date.getDay();
-    const hours = WORKING_HOURS[dayOfWeek];
-    
-    if (!hours) return createOffDayElement(date);
+    function createTimeSlots(date) {
+        const timesElement = document.createElement('div');
+        timesElement.className = 'time-slots';
+        const hours = WORKING_HOURS[date.getDay()];
+        
+        if (!hours) return timesElement;
 
-    if (!hours) {
-        // Add closure message to times container
-        const closure = document.createElement('div');
-        closure.className = 'closure-content';
-        closure.textContent = 'عطلة';
-        timesElement.appendChild(closure);
+        const now = new Date();
+        const todayJordan = toJordanTime(now);
+        const currentHour = todayJordan.getHours() + (todayJordan.getMinutes()/60);
+        
+        for (let h = hours.start; h < hours.end; h += 0.5) {
+            const timeButton = document.createElement('button');
+            timeButton.className = 'time-slot';
+            const formattedTime = formatHour(h);
+            
+            // Disable logic
+            const isToday = date.toDateString() === todayJordan.toDateString();
+            const isDisabled = (isToday && h < (currentHour + 2)) || 
+                disabledSlots.some(slot => 
+                    slot.date === formatJordanDate(date) && 
+                    slot.times.includes(formattedTime)
+                );
+
+            timeButton.textContent = formattedTime;
+            timeButton.disabled = isDisabled;
+            if (isDisabled) timeButton.classList.add('disabled');
+            
+            timesElement.appendChild(timeButton);
+        }
+        
         return timesElement;
     }
-
-    for (let hour = hours.start; hour < hours.end; hour += 0.5) {
-        const timeButton = document.createElement('button');
-        timeButton.className = 'time';
-        timeButton.textContent = formatHour(hour);
-        
-        const formattedTime = formatHour(hour);
-        const dateString = formatJordanDate(date);
-
-        function formatJordanDate(date) {
-            const jordanDate = new Date(date);
-            jordanDate.setMinutes(jordanDate.getMinutes() + jordanDate.getTimezoneOffset() + 180);
-            return jordanDate.toISOString().split('T')[0];
-        }
-        
-        // Check if slot should be disabled
-        const isDisabled = isTimePassed(date, hour) || 
-            disabledSlots.some(slot => 
-                slot.date === dateString && 
-                slot.times.includes(formattedTime)
-            );
-
-        timeButton.disabled = isDisabled;
-        
-        if (isDisabled) {
-            timeButton.classList.add('disabled');
-        }
-
-        timeButton.addEventListener('click', () => {
-            selectedTimeInput.value = `${date.toLocaleDateString('ar-JO')} ${formattedTime}`;
-            modal.style.display = 'block';
-        });
-
-        // Crucial: Always append the button to the DOM
-        timesElement.appendChild(timeButton);
-    }
-    return timesElement;
-}
-
+    
     // ========== Helper Functions ==========
     function formatHour(hour) {
         const isPM = hour >= 12;
