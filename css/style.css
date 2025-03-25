@@ -293,19 +293,20 @@ article img{
 .image-container {
   float: left; 
   width: 50%; 
-  margin: 0 20px 20px 0; 
+  margin: 0 20px 20px 0;
+  display: flex; 
+  flex-direction: column;
 }
 
-.image-container .article-image {
-  width:50%; 
+.image-container .the-image {
+  width:100%; 
   height: auto;
-  display: block;
   border: 1px solid #ddd; 
 }
 
 
 .image-caption {
-  width: 50%; /* نفس عرض الصورة */
+  width: 100%; /* نفس عرض الصورة */
   margin: 0;
   padding: 10px;
   background: rgba(25, 39, 51, 1); /* لون الخلفية */
