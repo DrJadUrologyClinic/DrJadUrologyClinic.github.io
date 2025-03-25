@@ -297,21 +297,22 @@ article img{
 }
 
 .image-container .article-image {
-  width: 100%; /* تأكيد ملء الصورة للحاوية */
+  width:50%; 
   height: auto;
-  display: block; /* إزالة الفراغات تحت الصورة */
-  border: 1px solid #ddd; /* إطار اختياري */
+  display: block;
+  border: 1px solid #ddd; 
 }
 
 
 .image-caption {
-  width: 100%; /* نفس عرض الصورة */
+  width: 50%; /* نفس عرض الصورة */
   margin: 0;
   padding: 10px;
-  background: rgba(25, 39, 51, 0.9); /* لون الخلفية */
-  color: rgb(43, 245, 255); /* لون النص */
+  background: rgba(25, 39, 51, 1); /* لون الخلفية */
+  color: rgb(43, 245, 255, 1); /* لون النص */
   text-align: center;
   box-sizing: border-box; /* للحفاظ على العرض الكلي */
+  position: relative;
 }
 
 article a {
