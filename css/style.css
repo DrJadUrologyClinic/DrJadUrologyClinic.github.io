@@ -295,16 +295,19 @@ article img{
   width: 50%; 
   display: flex; 
   flex-direction: column;
+  direction: ltr;
+  
 }
 
 .image-container .the-image {
-  height: auto;
+  width: 100%;
   border: 1px solid #ddd; 
+  border-radius: 5%;
 }
 
 
-.image-caption {
-  width: 50%; /* نفس عرض الصورة */
+.image-container .image-caption {
+  width: 50%;
   margin: 0;
   padding: 10px;
   background: rgba(25, 39, 51, 1); /* لون الخلفية */
@@ -312,6 +315,8 @@ article img{
   text-align: center;
   box-sizing: border-box; /* للحفاظ على العرض الكلي */
   position: relative;
+  font-size: smaller;
+  border: 5px ridge rgb(43, 245, 255, 1);
 }
 
 article a {
