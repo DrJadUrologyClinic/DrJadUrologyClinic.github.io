@@ -290,6 +290,30 @@ article img{
   padding-right: 1%;
 }
 
+.image-container {
+  float: left; 
+  width: 50%; 
+  margin: 0 20px 20px 0; 
+}
+
+.image-container .article-image {
+  width: 100%; /* تأكيد ملء الصورة للحاوية */
+  height: auto;
+  display: block; /* إزالة الفراغات تحت الصورة */
+  border: 1px solid #ddd; /* إطار اختياري */
+}
+
+
+.image-caption {
+  width: 100%; /* نفس عرض الصورة */
+  margin: 0;
+  padding: 10px;
+  background: rgba(25, 39, 51, 0.9); /* لون الخلفية */
+  color: rgb(43, 245, 255); /* لون النص */
+  text-align: center;
+  box-sizing: border-box; /* للحفاظ على العرض الكلي */
+}
+
 article a {
   background-color: rgb(25, 39, 51);
   text-decoration: underline;
