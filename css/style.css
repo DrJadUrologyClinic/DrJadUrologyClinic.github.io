@@ -292,7 +292,7 @@ article img{
 
 .image-container {
   float: left; 
-  width: 50%; 
+  width: 40%; 
   position: relative;
   overflow: hidden;
   display: flex; 
