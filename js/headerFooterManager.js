@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li style="margin: 10px 0;"><a href="${base}/services/index.html" style="text-decoration: none; font-size: 1.2em;">الخدمات</a></li>
           <li style="margin: 10px 0;"><a href="${base}/FAQ/index.html" style="text-decoration: none; font-size: 1.2em;">الأسئلة الشائعة</a></li>
           <li style="margin: 10px 0;"><a href="${base}/reservations/index.html" style="text-decoration: none; font-size: 1.2em;">حجز موعد</a></li>
+          <li style="margin: 10px 0;"><a href="${base}/location/index.html" style="text-decoration: none; font-size: 1.2em;">خارطة الموقع</a></li>
           <li style="margin: 10px 0;"><a href="${base}/contactUs/index.html" style="text-decoration: none; font-size: 1.2em;">تواصل معنا</a></li>
         </ul>
       </nav>
