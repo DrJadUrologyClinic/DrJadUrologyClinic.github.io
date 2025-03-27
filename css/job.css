@@ -26,6 +26,7 @@ body {
   align-items: flex-start;
   gap: 20px;
 }
+
 .job-section div {
   width: 100%;
 }
@@ -162,3 +163,6 @@ button:hover {
 .position-filled-banner {
   animation: banner-alert 0.5s ease-out;
 }
+
+.job-status-available { color: #2ecc71; }
+.active-vacancy { color: #2980b9; }
