@@ -16,6 +16,7 @@ body {
 
 .container a {
   color: rgba(0, 0, 0);
+  background-color: aliceblue;
   font-style: oblique;
   text-decoration: underline;
  }
