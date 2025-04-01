@@ -300,12 +300,18 @@ function createTimeSlots(date) {
         e.target.parentNode.insertBefore(statusDiv, e.target.nextSibling);
 
         try {
-            // Basic validation
-            if (!document.getElementById('name').value || 
-                !document.getElementById('phone').value || 
-                !selectedTimeInput.value) {
-                throw new Error('الرجاء ملء جميع الحقول المطلوبة');
-            }
+            // Get international phone number
+            const phoneInput = document.getElementById('phone');
+            const iti = window.intlTelInputGlobals.getInstance(phoneInput);
+            const phoneNumber = iti.getNumber();
+    
+
+        // Basic validation
+        if (!document.getElementById('name').value || 
+            !phoneNumber || 
+            !selectedTimeInput.value) {
+            throw new Error('الرجاء ملء جميع الحقول المطلوبة');
+        }
 
             submitButton.disabled = true;
             statusDiv.textContent = "جاري إرسال الحجز...";
