@@ -104,6 +104,11 @@ button:hover {
   
 }
 
+.active-vacancy {
+  font-size: medium;
+  line-height: 0cm;
+}
+
 /* Position Filled Banner Styling */
 .position-filled-banner {
   background-color: #ffebee; /* Soft red background */
