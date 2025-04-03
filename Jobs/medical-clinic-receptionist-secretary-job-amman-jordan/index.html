@@ -88,6 +88,28 @@
     Job Vacancy - Amman Jordan: Medical Clinic Receptionist
   </h1>
 
+  <div class="job-carousel">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Add your 10 images (replace placeholder URLs) -->
+        <div class="swiper-slide">
+          <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urologist_Operation_Theatre.webp" alt="Clinic Reception" loading="lazy" width="448" height="252">
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urology_Clinic_Hospital_Exterior_logo.webp" alt="Medical Team" loading="lazy" width="448" height="252">
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urology_Clinic_Exterior_Reception_Counter.webp" alt="Medical Team" loading="lazy" width="448" height="252">
+        </div>
+        <!-- Add remaining 8 slides -->
+      </div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
   <div class="job-section">
     <div class="rtl">
       <h2>معلومات الوظيفة</h2>
@@ -160,4 +182,44 @@
 </body>
 
 <script src="../../js/headerFooterManager.js"></script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  // Initialize Swiper with RTL support
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    loop: true,
+    rtl: true, // Important for Arabic layout
+    lazy: true,
+    
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // Pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    
+    // Mobile touch support
+    touchRatio: 1,
+    grabCursor: true,
+    
+    // Responsive breakpoints
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      }
+    },
+    
+    // Autoplay (optional)
+    autoplay: {
+      delay: 5000,
+    },
+  });
+</script>
 </html>
