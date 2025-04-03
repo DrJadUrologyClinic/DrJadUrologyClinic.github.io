@@ -50,6 +50,10 @@ body {
   margin: 5px 0;
 }
 
+.job-section a {
+  background-color: cyan;
+}
+
 form {
   margin-top: 20px;
 }
