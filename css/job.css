@@ -193,6 +193,13 @@ button:hover {
   width: 100%;
   height: 400px; /* Default desktop height */
   aspect-ratio: 16/9;
+  overflow: hidden !important;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.swiper-wrapper {
+  touch-action: manipulation !important;
 }
 
 .swiper-slide {
@@ -201,6 +208,9 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 .swiper-slide img {
@@ -229,6 +239,8 @@ button:hover {
   background: gray;
   padding: 15px;
   border-radius: 50%;
+  width: 44px !important;  /* Minimum touch target */
+  height: 44px !important;
 }
 
 .swiper-pagination-bullet {

@@ -209,51 +209,61 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  // Initialize Swiper with RTL support
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
-    rtl: true, // RTL layout
+    rtl: true,
     lazy: true,
-    autoHeight: true,
     
-    // Navigation
+    // Core touch parameters
+    touchStartPreventDefault: false,
+    touchAngle: 45,
+    simulateTouch: true,
+    touchRatio: 1,
+    touchReleaseOnEdges: true,
+    grabCursor: true,
+    
+    // Enhanced touch events
+    touchEventsTarget: 'container',
+    shortSwipes: true,
+    longSwipes: true,
+    longSwipesRatio: 0.5,
+    followFinger: true,
+    
+    // Navigation & Pagination
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    
-    // Pagination
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      dynamicBullets: true,
     },
-    
-    // Touch controls
-    touchRatio: 1,
-    grabCursor: true,
-    
-    // Responsive settings
+
+    // Mobile-first breakpoints
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 10
+        spaceBetween: 10,
+        allowTouchMove: true
       },
       768: {
         slidesPerView: 1,
-        spaceBetween: 20
+        spaceBetween: 20,
+        allowTouchMove: true
       }
     },
+
+    // Touch optimization
+    resistance: true,
+    resistanceRatio: 0.85,
     
-    // Autoplay
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    
-    // Keyboard control
-    keyboard: {
+    // Accessibility
+    a11y: {
       enabled: true,
+      prevSlideMessage: 'الصورة السابقة',
+      nextSlideMessage: 'الصورة التالية',
     }
   });
 </script>
