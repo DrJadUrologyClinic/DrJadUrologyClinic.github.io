@@ -226,7 +226,7 @@ button:hover {
 .swiper-button-next,
 .swiper-button-prev {
   color: rgb(43, 245, 255) !important;
-  background: transparent;
+  background: gray;
   padding: 15px;
   border-radius: 50%;
 }
