@@ -73,7 +73,7 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/job.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <header> 
@@ -104,7 +104,7 @@
           <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urology_Clinic_Exterior_Reception_Counter.webp" alt="Medical Team" loading="lazy" width="448" height="252">
         </div>
         <div class="swiper-slide">
-          <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urology_Clinic_Exterior_Front_Door.webp" alt="Medical Team" loading="lazy" width="448" height="252">
+          <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urologist_Certificates.webp" alt="Medical Team" loading="lazy" width="448" height="252">
         </div>
         <div class="swiper-slide">
           <img src="../../images/The_Best_Urology_Clinic_Images/the_Best_Amman_Urology_Clinics_Corridor_door.webp" alt="Medical Team" loading="lazy" width="448" height="252">
@@ -207,16 +207,17 @@
 
 <script src="../../js/headerFooterManager.js"></script>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   // Initialize Swiper with RTL support
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
-    rtl: true, // Important for Arabic layout
+    rtl: true, // RTL layout
     lazy: true,
+    autoHeight: true,
     
-    // Navigation arrows
+    // Navigation
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -228,22 +229,32 @@
       clickable: true,
     },
     
-    // Mobile touch support
+    // Touch controls
     touchRatio: 1,
     grabCursor: true,
     
-    // Responsive breakpoints
+    // Responsive settings
     breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
       768: {
         slidesPerView: 1,
         spaceBetween: 20
       }
     },
     
-    // Autoplay (optional)
+    // Autoplay
     autoplay: {
       delay: 5000,
+      disableOnInteraction: false,
     },
+    
+    // Keyboard control
+    keyboard: {
+      enabled: true,
+    }
   });
 </script>
 </html>
