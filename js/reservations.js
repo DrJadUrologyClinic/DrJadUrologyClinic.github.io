@@ -58,12 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========== Configuration ==========
     const WORKING_HOURS = {
-        0: { start: 10, end: 18 }, // Sunday
-        1: { start: 10, end: 18 }, // Monday
-        2: { start: 10, end: 18 }, // Tuesday
-        3: { start: 14, end: 18 }, // Wednesday
-        4: { start: 10, end: 14 }, // Thursday
-        6: { start: 10, end: 18 }, // Saturday
+        0: { start: 8, end: 18 }, // Sunday
+        1: { start: 8, end: 18 }, // Monday
+        2: { start: 8, end: 18 }, // Tuesday
+        3: { start: 8, end: 18 }, // Wednesday
+        4: { start: 8, end: 14 }, // Thursday
+        6: { start: 8, end: 18 }, // Saturday
         // Friday (5) is excluded
     };
 
