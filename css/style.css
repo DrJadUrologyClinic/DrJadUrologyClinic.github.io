@@ -225,7 +225,7 @@ footer {
 
 
 .references-section {
-  font-size: small;
+  font-size: 0.8rem;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -236,7 +236,7 @@ footer {
 }
 
 .references {
-  font-size: small;
+  font-size: 0.8rem;
   line-height: 2;
   direction: ltr;
   text-align: left;
@@ -248,7 +248,7 @@ footer {
   color: rgb(25, 39, 51);
   background-color: transparent;
   text-decoration: none;
-  font-size: small;
+  font-size: 0.8rem;
 }
 
 .references a:hover {
@@ -336,7 +336,7 @@ article img{
   text-align: center;
   box-sizing: border-box;
   position: relative;
-  font-size: x-small;
+  font-size: 0.8rem;
   border: 5px ridge rgb(43, 245, 255, 1);
   border-radius: 2%;
 }
@@ -344,7 +344,7 @@ article img{
 article a {
   background-color: rgb(25, 39, 51);
   text-decoration: underline;
-  font-size: large;
+  font-size: 1.0rem;
 }
 
 article a:hover {
