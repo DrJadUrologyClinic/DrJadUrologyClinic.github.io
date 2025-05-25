@@ -24,6 +24,14 @@ main {
   margin-top: 10%;
 }
 
+main .top {
+width: 100%; 
+max-width: 65%; 
+height: auto; 
+display: block; 
+margin: 1% auto;
+}
+
 /* Navigation Menu */
 header nav ul {
   margin: 0;
