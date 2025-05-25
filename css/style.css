@@ -134,7 +134,7 @@ u {
 }
 
 button {
-  font-size:larger;
+  font-size: 1.0rem;
   background-color: rgb(25, 39, 51, 1);
   color: rgb(43, 245, 255, 1);
   padding: 0 5px;
