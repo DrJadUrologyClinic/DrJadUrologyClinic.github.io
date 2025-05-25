@@ -121,6 +121,10 @@ h1 {
   font-size: x-large;
 }
 
+section h1 {
+  font-size: larger;
+}
+
 h2, h3 {
   padding: 10px;
 }
@@ -351,6 +355,7 @@ article a:hover {
 article h1 {
     color: rgb(43, 245, 255, 1);
     background-color: rgb(25, 39, 51, 1);
+    font-size: larger;
 }
 article h2 {
   color: rgb(25, 39, 51);
@@ -378,6 +383,10 @@ aside {
   margin: 20px auto;
   padding: 20px;
   line-height: 2;
+}
+
+aside h1 {
+  font-size: larger;
 }
 
 table {
