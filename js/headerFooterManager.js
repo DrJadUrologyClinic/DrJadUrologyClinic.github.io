@@ -23,14 +23,14 @@ const base = "/"; // Always points to root directory
       <!-- Hidden Navigation Menu -->
       <nav id="menu" style="display: none; flex-direction: column; position: absolute; top: 60px; right: 50%; transform: translateX(50%); background: rgb(25, 39, 51, 1); border: 2px solid rgb(43, 245, 255, 1); border-radius: 5px; padding: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
         <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
-          <li style="margin: 10px 0;"><a href="${base}/index.html" style="text-decoration: none; font-size: 1.2em;">الرئيسية</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/about/index.html" style="text-decoration: none; font-size: 1.2em;">عن الدكتور</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/مشاكل_المسالك_البولية/index.html" style="text-decoration: none; font-size: 1.2em;">مشاكل المسالك</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/services/index.html" style="text-decoration: none; font-size: 1.2em;">الخدمات</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/FAQ/index.html" style="text-decoration: none; font-size: 1.2em;">الأسئلة الشائعة</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/reservations/index.html" style="text-decoration: none; font-size: 1.2em;">حجز موعد</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/location/index.html" style="text-decoration: none; font-size: 1.2em;">خارطة الموقع</a></li>
-          <li style="margin: 10px 0;"><a href="${base}/contactUs/index.html" style="text-decoration: none; font-size: 1.2em;">تواصل معنا</a></li>
+          <li style="margin: 10px 0;"><a href="${base}index.html" style="text-decoration: none; font-size: 1.2em;">الرئيسية</a></li>
+          <li style="margin: 10px 0;"><a href="${base}about/index.html" style="text-decoration: none; font-size: 1.2em;">عن الدكتور</a></li>
+          <li style="margin: 10px 0;"><a href="${base}مشاكل_المسالك_البولية/index.html" style="text-decoration: none; font-size: 1.2em;">مشاكل المسالك</a></li>
+          <li style="margin: 10px 0;"><a href="${base}services/index.html" style="text-decoration: none; font-size: 1.2em;">الخدمات</a></li>
+          <li style="margin: 10px 0;"><a href="${base}FAQ/index.html" style="text-decoration: none; font-size: 1.2em;">الأسئلة الشائعة</a></li>
+          <li style="margin: 10px 0;"><a href="${base}reservations/index.html" style="text-decoration: none; font-size: 1.2em;">حجز موعد</a></li>
+          <li style="margin: 10px 0;"><a href="${base}location/index.html" style="text-decoration: none; font-size: 1.2em;">خارطة الموقع</a></li>
+          <li style="margin: 10px 0;"><a href="${base}contactUs/index.html" style="text-decoration: none; font-size: 1.2em;">تواصل معنا</a></li>
         </ul>
       </nav>
     </header>
@@ -55,9 +55,9 @@ const base = "/"; // Always points to root directory
 
       <!--
       <div class="media-icons">
-       <a href=""><img src="${base}/images/youtube.png"></a>
-       <a href=""><img src="${base}/images/instagram.png"></a>
-       <a href=""><img src="${base}/images/facebook.png"></a>
+       <a href=""><img src="${base}images/youtube.png"></a>
+       <a href=""><img src="${base}images/instagram.png"></a>
+       <a href=""><img src="${base}images/facebook.png"></a>
       </div>
       -->
 
@@ -68,19 +68,19 @@ const base = "/"; // Always points to root directory
         <li class="footer-link-name">
              العيادة
         </li>
-        <li><a href="${base}/index.html" title="الرئيسية - افضل دكتور كلى ومسالك في الاردن">الرئيسية</a></li>
-        <li><a href="${base}/about/index.html" title="الدكتور جاد الصمادي - احسن استشاري مسالك وكلى وانجاب في الاردن">الدكتور جاد الصمادي</a></li>
-        <li><a href="${base}/reservations/index.html" title="احجز موعد مع أفضل دكتور كلى ومسالك وعقم وانجاب في الاردن">المواعيد</a></li>
-        <li><a href="${base}/location/index.html" title="موقع اشطر دكتور كلى ومسالك في الاردن">الموقع</a></li>
+        <li><a href="${base}index.html" title="الرئيسية - افضل دكتور كلى ومسالك في الاردن">الرئيسية</a></li>
+        <li><a href="${base}about/index.html" title="الدكتور جاد الصمادي - احسن استشاري مسالك وكلى وانجاب في الاردن">الدكتور جاد الصمادي</a></li>
+        <li><a href="${base}reservations/index.html" title="احجز موعد مع أفضل دكتور كلى ومسالك وعقم وانجاب في الاردن">المواعيد</a></li>
+        <li><a href="${base}location/index.html" title="موقع اشطر دكتور كلى ومسالك في الاردن">الموقع</a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
              الخدمات
         </li>
-        <li><a href="${base}/services/flexibleCystoscopy/index.html" title="أفضل دكتور تنظير مسالك ومثانة في الأردن">  تنظير المثانة </a></li>
-        <li><a href="${base}/services/urodynamicTesting/index.html" title="أفضل دكتور مسالك تخطيط مثانة في الأردن">  تخطيط ديناميكية المثانة </a></li>
-        <li><a href="${base}/services/prostateBiopsy/index.html" title="أفضل دكتور خزعة بروستات في الأردن">  خزعة البروستات </a></li>
-        <li><a href="${base}/services/index.html" title="أفضل دكتور كلى ومسالك التراساوند في الأردن the best urologist ultrasound in Amman">  التصوير بالالتراساوند </a></li>
+        <li><a href="${base}services/flexibleCystoscopy/index.html" title="أفضل دكتور تنظير مسالك ومثانة في الأردن">  تنظير المثانة </a></li>
+        <li><a href="${base}services/urodynamicTesting/index.html" title="أفضل دكتور مسالك تخطيط مثانة في الأردن">  تخطيط ديناميكية المثانة </a></li>
+        <li><a href="${base}services/prostateBiopsy/index.html" title="أفضل دكتور خزعة بروستات في الأردن">  خزعة البروستات </a></li>
+        <li><a href="${base}services/index.html" title="أفضل دكتور كلى ومسالك التراساوند في الأردن the best urologist ultrasound in Amman">  التصوير بالالتراساوند </a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
@@ -89,24 +89,24 @@ const base = "/"; // Always points to root directory
         <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
         <li><a href="https://wa.me/962778089234" target="_blank" rel="noopener noreferrer"> تواصل معنا واتس أب </a></li>
         <li><a href="https://wa.me/962778089234" target="_blank" rel="noopener noreferrer">  962778089234+  </a></li>
-        <li><a href="${base}/location/index.html" title="موقع احسن دكتور كلى ومسالك في الاردن">الموقع</a></li>
+        <li><a href="${base}location/index.html" title="موقع احسن دكتور كلى ومسالك في الاردن">الموقع</a></li>
       </ul>
       <ul class="footer-box">
         <li class="footer-link-name">
           معلومات عامة
         </li>
-        <li><a href="${base}/مشاكل_المسالك_البولية/أعراض_الكلى_والمسالك_البولية/index.html">أعراض الكلى والمسالك البولية</a></li>
-        <li><a href="${base}/مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/index.html">أمراض الكلى والمسالك البولية</a></li>
-        <li><a href="${base}/مشاكل_المسالك_البولية/عمليات_الكلى_والمسالك_البولية/index.html">عمليات الكلى والمسالك البولية</a></li>
+        <li><a href="${base}مشاكل_المسالك_البولية/أعراض_الكلى_والمسالك_البولية/index.html">أعراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}مشاكل_المسالك_البولية/أمراض_الكلى_والمسالك_البولية/index.html">أمراض الكلى والمسالك البولية</a></li>
+        <li><a href="${base}مشاكل_المسالك_البولية/عمليات_الكلى_والمسالك_البولية/index.html">عمليات الكلى والمسالك البولية</a></li>
       </ul>
     </div>
 
     <div class="bottom-details">
       <div class="bottom-text">
-        <span class="copyright-text">Copyright &#169; 2025 <a href="${base}/index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
-        <span class="policy-terms"><a href="${base}/privacy-policy/index.html">سياسة الخصوصية</a></span>
-        <span class="policy-terms"><a href="${base}/terms-and-conditions/index.html">الشروط والأحكام</a></span>
-        <span><a href="${base}/Jobs/index.html">الإعلانات والوظائف</a></span>
+        <span class="copyright-text">Copyright &#169; 2025 <a href="${base}index.html">عيادة الدكتور جاد الصمادي</a> جميع الحقوق محفوظة</span>
+        <span class="policy-terms"><a href="${base}privacy-policy/index.html">سياسة الخصوصية</a></span>
+        <span class="policy-terms"><a href="${base}terms-and-conditions/index.html">الشروط والأحكام</a></span>
+        <span><a href="${base}Jobs/index.html">الإعلانات والوظائف</a></span>
         
       </div>
     </div> 
