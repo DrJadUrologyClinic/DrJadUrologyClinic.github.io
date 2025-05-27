@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
           معلومات التواصل
         </li>
         <li><a href="mailto:Jadsmadi@live.com">  البريد الالكتروني </a></li>
-        <li><a href="https://wa.me/962778089234" target="_blank"> تواصل معنا واتس أب </a></li>
-        <li><a href="https://wa.me/962778089234" target="_blank">  962778089234+  </a></li>
+        <li><a href="https://wa.me/962778089234" target="_blank" rel="noopener noreferrer"> تواصل معنا واتس أب </a></li>
+        <li><a href="https://wa.me/962778089234" target="_blank" rel="noopener noreferrer">  962778089234+  </a></li>
         <li><a href="${base}/location/index.html" title="موقع احسن دكتور كلى ومسالك في الاردن">الموقع</a></li>
       </ul>
       <ul class="footer-box">
