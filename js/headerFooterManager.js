@@ -1,6 +1,11 @@
 // headerFooterManager.js
-document.addEventListener("DOMContentLoaded", function () {
-  const base = document.querySelector("base")?.getAttribute("href") || ".";
+document.addEventListener("DOMContentLoaded", function () { 
+
+  // Changed from: const base = document.querySelector("base")?.getAttribute("href") || ".";  //
+  
+  // To:
+const base = "/"; // Always points to root directory
+
 
   // Add Header with Centered Menu Toggle
   const header = `
