@@ -12,8 +12,8 @@ const base = "/"; // Always points to root directory
     <header style="background-color: rgb(25, 39, 51, 1); color: rgb(43, 245, 255, 1); padding: 10px; direction: rtl; text-align: center;">
       <div style="display: flex; justify-content: center; align-items: center;">
         <!-- Logo -->
-        <a href="${base}/index.html" style="position: absolute; left: 10px; top: 10px;">
-          <img src="${base}/images/logo.webp" alt="Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 50%;">
+        <a href="${base}index.html" style="position: absolute; left: 10px; top: 10px;">
+          <img src="${base}images/logo.webp" alt="Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 50%;">
         </a>
         <!-- Centered Menu Toggle -->
         <button id="menu-toggle" aria-label="menu toggle" style="background: none; border: none; color: rgb(43, 245, 255, 1); font-size: 2em; cursor: pointer;">
@@ -49,7 +49,7 @@ const base = "/"; // Always points to root directory
     <div class="top">
 
       <div class="logo-footer">
-        <a href="${base}/index.html"><img src="${base}/images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  " loading="lazy" width="150"  height="150"></a>
+        <a href="${base}index.html"><img src="${base}images/logo.webp" alt="  شعار أفضل استشاري مسالك بولية في عمان أو أيقونة أفضل استشاري جراحة الكلى والمسالك و العقم و الإنجاب في عمان  " loading="lazy" width="150"  height="150"></a>
         <span class="logo-name"> عيادة الدكتور جاد الصمادي </span> 
       </div>
 
